@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Archivo, Fraunces, Space_Grotesk } from "next/font/google";
+import { Fraunces, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
-const archivo = Archivo({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -38,12 +32,11 @@ export default function RootLayout({
       lang="en"
       className={cn(
         "dark h-full scroll-smooth antialiased",
-        archivo.variable,
         spaceGrotesk.variable,
         fraunces.variable
       )}
     >
-      <body className="min-h-full bg-zinc-950 font-sans text-zinc-100">{children}</body>
+      <body className="min-h-full bg-em-bg font-sans text-em-text">{children}</body>
     </html>
   );
 }
