@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
+import { GradientButton } from "@/components/ui/GradientButton";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -43,24 +44,26 @@ export function Navbar() {
 
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="group relative">
               <a
                 href={link.href}
-                className="cursor-pointer text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+                className="cursor-pointer text-sm font-medium text-em-text-muted transition-colors hover:text-em-text"
               >
                 {link.label}
               </a>
+              <span
+                className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-em-accent transition-transform duration-300 ease-out group-hover:scale-x-100"
+                aria-hidden="true"
+              />
             </li>
           ))}
         </ul>
 
-        <a
-          href="#contact"
-          className="hidden cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-white md:inline-flex"
-          style={{ background: "var(--gradient-primary)" }}
-        >
-          Get in touch
-        </a>
+        <div className="hidden md:inline-flex">
+          <GradientButton href="#contact" magnetic>
+            Get in touch
+          </GradientButton>
+        </div>
 
         <button
           type="button"
