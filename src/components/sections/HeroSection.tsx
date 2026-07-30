@@ -1,35 +1,31 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 import { BlurText } from "@/components/reactbits/BlurText";
 import Lightfall from "@/components/reactbits/Lightfall";
 import { GradientButton } from "@/components/ui/GradientButton";
-import { useInViewport } from "@/hooks/use-in-viewport";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 interface HeroSectionProps {
   name?: string;
   title?: string;
   subtitle?: string;
+  status?: string;
   ctaText?: string;
 }
 
 export default function HeroSection({
   name = "Paolo Rossi",
   title = "Creative Engineer",
-  subtitle = "Crafting digital experiences that blur the line between technology and art",
-  ctaText = "Explore My Work",
+  subtitle = "I build interfaces with the discipline of print and the precision of code.",
+  status = "Available for select work",
+  ctaText = "View the work",
 }: HeroSectionProps) {
-  const [textVisible, setTextVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const inViewport = useInViewport(sectionRef);
+  const textVisible = useInView(sectionRef, { once: true, margin: "-80px" });
   const reducedMotion = usePrefersReducedMotion();
-
-  useEffect(() => {
-    if (inViewport) setTextVisible(true);
-  }, [inViewport]);
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -39,38 +35,49 @@ export default function HeroSection({
     <section
       ref={sectionRef}
       id="hero"
-      className="relative flex h-screen w-full items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen w-full flex-col justify-end overflow-hidden bg-em-bg px-6 pb-16 pt-32 md:px-16 md:pb-24"
     >
       <div className="absolute inset-0 z-0">
         <Lightfall
-          colors={["#1e57b8", "#5227FF", "#2d9ef8"]}
-          backgroundColor="#09090B"
-          speed={reducedMotion ? 0.15 : 0.35}
-          streakCount={3}
-          density={0.55}
-          glow={1.2}
+          colors={["#c2542e", "#8a4a2e", "#e08a52"]}
+          backgroundColor="#0b0a08"
+          speed={reducedMotion ? 0.1 : 0.25}
+          streakCount={2}
+          streakWidth={1.1}
+          density={0.35}
+          glow={0.85}
+          backgroundGlow={0.2}
+          opacity={0.8}
           mouseInteraction={!reducedMotion}
         />
       </div>
 
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-zinc-950/40 via-zinc-950/20 to-zinc-950/90" />
+      <div className="bg-grain absolute inset-0 z-[1] opacity-[0.05] mix-blend-overlay" aria-hidden="true" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center gap-6 px-6 text-center">
-        <motion.p
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-em-bg via-em-bg/70 to-em-bg/45" />
+
+      <div className="relative z-10 flex max-w-2xl flex-col items-start gap-5">
+        <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: textVisible ? 1 : 0, y: textVisible ? 0 : 12 }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs uppercase tracking-[0.3em] text-blue-300/70"
+          className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-em-accent"
         >
-          Portfolio 2026
-        </motion.p>
+          <motion.span
+            className="h-1.5 w-1.5 shrink-0 rounded-full bg-em-accent"
+            animate={reducedMotion ? undefined : { opacity: [1, 0.3, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
+            aria-hidden="true"
+          />
+          {status}
+        </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: textVisible ? 1 : 0, y: textVisible ? 0 : 20 }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: textVisible ? 1 : 0, y: textVisible ? 0 : 24 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="font-display text-5xl font-bold tracking-tighter text-white md:text-7xl lg:text-8xl">
+          <h1 className="font-editorial text-5xl font-normal leading-[0.95] tracking-tight text-em-text md:text-7xl lg:text-[6.5rem]">
             <BlurText text={name} delay={0.04} duration={0.7} ease="easeOut" />
           </h1>
         </motion.div>
@@ -78,16 +85,11 @@ export default function HeroSection({
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: textVisible ? 1 : 0, y: textVisible ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.45 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex items-center gap-4"
         >
-          <h2
-            className="font-display text-2xl font-medium tracking-tight md:text-3xl"
-            style={{
-              background: "var(--gradient-primary)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
+          <span className="h-px w-12 bg-em-accent" aria-hidden="true" />
+          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-em-accent md:text-base">
             {title}
           </h2>
         </motion.div>
@@ -95,8 +97,8 @@ export default function HeroSection({
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: textVisible ? 1 : 0, y: textVisible ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-lg text-base leading-relaxed text-zinc-400 md:text-lg"
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="max-w-md text-base leading-relaxed text-em-text-muted md:text-lg"
         >
           {subtitle}
         </motion.p>
@@ -104,9 +106,10 @@ export default function HeroSection({
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: textVisible ? 1 : 0, y: textVisible ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.75 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="pt-2"
         >
-          <GradientButton size="lg" onClick={scrollToProjects}>
+          <GradientButton size="lg" variant="outline" onClick={scrollToProjects}>
             {ctaText}
           </GradientButton>
         </motion.div>
@@ -115,16 +118,16 @@ export default function HeroSection({
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: textVisible ? 1 : 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
-        className="absolute bottom-10 z-10 flex flex-col items-center gap-2"
+        transition={{ duration: 0.8, delay: 0.9 }}
+        className="absolute bottom-8 right-6 z-10 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-em-text-dim md:right-16"
       >
-        <span className="text-xs uppercase tracking-widest text-zinc-500">Scroll</span>
-        <motion.div
-          animate={reducedMotion ? undefined : { y: [0, 6, 0] }}
+        Scroll
+        <motion.span
+          animate={reducedMotion ? undefined : { y: [0, 5, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown size={20} className="text-zinc-500" />
-        </motion.div>
+          <ArrowDown size={14} className="text-em-text-dim" />
+        </motion.span>
       </motion.div>
     </section>
   );

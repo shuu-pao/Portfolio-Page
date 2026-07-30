@@ -50,6 +50,12 @@
   --gradient-primary: linear-gradient(135deg, #1e57b8, #2d9ef8);
   --gradient-secondary: linear-gradient(135deg, #4ecdc4, #16a085);
   --gradient-accent: linear-gradient(135deg, #2e2e89, #5a43de);
+  --font-editorial: var(--font-editorial);
+  --color-em-bg: var(--em-bg);
+  --color-em-text: var(--em-text);
+  --color-em-text-muted: var(--em-text-muted);
+  --color-em-text-dim: var(--em-text-dim);
+  --color-em-accent: var(--em-accent);
 }
 
 :root {
@@ -96,6 +102,13 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+  /* Editorial Mono — Hero art direction */
+  --em-bg: #0b0a08;
+  --em-text: #f3efe7;
+  --em-text-muted: #9c9484;
+  --em-text-dim: #5c574c;
+  --em-accent: #c2542e;
 }
 
 .dark {
@@ -149,6 +162,11 @@
   .font-display {
     font-family: var(--font-display), system-ui, sans-serif;
   }
+}
+
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 @media (prefers-reduced-motion: reduce) {

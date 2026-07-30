@@ -10,7 +10,7 @@ interface GradientButtonProps {
   href?: string;
   className?: string;
   size?: "default" | "lg";
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "outline";
   type?: "button" | "submit" | "reset";
 }
 
@@ -26,11 +26,13 @@ export function GradientButton({
   const reducedMotion = usePrefersReducedMotion();
 
   const baseClasses = cn(
-    "relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+    "relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
     size === "lg" ? "px-8 py-3.5 text-base" : "px-6 py-2.5 text-sm",
-    variant === "primary"
-      ? "text-white shadow-lg shadow-blue-900/30"
-      : "border border-white/20 bg-white/5 text-white backdrop-blur-md hover:bg-white/10",
+    variant === "primary" && "text-white shadow-lg shadow-blue-900/30 focus-visible:ring-blue-400/60",
+    variant === "ghost" &&
+      "border border-white/20 bg-white/5 text-white backdrop-blur-md hover:bg-white/10 focus-visible:ring-blue-400/60",
+    variant === "outline" &&
+      "border border-em-accent/50 bg-transparent text-em-accent hover:bg-em-accent/10 focus-visible:ring-em-accent/60",
     className
   );
 
