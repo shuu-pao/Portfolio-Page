@@ -27,4 +27,3 @@ When instructed to build, edit, or style any component or page, you must process
 - **Graphify First:** To map project architecture, identify imports, or locate files, prefer invoking `Skill("graphify")` over ad-hoc recursive scans — it's faster and more precise, not because scans are forbidden.
 - **Strict Scope Boundaries:** When asked to edit code, target ONLY the file specified. Do not read or modify neighboring pages unless explicitly requested.
 - **No Refactoring Bloat:** Do not rewrite or clean up code in files you are not actively fixing. Fix only the bug or feature assigned.
-- **Do Not Invent Code for React Bits:** Assume all foundational animated components inside `@/components/reactbits/` are perfectly configured manually by the human. Your only job is to position them using layout utilities.
