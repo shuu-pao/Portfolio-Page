@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePrefersReducedMotion } from "./use-prefers-reduced-motion";
 
 interface Particle {
@@ -12,8 +12,21 @@ interface Particle {
   opacity: number;
 }
 
+// Hook currently has no consumers (CanvasVisualizer is dead code).
+// Scroll-reactive behavior preserved via inlined scroll tracking.
 export function useScrollVisualizer(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
   const reducedMotion = usePrefersReducedMotion();
+  const scrollRef = useRef(0);
+
+  // Inline scroll position tracking (replaces deleted use-scroll-position.ts hook)
+  useEffect(() => {
+    const handleScroll = () => {
+      scrollRef.current = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -52,7 +65,8 @@ export function useScrollVisualizer(canvasRef: React.RefObject<HTMLCanvasElement
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const speed = reducedMotion ? 0.2 : 0.5;
+      const scrollFactor = Math.min(scrollRef.current / 800, 1);
+      const speed = reducedMotion ? 0.2 : 0.5 + scrollFactor * 1.5;
 
       for (const p of particles) {
         p.x += p.vx * speed;
@@ -65,7 +79,7 @@ export function useScrollVisualizer(canvasRef: React.RefObject<HTMLCanvasElement
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(147, 197, 253, ${p.opacity})`;
+        ctx.fillStyle = `rgba(147, 197, 253, ${p.opacity * (0.3 + scrollFactor * 0.7)})`;
         ctx.fill();
       }
 
