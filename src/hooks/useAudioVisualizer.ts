@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useScrollPosition } from "./use-scroll-position";
+import { useEffect } from "react";
 import { usePrefersReducedMotion } from "./use-prefers-reduced-motion";
 
 interface Particle {
@@ -14,13 +13,7 @@ interface Particle {
 }
 
 export function useScrollVisualizer(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
-  const scrollY = useScrollPosition();
   const reducedMotion = usePrefersReducedMotion();
-  const scrollRef = useRef(scrollY);
-
-  useEffect(() => {
-    scrollRef.current = scrollY;
-  }, [scrollY]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -59,8 +52,7 @@ export function useScrollVisualizer(canvasRef: React.RefObject<HTMLCanvasElement
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const scrollFactor = Math.min(scrollRef.current / 800, 1);
-      const speed = reducedMotion ? 0.2 : 0.5 + scrollFactor * 1.5;
+      const speed = reducedMotion ? 0.2 : 0.5;
 
       for (const p of particles) {
         p.x += p.vx * speed;
@@ -73,7 +65,7 @@ export function useScrollVisualizer(canvasRef: React.RefObject<HTMLCanvasElement
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(147, 197, 253, ${p.opacity * (0.3 + scrollFactor * 0.7)})`;
+        ctx.fillStyle = `rgba(147, 197, 253, ${p.opacity})`;
         ctx.fill();
       }
 
