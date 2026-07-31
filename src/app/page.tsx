@@ -1,5 +1,4 @@
 import HeroSection from "@/components/sections/HeroSection";
-import MarqueeTickerSection from "@/components/sections/MarqueeTickerSection";
 import PortfolioGallerySection from "@/components/sections/PortfolioGallerySection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
 import SkillsStackSection from "@/components/sections/SkillsStackSection";
@@ -13,7 +12,6 @@ export default function Home() {
       <Navbar />
       <main className="relative min-h-screen w-full bg-em-bg">
         <HeroSection />
-        <MarqueeTickerSection />
         <PortfolioGallerySection />
         <AboutMeSection />
         <SkillsStackSection />
