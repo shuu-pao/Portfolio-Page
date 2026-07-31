@@ -28,7 +28,11 @@ function BentoCard({ item }: { item: BentoItem }) {
   const rotateX = useTransform(y, [-100, 100], [4, -4]);
   const rotateY = useTransform(x, [-100, 100], [-4, 4]);
 
+  const isFinePointer = () =>
+    typeof window !== "undefined" && window.matchMedia("(pointer: fine)").matches;
+
   function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
+    if (!isFinePointer()) return;
     const rect = event.currentTarget.getBoundingClientRect();
     x.set(((event.clientX - rect.left) / rect.width - 0.5) * 100);
     y.set(((event.clientY - rect.top) / rect.height - 0.5) * 100);
