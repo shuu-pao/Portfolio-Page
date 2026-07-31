@@ -15,7 +15,6 @@ module.exports = {
       /* Fonts */
       fontFamily: {
         sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        display: ['Archivo', 'system-ui', 'sans-serif'],
       }
     }
   },

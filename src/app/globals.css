@@ -54,6 +54,10 @@
   --color-em-text-dim: var(--em-text-dim);
   --color-em-accent: var(--em-accent);
   --color-em-accent-text: var(--em-accent-text);
+  --color-em-invert-bg: var(--em-invert-bg);
+  --color-em-invert-text: var(--em-invert-text);
+  --color-em-invert-muted: var(--em-invert-muted);
+  --font-cursive: var(--font-cursive);
 }
 
 :root {
@@ -101,13 +105,16 @@
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
 
-  /* Editorial Mono — Hero art direction */
-  --em-bg: #0b0a08;
-  --em-text: #f3efe7;
-  --em-text-muted: #9c9484;
-  --em-text-dim: #5c574c;
-  --em-accent: #c2542e;
-  --em-accent-text: #e08a52;
+  /* Editorial warm palette */
+  --em-bg: #ede2cd;
+  --em-text: #211c16;
+  --em-text-muted: #6b6153;
+  --em-text-dim: #a89b85;
+  --em-accent: #b5502e;
+  --em-accent-text: #d97b52;
+  --em-invert-bg: #17130f;
+  --em-invert-text: #f3ede2;
+  --em-invert-muted: #b5aa98;
 }
 
 .dark {
@@ -142,6 +149,9 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --em-bg: var(--em-invert-bg);
+  --em-text: var(--em-invert-text);
+  --em-text-muted: var(--em-invert-muted);
 }
 
 @layer base {
