@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Code2, Layers, Sparkles, Zap } from "lucide-react";
+import CountUp from "@/components/reactbits/CountUp";
+import { BlurText } from "@/components/reactbits/BlurText";
 
 const skills = [
   { icon: Code2, label: "React & Next.js", detail: "App Router, RSC, performance" },
@@ -17,6 +19,12 @@ const achievements = [
   "Led frontend architecture for high-traffic marketing platforms",
 ];
 
+const stats = [
+  { value: 6, suffix: "+", label: "Years building interfaces" },
+  { value: 30, suffix: "+", label: "Projects shipped" },
+  { value: 100, suffix: "%", label: "Cinematic intent" },
+];
+
 export default function AboutMeSection() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -25,9 +33,9 @@ export default function AboutMeSection() {
     <section
       id="about"
       ref={ref}
-      className="relative w-full overflow-hidden bg-zinc-950 px-6 py-32"
+      className="relative w-full overflow-hidden bg-em-bg px-6 py-32"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(30,87,184,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(194,84,46,0.1),transparent_60%)]" />
 
       <div className="relative mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:gap-24">
         <motion.div
@@ -35,23 +43,16 @@ export default function AboutMeSection() {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-blue-400/80">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-em-accent-text/80">
             About
           </p>
-          <h2 className="font-display mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl">
-            Engineering with
-            <span
-              className="block"
-              style={{
-                background: "var(--gradient-accent)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              cinematic intent
+          <h2 className="font-display mb-6 text-4xl font-bold tracking-tight text-em-text md:text-5xl">
+            <BlurText text="Engineering with" delay={0.03} duration={0.6} ease="easeOut" />
+            <span className="block text-em-accent">
+              <BlurText text="cinematic intent" delay={0.03} duration={0.6} ease="easeOut" />
             </span>
           </h2>
-          <p className="mb-6 text-lg leading-relaxed text-zinc-400">
+          <p className="mb-6 text-lg leading-relaxed text-em-text-muted">
             I&apos;m a software engineer who treats interfaces as experiences — not
             templates. I blend precise engineering with motion, depth, and
             typography to build portfolios and products that feel unmistakably
@@ -71,11 +72,23 @@ export default function AboutMeSection() {
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                 className="flex items-start gap-3 text-zinc-300"
               >
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-em-accent" />
                 {item}
               </motion.li>
             ))}
           </ul>
+
+          <div className="mt-10 grid grid-cols-3 gap-6 border-t border-em-text/10 pt-8">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <div className="font-display text-3xl font-bold text-em-text">
+                  <CountUp to={stat.value} duration={1.5} />
+                  {stat.suffix}
+                </div>
+                <p className="mt-1 text-xs text-em-text-dim">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
@@ -90,11 +103,11 @@ export default function AboutMeSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-              className="group cursor-default rounded-xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400/30 hover:bg-white/[0.06]"
+              className="group cursor-default rounded-xl border border-em-text/10 bg-em-text/[0.03] p-5 backdrop-blur-sm transition-all duration-300 hover:border-em-accent/30 hover:bg-em-text/[0.06]"
             >
               <skill.icon
                 size={22}
-                className="mb-3 text-blue-400 transition-transform duration-300 group-hover:scale-110"
+                className="mb-3 text-em-accent transition-transform duration-300 group-hover:scale-110"
               />
               <h3 className="mb-1 font-semibold text-white">{skill.label}</h3>
               <p className="text-sm text-zinc-500">{skill.detail}</p>
