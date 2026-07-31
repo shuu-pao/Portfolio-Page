@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+import { useMagnetic } from "@/hooks/use-magnetic";
 
 interface GradientButtonProps {
   children: React.ReactNode;
@@ -10,8 +11,9 @@ interface GradientButtonProps {
   href?: string;
   className?: string;
   size?: "default" | "lg";
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "outline";
   type?: "button" | "submit" | "reset";
+  magnetic?: boolean;
 }
 
 export function GradientButton({
@@ -22,27 +24,25 @@ export function GradientButton({
   size = "default",
   variant = "primary",
   type = "button",
+  magnetic = false,
 }: GradientButtonProps) {
   const reducedMotion = usePrefersReducedMotion();
+  const { ref, x, y, handleMouseMove, handleMouseLeave } = useMagnetic<HTMLElement>();
 
   const baseClasses = cn(
-    "relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+    "relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-em-bg",
     size === "lg" ? "px-8 py-3.5 text-base" : "px-6 py-2.5 text-sm",
-    variant === "primary"
-      ? "text-white shadow-lg shadow-blue-900/30"
-      : "border border-white/20 bg-white/5 text-white backdrop-blur-md hover:bg-white/10",
+    variant === "primary" &&
+      "bg-em-accent text-em-text shadow-lg shadow-em-accent/30 hover:bg-em-accent/90 focus-visible:ring-em-accent/60",
+    variant === "ghost" &&
+      "border border-em-text/20 bg-em-text/5 text-em-text backdrop-blur-md hover:bg-em-text/10 focus-visible:ring-em-accent/60",
+    variant === "outline" &&
+      "border border-em-accent/50 bg-transparent text-em-accent-text hover:bg-em-accent/10 focus-visible:ring-em-accent/60",
     className
   );
 
   const inner = (
     <>
-      {variant === "primary" && (
-        <span
-          className="absolute inset-0"
-          style={{ background: "var(--gradient-primary)" }}
-          aria-hidden="true"
-        />
-      )}
       <motion.span
         className="relative z-10"
         whileHover={reducedMotion ? undefined : { y: -1 }}
@@ -53,7 +53,7 @@ export function GradientButton({
       </motion.span>
       {variant === "primary" && (
         <motion.span
-          className="absolute inset-0 z-0 bg-white/20"
+          className="absolute inset-0 z-0 bg-white/15"
           initial={{ opacity: 0, x: "-100%" }}
           whileHover={reducedMotion ? undefined : { opacity: 1, x: 0 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
@@ -63,17 +63,37 @@ export function GradientButton({
     </>
   );
 
+  const magneticProps = magnetic
+    ? {
+        style: { x, y },
+        onMouseMove: handleMouseMove,
+        onMouseLeave: handleMouseLeave,
+      }
+    : {};
+
   if (href) {
     return (
-      <a href={href} className={baseClasses} onClick={onClick}>
+      <motion.a
+        ref={magnetic ? (ref as React.Ref<HTMLAnchorElement>) : undefined}
+        href={href}
+        className={baseClasses}
+        onClick={onClick}
+        {...magneticProps}
+      >
         {inner}
-      </a>
+      </motion.a>
     );
   }
 
   return (
-    <button type={type} className={baseClasses} onClick={onClick}>
+    <motion.button
+      ref={magnetic ? (ref as React.Ref<HTMLButtonElement>) : undefined}
+      type={type}
+      className={baseClasses}
+      onClick={onClick}
+      {...magneticProps}
+    >
       {inner}
-    </button>
+    </motion.button>
   );
 }

@@ -8,9 +8,9 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-zinc-950 px-6 py-12">
+    <footer className="relative z-10 border-t border-em-text/10 px-6 py-12">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-em-text-muted">
           © {new Date().getFullYear()} Paolo Rossi. Crafted with intent.
         </p>
 
@@ -22,7 +22,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="cursor-pointer rounded-lg p-2 text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
+              className="cursor-pointer rounded-lg p-2 text-em-text-muted transition-colors hover:bg-em-accent/10 hover:text-em-accent"
             >
               <Icon size={18} />
             </a>

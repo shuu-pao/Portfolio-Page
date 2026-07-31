@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { motion, HTMLMotionProps } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView, HTMLMotionProps } from "framer-motion";
 
 /**
  * BlurText - Animated text component with blur effects
@@ -27,14 +27,11 @@ export const BlurText: React.FC<BlurTextProps> = ({
   ease = "easeOut",
   className = "",
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const ref = useRef<HTMLSpanElement>(null);
+  const isVisible = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <span className={className}>
+    <span ref={ref} className={className}>
       {text.split("").map((char, index) => (
         <motion.span
           key={`${char}-${index}`}

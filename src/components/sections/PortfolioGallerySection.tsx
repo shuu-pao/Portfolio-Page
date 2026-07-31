@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, useInView, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { ExternalLink, Code2, X } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+import { BlurText } from "@/components/reactbits/BlurText";
 
 interface Project {
   id: number;
@@ -69,6 +70,33 @@ function ProjectCard({
   onSelect: (p: Project) => void;
 }) {
   const reducedMotion = usePrefersReducedMotion();
+  const cardRef = useRef<HTMLDivElement>(null);
+  const rotateX = useSpring(useMotionValue(0), { stiffness: 200, damping: 20, mass: 1 });
+  const rotateY = useSpring(useMotionValue(0), { stiffness: 200, damping: 20, mass: 1 });
+
+  const isFinePointer = () =>
+    typeof window !== "undefined" && window.matchMedia("(pointer: fine)").matches;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reducedMotion || !isFinePointer() || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left - rect.width / 2;
+    const offsetY = e.clientY - rect.top - rect.height / 2;
+    rotateX.set((offsetY / (rect.height / 2)) * -8);
+    rotateY.set((offsetX / (rect.width / 2)) * 8);
+  };
+
+  const handleMouseLeave = () => {
+    rotateX.set(0);
+    rotateY.set(0);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onSelect(project);
+    }
+  };
 
   return (
     <motion.article
@@ -79,31 +107,36 @@ function ProjectCard({
       className="group cursor-pointer"
       style={{ perspective: "1200px" }}
       onClick={() => onSelect(project)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     >
       <motion.div
-        whileHover={reducedMotion ? undefined : { rotateY: 4, rotateX: -2 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-        className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-shadow duration-300 hover:border-white/20 hover:shadow-xl hover:shadow-blue-900/20"
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        className="overflow-hidden rounded-2xl border border-em-text/10 bg-em-text/[0.03] backdrop-blur-sm transition-shadow duration-300 hover:border-em-accent/40 hover:shadow-xl hover:shadow-em-accent/20"
       >
         <div
           className="relative flex h-48 items-end p-6"
           style={{ background: project.gradient }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent" />
-          <h3 className="relative font-display text-xl font-bold text-white">
+          <div className="absolute inset-0 bg-gradient-to-t from-em-bg/80 to-transparent" />
+          <h3 className="relative font-display text-xl font-bold text-em-text">
             {project.title}
           </h3>
         </div>
 
         <div className="space-y-3 p-5">
-          <p className="line-clamp-2 text-sm leading-relaxed text-zinc-400">
+          <p className="line-clamp-2 text-sm leading-relaxed text-em-text-muted">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs font-medium text-zinc-300"
+                className="rounded-full border border-em-accent/20 bg-em-accent/5 px-2.5 py-0.5 text-xs font-medium text-em-text-muted"
               >
                 {tag}
               </span>
@@ -119,10 +152,30 @@ export default function PortfolioGallerySection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    modalRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      previouslyFocused?.focus();
+    };
+  }, [selectedProject]);
 
   return (
-    <section id="projects" ref={ref} className="relative bg-zinc-950 px-6 py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(45,158,248,0.06),transparent_70%)]" />
+    <section id="projects" ref={ref} className="relative bg-em-bg px-6 py-32">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(194,84,46,0.08),transparent_70%)]" />
 
       <div className="relative mx-auto max-w-7xl">
         <motion.div
@@ -131,11 +184,11 @@ export default function PortfolioGallerySection() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-blue-400/80">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-em-accent-text/80">
             Selected Work
           </p>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-5xl">
-            Projects
+          <h2 className="font-display text-4xl font-bold tracking-tight text-em-text md:text-5xl">
+            <BlurText text="Projects" delay={0.03} duration={0.6} ease="easeOut" />
           </h2>
         </motion.div>
 
@@ -157,21 +210,26 @@ export default function PortfolioGallerySection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/90 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-em-bg/90 p-4 backdrop-blur-md"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
+              ref={modalRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-modal-title"
+              tabIndex={-1}
               initial={{ opacity: 0, scale: 0.92, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.92, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 28 }}
-              className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-zinc-900 p-8"
+              className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-em-bg p-8"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 type="button"
                 aria-label="Close project details"
-                className="absolute right-4 top-4 cursor-pointer rounded-lg p-2 text-zinc-400 transition-colors hover:bg-white/10 hover:text-white"
+                className="absolute right-4 top-4 cursor-pointer rounded-lg p-2 text-em-text-muted transition-colors hover:bg-white/10 hover:text-white"
                 onClick={() => setSelectedProject(null)}
               >
                 <X size={20} />
@@ -181,12 +239,12 @@ export default function PortfolioGallerySection() {
                 className="mb-6 flex h-40 items-end rounded-xl p-6"
                 style={{ background: selectedProject.gradient }}
               >
-                <h2 className="font-display text-3xl font-bold text-white">
+                <h2 id="project-modal-title" className="font-display text-3xl font-bold text-em-text">
                   {selectedProject.title}
                 </h2>
               </div>
 
-              <p className="mb-6 leading-relaxed text-zinc-300">
+              <p className="mb-6 leading-relaxed text-em-text-muted">
                 {selectedProject.description}
               </p>
 
@@ -194,7 +252,7 @@ export default function PortfolioGallerySection() {
                 {selectedProject.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-zinc-300"
+                    className="rounded-full border border-em-accent/20 bg-em-accent/5 px-3 py-1 text-sm text-em-text-muted"
                   >
                     {tag}
                   </span>
