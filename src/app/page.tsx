@@ -1,6 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
+import IntroBioSection from "@/components/sections/IntroBioSection";
 import PortfolioGallerySection from "@/components/sections/PortfolioGallerySection";
-import AboutMeSection from "@/components/sections/AboutMeSection";
 import SkillsStackSection from "@/components/sections/SkillsStackSection";
 import ProcessTimelineSection from "@/components/sections/ProcessTimelineSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -12,8 +12,8 @@ export default function Home() {
       <Navbar />
       <main className="relative min-h-screen w-full bg-em-bg">
         <HeroSection />
+        <IntroBioSection />
         <PortfolioGallerySection />
-        <AboutMeSection />
         <SkillsStackSection />
         <ProcessTimelineSection />
         <ContactSection />
