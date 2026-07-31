@@ -154,7 +154,7 @@ export default function PortfolioGallerySection() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-em-accent/80">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-em-accent-text/80">
             Selected Work
           </p>
           <h2 className="font-display text-4xl font-bold tracking-tight text-em-text md:text-5xl">

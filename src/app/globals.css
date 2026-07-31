@@ -53,6 +53,7 @@
   --color-em-text-muted: var(--em-text-muted);
   --color-em-text-dim: var(--em-text-dim);
   --color-em-accent: var(--em-accent);
+  --color-em-accent-text: var(--em-accent-text);
 }
 
 :root {
@@ -106,6 +107,7 @@
   --em-text-muted: #9c9484;
   --em-text-dim: #5c574c;
   --em-accent: #c2542e;
+  --em-accent-text: #e08a52;
 }
 
 .dark {
