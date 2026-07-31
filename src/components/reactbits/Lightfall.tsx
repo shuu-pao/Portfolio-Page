@@ -224,6 +224,11 @@ const Lightfall = (props: LightfallProps) => {
   const rendererRef = useRef<import('ogl').Renderer>(null);
   const mouseTargetRef = useRef<[number, number]>([0, 0]);
   const lastTimeRef = useRef<number>(0);
+  const pausedRef = useRef(paused);
+
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -324,7 +329,7 @@ const Lightfall = (props: LightfallProps) => {
       } else {
         lastTimeRef.current = t;
       }
-      if (!paused && programRef.current && meshRef.current) {
+      if (!pausedRef.current && programRef.current && meshRef.current) {
         try {
           renderer.render({ scene: meshRef.current });
         } catch (e) {
@@ -357,7 +362,6 @@ const Lightfall = (props: LightfallProps) => {
     };
   }, [
     dpr,
-    paused,
     colors,
     backgroundColor,
     speed,

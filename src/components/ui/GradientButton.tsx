@@ -37,7 +37,7 @@ export function GradientButton({
     variant === "ghost" &&
       "border border-em-text/20 bg-em-text/5 text-em-text backdrop-blur-md hover:bg-em-text/10 focus-visible:ring-em-accent/60",
     variant === "outline" &&
-      "border border-em-accent/50 bg-transparent text-em-accent hover:bg-em-accent/10 focus-visible:ring-em-accent/60",
+      "border border-em-accent/50 bg-transparent text-em-accent-text hover:bg-em-accent/10 focus-visible:ring-em-accent/60",
     className
   );
 

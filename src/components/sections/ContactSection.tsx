@@ -10,6 +10,8 @@ import Lightfall from "@/components/reactbits/Lightfall";
 import { Footer } from "@/components/layout/Footer";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
+const CONTACT_LIGHTFALL_COLORS = ["#8a4a2e", "#c2542e", "#5c3826"];
+
 export default function ContactSection() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -28,7 +30,7 @@ export default function ContactSection() {
     <div ref={bookendRef} className="relative w-full overflow-hidden bg-em-bg">
       <div className="absolute inset-0 z-0">
         <Lightfall
-          colors={["#8a4a2e", "#c2542e", "#5c3826"]}
+          colors={CONTACT_LIGHTFALL_COLORS}
           backgroundColor="#0b0a08"
           speed={reducedMotion ? 0.05 : 0.12}
           streakCount={1}

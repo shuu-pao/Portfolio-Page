@@ -146,7 +146,11 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
 
     return (
       <div className={parallaxClassName} style={parallaxStyle}>
-        <motion.div className={scrollerClassName} style={{ x, ...scrollerStyle }}>
+        <motion.div
+          className={scrollerClassName}
+          style={{ x, ...scrollerStyle }}
+          aria-hidden="true"
+        >
           {spans}
         </motion.div>
       </div>
@@ -154,7 +158,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
   }
 
   return (
-    <section>
+    <div>
       {texts.map((text, index) => (
         <VelocityText
           key={index}
@@ -173,7 +177,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
           {text}
         </VelocityText>
       ))}
-    </section>
+    </div>
   );
 };
 

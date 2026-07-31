@@ -26,12 +26,14 @@ export default function ProcessTimelineSection() {
     if (reducedMotion || !sectionRef.current || !lineRef.current) return;
 
     let ctx: gsap.Context | undefined;
+    let cancelled = false;
 
     (async () => {
       const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([
         import("gsap"),
         import("gsap/ScrollTrigger"),
       ]);
+      if (cancelled) return;
       gsap.registerPlugin(ScrollTrigger);
 
       ctx = gsap.context(() => {
@@ -52,7 +54,10 @@ export default function ProcessTimelineSection() {
       }, sectionRef);
     })();
 
-    return () => ctx?.revert();
+    return () => {
+      cancelled = true;
+      ctx?.revert();
+    };
   }, [reducedMotion]);
 
   return (
@@ -79,7 +84,7 @@ export default function ProcessTimelineSection() {
             {steps.map((step, i) => (
               <li key={step.title} className="relative">
                 <span
-                  className="absolute -left-10 top-0.5 flex h-6 w-6 items-center justify-center rounded-full border border-em-accent/40 bg-em-bg font-mono text-xs text-em-accent"
+                  className="absolute -left-10 top-0.5 flex h-6 w-6 items-center justify-center rounded-full border border-em-accent/40 bg-em-bg font-mono text-xs text-em-accent-text"
                   aria-hidden="true"
                 >
                   {i + 1}

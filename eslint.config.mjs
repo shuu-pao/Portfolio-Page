@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Third-party skill tooling, not part of this project's lint surface.
+    ".claude/**",
   ]),
 ]);
 

@@ -18,6 +18,8 @@ interface HeroSectionProps {
   ctaText?: string;
 }
 
+const HERO_LIGHTFALL_COLORS = ["#c2542e", "#8a4a2e", "#e08a52"];
+
 export default function HeroSection({
   name = "Paolo Rossi",
   title = "Creative Engineer",
@@ -35,12 +37,14 @@ export default function HeroSection({
     if (reducedMotion || !sectionRef.current || !contentRef.current) return;
 
     let ctx: gsap.Context | undefined;
+    let cancelled = false;
 
     (async () => {
       const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([
         import("gsap"),
         import("gsap/ScrollTrigger"),
       ]);
+      if (cancelled) return;
       gsap.registerPlugin(ScrollTrigger);
 
       ctx = gsap.context(() => {
@@ -58,7 +62,10 @@ export default function HeroSection({
       }, sectionRef);
     })();
 
-    return () => ctx?.revert();
+    return () => {
+      cancelled = true;
+      ctx?.revert();
+    };
   }, [reducedMotion]);
 
   const scrollToProjects = () => {
@@ -73,7 +80,7 @@ export default function HeroSection({
     >
       <div className="absolute inset-0 z-0">
         <Lightfall
-          colors={["#c2542e", "#8a4a2e", "#e08a52"]}
+          colors={HERO_LIGHTFALL_COLORS}
           backgroundColor="#0b0a08"
           speed={reducedMotion ? 0.1 : 0.25}
           streakCount={2}
@@ -96,7 +103,7 @@ export default function HeroSection({
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: textVisible ? 1 : 0, y: textVisible ? 0 : 12 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-em-accent"
+          className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-em-accent-text"
         >
           <motion.span
             className="h-1.5 w-1.5 shrink-0 rounded-full bg-em-accent"
@@ -124,7 +131,7 @@ export default function HeroSection({
           className="flex items-center gap-4"
         >
           <span className="h-px w-12 bg-em-accent" aria-hidden="true" />
-          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-em-accent md:text-base">
+          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-em-accent-text md:text-base">
             {title}
           </h2>
         </motion.div>

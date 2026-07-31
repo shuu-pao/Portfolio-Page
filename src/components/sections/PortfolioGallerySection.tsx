@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useInView, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { ExternalLink, Code2, X } from "lucide-react";
 import { GradientButton } from "@/components/ui/GradientButton";
@@ -91,6 +91,13 @@ function ProjectCard({
     rotateY.set(0);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onSelect(project);
+    }
+  };
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -100,6 +107,9 @@ function ProjectCard({
       className="group cursor-pointer"
       style={{ perspective: "1200px" }}
       onClick={() => onSelect(project)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     >
       <motion.div
         ref={cardRef}
@@ -112,14 +122,14 @@ function ProjectCard({
           className="relative flex h-48 items-end p-6"
           style={{ background: project.gradient }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent" />
-          <h3 className="relative font-display text-xl font-bold text-white">
+          <div className="absolute inset-0 bg-gradient-to-t from-em-bg/80 to-transparent" />
+          <h3 className="relative font-display text-xl font-bold text-em-text">
             {project.title}
           </h3>
         </div>
 
         <div className="space-y-3 p-5">
-          <p className="line-clamp-2 text-sm leading-relaxed text-zinc-400">
+          <p className="line-clamp-2 text-sm leading-relaxed text-em-text-muted">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -142,6 +152,26 @@ export default function PortfolioGallerySection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    modalRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      previouslyFocused?.focus();
+    };
+  }, [selectedProject]);
 
   return (
     <section id="projects" ref={ref} className="relative bg-em-bg px-6 py-32">
@@ -180,21 +210,26 @@ export default function PortfolioGallerySection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/90 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-em-bg/90 p-4 backdrop-blur-md"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
+              ref={modalRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-modal-title"
+              tabIndex={-1}
               initial={{ opacity: 0, scale: 0.92, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.92, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 28 }}
-              className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-zinc-900 p-8"
+              className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-em-bg p-8"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 type="button"
                 aria-label="Close project details"
-                className="absolute right-4 top-4 cursor-pointer rounded-lg p-2 text-zinc-400 transition-colors hover:bg-white/10 hover:text-white"
+                className="absolute right-4 top-4 cursor-pointer rounded-lg p-2 text-em-text-muted transition-colors hover:bg-white/10 hover:text-white"
                 onClick={() => setSelectedProject(null)}
               >
                 <X size={20} />
@@ -204,12 +239,12 @@ export default function PortfolioGallerySection() {
                 className="mb-6 flex h-40 items-end rounded-xl p-6"
                 style={{ background: selectedProject.gradient }}
               >
-                <h2 className="font-display text-3xl font-bold text-white">
+                <h2 id="project-modal-title" className="font-display text-3xl font-bold text-em-text">
                   {selectedProject.title}
                 </h2>
               </div>
 
-              <p className="mb-6 leading-relaxed text-zinc-300">
+              <p className="mb-6 leading-relaxed text-em-text-muted">
                 {selectedProject.description}
               </p>
 

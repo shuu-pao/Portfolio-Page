@@ -58,7 +58,7 @@ export default function AboutMeSection() {
             typography to build portfolios and products that feel unmistakably
             crafted.
           </p>
-          <p className="text-base leading-relaxed text-zinc-500">
+          <p className="text-base leading-relaxed text-em-text-muted">
             Based in Southeast Asia, available for senior frontend roles, creative
             tech collaborations, and select freelance projects.
           </p>
@@ -70,7 +70,7 @@ export default function AboutMeSection() {
                 initial={{ opacity: 0, x: -16 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                className="flex items-start gap-3 text-zinc-300"
+                className="flex items-start gap-3 text-em-text-muted"
               >
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-em-accent" />
                 {item}
@@ -109,8 +109,8 @@ export default function AboutMeSection() {
                 size={22}
                 className="mb-3 text-em-accent transition-transform duration-300 group-hover:scale-110"
               />
-              <h3 className="mb-1 font-semibold text-white">{skill.label}</h3>
-              <p className="text-sm text-zinc-500">{skill.detail}</p>
+              <h3 className="mb-1 font-semibold text-em-text">{skill.label}</h3>
+              <p className="text-sm text-em-text-muted">{skill.detail}</p>
             </motion.div>
           ))}
         </motion.div>
