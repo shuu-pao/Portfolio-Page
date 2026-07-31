@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bodoni_Moda, Caveat, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Providers } from "@/components/layout/Providers";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -42,7 +43,9 @@ export default function RootLayout({
         caveat.variable
       )}
     >
-      <body className="min-h-full bg-em-bg font-sans text-em-text">{children}</body>
+      <body className="min-h-full bg-em-bg font-sans text-em-text">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
