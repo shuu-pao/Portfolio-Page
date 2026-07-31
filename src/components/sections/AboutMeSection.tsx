@@ -85,7 +85,7 @@ export default function AboutMeSection() {
                   <CountUp to={stat.value} duration={1.5} />
                   {stat.suffix}
                 </div>
-                <p className="mt-1 text-xs text-em-text-dim">{stat.label}</p>
+                <p className="mt-1 text-xs text-em-text-muted">{stat.label}</p>
               </div>
             ))}
           </div>
