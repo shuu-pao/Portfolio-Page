@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { BlurText } from "@/components/reactbits/BlurText";
 import Lightfall from "@/components/reactbits/Lightfall";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+import { useInViewport } from "@/hooks/use-in-viewport";
+import type { gsap } from "gsap";
 
 interface HeroSectionProps {
   name?: string;
@@ -24,8 +26,40 @@ export default function HeroSection({
   ctaText = "View the work",
 }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const textVisible = useInView(sectionRef, { once: true, margin: "-80px" });
+  const heroInViewport = useInViewport(sectionRef, { threshold: 0 });
   const reducedMotion = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (reducedMotion || !sectionRef.current || !contentRef.current) return;
+
+    let ctx: gsap.Context | undefined;
+
+    (async () => {
+      const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger"),
+      ]);
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.to(contentRef.current, {
+          opacity: 0,
+          y: -60,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }, sectionRef);
+    })();
+
+    return () => ctx?.revert();
+  }, [reducedMotion]);
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -49,6 +83,7 @@ export default function HeroSection({
           backgroundGlow={0.2}
           opacity={0.8}
           mouseInteraction={!reducedMotion}
+          paused={!heroInViewport}
         />
       </div>
 
@@ -56,7 +91,7 @@ export default function HeroSection({
 
       <div className="absolute inset-0 z-[1] bg-gradient-to-t from-em-bg via-em-bg/70 to-em-bg/45" />
 
-      <div className="relative z-10 flex max-w-2xl flex-col items-start gap-5">
+      <div ref={contentRef} className="relative z-10 flex max-w-2xl flex-col items-start gap-5">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: textVisible ? 1 : 0, y: textVisible ? 0 : 12 }}
