@@ -53,7 +53,6 @@ import type { Metadata } from "next";
 import { Bodoni_Moda, Caveat, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Providers } from "@/components/layout/Providers";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -94,15 +93,13 @@ export default function RootLayout({
         caveat.variable
       )}
     >
-      <body className="min-h-full bg-em-bg font-sans text-em-text">
-        <Providers>{children}</Providers>
-      </body>
+      <body className="min-h-full bg-em-bg font-sans text-em-text">{children}</body>
     </html>
   );
 }
 ```
 
-Note: `Providers` doesn't exist yet — that's created in Task 3. This step will not compile until Task 3 lands; that's expected since Task 1 and Task 3 are both foundational. Proceed to Step 3 first, then come back and run the verification in Step 5 only after confirming `Providers` will exist (Task 3 must run before this task's final verification — see Step 5 note).
+Note: this step intentionally does NOT wire in a `Providers` wrapper yet — that happens in Task 3, which creates `Providers.tsx` and edits this same file to wrap `{children}` with it. Keeping this task's `layout.tsx` change to fonts only (no forward reference) means this task is fully self-contained and independently verifiable without Task 3 existing first.
 
 - [ ] **Step 3: Replace the color palette in `src/app/globals.css`**
 
@@ -142,14 +139,14 @@ In the `@theme inline` block, add after the existing `--color-em-accent-text: va
 
 In the `fontFamily` block, remove the `display: ['Archivo', 'system-ui', 'sans-serif'],` line entirely, leaving only `sans`.
 
-- [ ] **Step 5: Verify (after Task 3 exists)**
+- [ ] **Step 5: Verify**
 
-This task's `layout.tsx` change references `Providers`, created in Task 3. Do Task 3 immediately after this one, then run:
 ```bash
 npx tsc --noEmit
 npm run lint
+npm run dev
 ```
-Expected: both exit 0.
+Open `http://localhost:3000`. Expected: cream/tan background, near-black text, the Hero name (still using the old Hero component/props at this point — that's rewritten in Task 6) now rendering in Bodoni Moda instead of Fraunces. `tsc`/`lint` both exit 0.
 
 - [ ] **Step 6: Commit**
 
@@ -157,7 +154,6 @@ Expected: both exit 0.
 git add package.json package-lock.json src/app/layout.tsx src/app/globals.css tailwind.config.js
 git commit -m "feat: swap to editorial warm palette and Bodoni Moda/Caveat type system"
 ```
-(Run this commit after Task 3's files are also staged, or split into two commits — either is fine as long as `tsc`/`lint` pass before each commit. If splitting, commit this task's files with the `Providers` import temporarily reverted to a comment, then restore it in Task 3's commit. Simpler: just do Tasks 1 and 3 back-to-back and commit once both are done.)
 
 ---
 
@@ -268,7 +264,7 @@ git commit -m "feat: add ImagePlaceholder and PillTag shared primitives"
 **Files:**
 - Create: `src/hooks/use-lenis.ts`
 - Create: `src/components/layout/Providers.tsx`
-- Modify: `src/app/layout.tsx` (already wired in Task 1, Step 2 — confirm it matches)
+- Modify: `src/app/layout.tsx`
 
 **Interfaces:**
 - Produces: `useLenis(): void` — side-effect-only hook, initializes Lenis + GSAP ScrollTrigger integration, no-ops under reduced motion. Consumed only by `Providers`.
@@ -339,19 +335,35 @@ export function Providers({ children }: { children: React.ReactNode }) {
 }
 ```
 
-- [ ] **Step 3: Verify**
+- [ ] **Step 3: Wire `Providers` into `layout.tsx`**
+
+In `src/app/layout.tsx`, add `import { Providers } from "@/components/layout/Providers";` and change the body from:
+
+```tsx
+<body className="min-h-full bg-em-bg font-sans text-em-text">{children}</body>
+```
+
+to:
+
+```tsx
+<body className="min-h-full bg-em-bg font-sans text-em-text">
+  <Providers>{children}</Providers>
+</body>
+```
+
+- [ ] **Step 4: Verify**
 
 ```bash
 npx tsc --noEmit
 npm run lint
 npm run dev
 ```
-Open `http://localhost:3000`, scroll the page. Expected: no console errors, scroll feels the same as before for now (Lenis is running but nothing yet depends on its smoothing being visible — that becomes apparent once ScrollTrigger-driven sections exist in Task 9). Confirm `tsc`/`lint` exit 0 — this also validates Task 1's `layout.tsx` import of `Providers` now resolves.
+Open `http://localhost:3000`, scroll the page. Expected: no console errors, scroll feels the same as before for now (Lenis is running but nothing yet depends on its smoothing being visible — that becomes apparent once ScrollTrigger-driven sections exist in Task 8). `tsc`/`lint` both exit 0.
 
-- [ ] **Step 4: Commit**
+- [ ] **Step 5: Commit**
 
 ```bash
-git add src/hooks/use-lenis.ts src/components/layout/Providers.tsx src/app/layout.tsx src/app/globals.css tailwind.config.js package.json package-lock.json
+git add src/hooks/use-lenis.ts src/components/layout/Providers.tsx src/app/layout.tsx
 git commit -m "feat: wire Lenis smooth-scroll and next-themes ThemeProvider at app root"
 ```
 
