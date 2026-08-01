@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { useDialogBehavior } from "@/hooks/use-dialog-behavior";
 import { cn } from "@/lib/utils";
 
 interface NavLink {
@@ -17,26 +17,7 @@ interface NavOverlayProps {
 }
 
 export function NavOverlay({ open, onClose, links }: NavOverlayProps) {
-  const panelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    panelRef.current?.focus();
-    document.body.style.overflow = "hidden";
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
-      previouslyFocused?.focus();
-    };
-  }, [open, onClose]);
+  const panelRef = useDialogBehavior(open, onClose);
 
   return (
     <AnimatePresence>
