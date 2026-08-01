@@ -30,12 +30,12 @@ export function GradientButton({
   const { ref, x, y, handleMouseMove, handleMouseLeave } = useMagnetic<HTMLElement>();
 
   const baseClasses = cn(
-    "relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-em-bg",
+    "relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-em-invert-bg",
     size === "lg" ? "px-8 py-3.5 text-base" : "px-6 py-2.5 text-sm",
     variant === "primary" &&
-      "bg-em-accent text-em-text shadow-lg shadow-em-accent/30 hover:bg-em-accent/90 focus-visible:ring-em-accent/60",
+      "bg-em-accent text-em-invert-text shadow-lg shadow-em-accent/30 hover:bg-em-accent/90 focus-visible:ring-em-accent/60",
     variant === "ghost" &&
-      "border border-em-text/20 bg-em-text/5 text-em-text backdrop-blur-md hover:bg-em-text/10 focus-visible:ring-em-accent/60",
+      "border border-em-invert-text/20 bg-em-invert-text/5 text-em-invert-text backdrop-blur-md hover:bg-em-invert-text/10 focus-visible:ring-em-accent/60",
     variant === "outline" &&
       "border border-em-accent/50 bg-transparent text-em-accent-text hover:bg-em-accent/10 focus-visible:ring-em-accent/60",
     className

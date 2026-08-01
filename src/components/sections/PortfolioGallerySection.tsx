@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Code2, X } from "lucide-react";
+import { useDialogBehavior } from "@/hooks/use-dialog-behavior";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { PillTag } from "@/components/ui/PillTag";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
@@ -91,22 +92,8 @@ function ProjectCard({ project, onSelect }: { project: Project; onSelect: (p: Pr
 
 export default function PortfolioGallerySection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const modalRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!selectedProject) return;
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    modalRef.current?.focus();
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedProject(null);
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      previouslyFocused?.focus();
-    };
-  }, [selectedProject]);
+  const closeModal = useCallback(() => setSelectedProject(null), []);
+  const modalRef = useDialogBehavior(!!selectedProject, closeModal);
 
   return (
     <section id="work" className="relative w-full bg-em-bg px-6 py-24 md:px-16">
@@ -164,7 +151,9 @@ export default function PortfolioGallerySection() {
 
               <div className="mt-6 flex flex-wrap gap-2">
                 {selectedProject.tags.map((tag) => (
-                  <PillTag key={tag}>{tag}</PillTag>
+                  <PillTag key={tag} className="border-em-accent-text/40 text-em-accent-text">
+                    {tag}
+                  </PillTag>
                 ))}
               </div>
 

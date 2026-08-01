@@ -27,7 +27,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             className="mb-12 text-center"
           >
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-em-accent">Contact</p>
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-em-accent-text">Contact</p>
             <h2 className="font-display text-4xl font-bold tracking-tight text-em-invert-text md:text-5xl">
               <BlurText text="Let's build something" delay={0.03} duration={0.6} ease="easeOut" />
             </h2>
@@ -39,6 +39,8 @@ export default function ContactSection() {
 
           {submitted ? (
             <motion.div
+              role="status"
+              aria-live="polite"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               className="rounded-sm border border-em-accent/30 bg-em-accent/5 p-10 text-center"
