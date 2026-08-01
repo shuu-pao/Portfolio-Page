@@ -6,11 +6,13 @@ import MissionStatementSection from "@/components/sections/MissionStatementSecti
 import ProcessTimelineSection from "@/components/sections/ProcessTimelineSection";
 import ContactSection from "@/components/sections/ContactSection";
 import { Navbar } from "@/components/layout/Navbar";
+import { SectionIndexTab } from "@/components/layout/SectionIndexTab";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <SectionIndexTab />
       <main className="relative min-h-screen w-full bg-em-bg">
         <HeroSection />
         <IntroBioSection />
