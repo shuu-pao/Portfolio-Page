@@ -25,7 +25,7 @@ export function useActiveSection(sections: SectionInfo[]): SectionInfo {
           if (match) setActive(match.section);
         }
       },
-      { threshold: [0.3, 0.5, 0.7], rootMargin: "-40% 0px -40% 0px" }
+      { threshold: 0, rootMargin: "-50% 0px -50% 0px" }
     );
 
     elements.forEach((e) => observer.observe(e.el));
