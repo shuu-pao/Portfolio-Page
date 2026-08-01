@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Caveat, Space_Grotesk } from "next/font/google";
+import { Bodoni_Moda, Caveat, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Providers } from "@/components/layout/Providers";
@@ -14,6 +14,12 @@ const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-editorial",
   weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono-editorial",
+  weight: ["400", "700"],
 });
 
 const caveat = Caveat({
@@ -36,10 +42,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(
         "h-full scroll-smooth antialiased",
         spaceGrotesk.variable,
         bodoniModa.variable,
+        spaceMono.variable,
         caveat.variable
       )}
     >
