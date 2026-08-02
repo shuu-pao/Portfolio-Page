@@ -98,7 +98,7 @@ function ProjectCard({ project, onSelect }: { project: Project; onSelect: (p: Pr
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.5 }}
-        className="group relative z-10 w-full cursor-pointer bg-em-bg sm:max-w-[60vw] md:max-w-[30vw]"
+        className="group w-full cursor-pointer bg-em-bg sm:max-w-[60vw] md:max-w-[30vw]"
         onClick={() => onSelect(project)}
         role="button"
         tabIndex={0}
@@ -112,7 +112,7 @@ function ProjectCard({ project, onSelect }: { project: Project; onSelect: (p: Pr
             label="Project image"
             className="transition-opacity group-hover:opacity-90"
           />
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-em-invert-bg/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-em-invert-bg/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-em-invert-text">
               View Details
             </span>
@@ -143,12 +143,12 @@ export default function PortfolioGallerySection() {
       <div className="relative">
         <div className="sticky top-[8vh] z-0" aria-hidden="true">
           <div className="overflow-hidden">
-            <h2 className="font-heading text-[calc((100vw_-_48px)*0.1715)] uppercase leading-[1] tracking-tighter text-em-text/90 md:text-[calc((100vw_-_128px)*0.1715)]">
+            <h2 className="font-heading text-[calc((100vw_-_48px)*0.18406)] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90 md:text-[calc((100vw_-_128px)*0.18406)]">
               Selected
             </h2>
           </div>
           <div className="flex justify-center overflow-hidden">
-            <h2 className="font-heading text-[calc((100vw_-_48px)*0.1715)] uppercase leading-[1] tracking-tighter text-em-text/90 md:text-[calc((100vw_-_128px)*0.1715)]">
+            <h2 className="font-heading text-[calc((100vw_-_48px)*0.18406)] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90 md:text-[calc((100vw_-_128px)*0.18406)]">
               Projects
             </h2>
           </div>
