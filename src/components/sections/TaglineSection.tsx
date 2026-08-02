@@ -7,7 +7,8 @@ const LINES = [
   { text: "I turn complex problems", indent: false },
   { text: "into dependable systems.", indent: false },
   { text: "With deliberate engineering,", indent: true },
-  { text: "I ship things that hold up under real use.", indent: true },
+  { text: "I ship things that hold up", indent: true },
+  { text: "under real use.", indent: true },
 ];
 
 export default function TaglineSection() {

@@ -19,8 +19,7 @@ const archivoBlack = Archivo_Black({
 const spectral = Spectral({
   subsets: ["latin"],
   variable: "--font-tagline",
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
+  weight: ["400"],
 });
 
 const bodoniModa = Bodoni_Moda({

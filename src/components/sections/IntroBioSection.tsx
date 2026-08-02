@@ -14,19 +14,19 @@ export default function IntroBioSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="flex flex-col gap-6 md:flex-row md:items-start md:gap-[4.4%]"
+        className="flex flex-col gap-6 md:flex-row md:items-start md:gap-[5%]"
       >
         <ImagePlaceholder
           alt="Paolo working on Salesforce Agentforce configuration"
           aspectRatio="695 / 894"
           label="Workspace photo"
-          className="w-full rounded-sm md:w-[48%]"
+          className="w-full rounded-sm md:w-[54.8%]"
         />
         <ImagePlaceholder
           alt="Close-up of embedded hardware Paolo built"
           aspectRatio="442 / 696"
           label="Hardware photo"
-          className="w-full rounded-sm md:mt-[11.7%] md:w-[30%]"
+          className="w-full rounded-sm md:mt-[13.3%] md:w-[34.9%]"
         />
       </motion.div>
 
@@ -34,7 +34,7 @@ export default function IntroBioSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.15 }}
-        className="mt-10 grid grid-cols-1 gap-6 text-sm leading-relaxed text-[#8a3f22] sm:text-base md:grid-cols-2 md:gap-10"
+        className="mt-10 grid grid-cols-1 gap-6 text-base leading-relaxed text-[#8a3f22] md:grid-cols-[54.8%_34.9%] md:gap-[5%]"
       >
         <p>
           As an engineer, I prioritize root causes over quick patches — whether that&apos;s an
