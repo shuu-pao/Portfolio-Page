@@ -52,7 +52,16 @@ All rows are `flex justify-center` on mobile (stacked full-width, no stagger) an
 ## Decisions (confirmed with user)
 
 1. **Keep the existing click-to-open modal** (GitHub/Live Demo buttons) instead of building dedicated `/works/[slug]` pages. Revisit dedicated pages in a later pass once all redesign phases are done — tracked as a roadmap backlog item, not part of this phase.
-2. **Add a 4th project card** so the section uses the reference's full 4-card stagger pattern (right/left/center/right) instead of a 3-card approximation. The 4th project is this portfolio site itself:
+2. **Each of our projects sits in the same slot as its corresponding reference card**, preserving the reference's exact right/left/center/right stagger order (this was implicit in the original ordering but is made explicit here per user request):
+
+   | Slot | Reference card | Our project | `position` |
+   |---|---|---|---|
+   | 1st | Techstar | PortfolioMon | `end` |
+   | 2nd | Sylvan | PIC-Based Futsal Scoreboard | `start` |
+   | 3rd | Oracle Music | SMARTBIN 3 (Thesis) | `center` |
+   | 4th | Lofi Train | Premium Portfolio (new) | `end` |
+
+   The 4th project (Premium Portfolio) is this portfolio site itself:
    - **title**: "Premium Portfolio"
    - **year**: "2026"
    - **description**: "This site — a cinematic, reference-matched personal portfolio built with pixel-precise fidelity to hand-picked design references."
