@@ -40,12 +40,17 @@ export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
   const [copyWidth, setCopyWidth] = useState(0);
 
   useLayoutEffect(() => {
+    const node = copyRef.current;
+    if (!node) return;
+
     function updateWidth() {
       if (copyRef.current) setCopyWidth(copyRef.current.offsetWidth);
     }
     updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(node);
+    return () => observer.disconnect();
   }, []);
 
   const baseX = useMotionValue(0);

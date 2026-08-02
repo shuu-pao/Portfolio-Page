@@ -12,7 +12,7 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full overflow-hidden bg-em-bg px-6 pb-20 pt-16 md:px-16 md:pt-24"
     >
-      <h1 className="font-display -mx-6 overflow-hidden text-[16vw] font-black leading-[0.85] tracking-tight text-em-text md:-mx-16 md:text-[11vw]">
+      <h1 className="font-display -mx-6 overflow-hidden text-[10vw] font-black leading-[0.85] tracking-tight text-em-text md:-mx-16 md:text-[11vw]">
         <BlurText text="Paolo" delay={0.04} duration={0.7} ease="easeOut" className="block px-6 md:px-16" />
         <BlurText
           text="Jansen Enrera"
@@ -26,13 +26,13 @@ export default function HeroSection() {
       <div className="relative -mx-6 mt-2 md:-mx-16">
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute left-2 top-1/2 hidden -translate-y-1/2 text-em-text-dim md:block"
+          className="pointer-events-none absolute left-2 top-1/2 z-10 hidden -translate-y-1/2 bg-em-bg px-1 text-em-text-dim md:block"
         >
           |
         </span>
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 text-em-text-dim md:block"
+          className="pointer-events-none absolute right-2 top-1/2 z-10 hidden -translate-y-1/2 bg-em-bg px-1 text-em-text-dim md:block"
         >
           |
         </span>
@@ -46,7 +46,7 @@ export default function HeroSection() {
               alt="A portrait-style project photo of Paolo at work"
               aspectRatio="4 / 5"
               label="Project photo"
-              className="w-full max-w-sm rounded-sm md:max-w-none"
+              className="mx-auto w-full max-w-sm rounded-sm md:mx-0 md:max-w-none"
             />
           </div>
 
