@@ -40,42 +40,46 @@ export default function HeroSection() {
       </div>
 
       <div className="mx-auto mt-16 max-w-6xl md:mt-20">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-6">
-          <div className="md:col-span-5 md:col-start-4">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-end md:gap-6">
+          <div className="relative md:col-span-9 md:col-start-4">
             <ImagePlaceholder
-              alt="A portrait-style project photo of Paolo at work"
-              aspectRatio="4 / 5"
+              alt="A wide project photo of Paolo at work"
+              aspectRatio="3 / 2"
               label="Project photo"
-              className="mx-auto w-full max-w-sm rounded-sm md:mx-0 md:max-w-none"
+              className="w-full rounded-sm"
             />
+
+            <div className="mt-6 flex flex-col gap-3 md:absolute md:right-10 md:top-10 md:mt-0 md:max-w-sm">
+              <div className="flex items-baseline gap-2">
+                <span aria-hidden="true" className="font-mono text-xs uppercase tracking-widest text-em-text-dim">
+                  P./
+                </span>
+                <span className="font-cursive text-3xl leading-none text-em-accent sm:text-4xl md:text-5xl">
+                  Debug &amp; Build
+                </span>
+              </div>
+              <div className="space-y-3 text-sm leading-relaxed text-em-text-muted sm:text-base">
+                <p>
+                  Computer Engineering graduate who builds at both ends of the stack — enterprise AI
+                  agents at Accenture and low-level firmware in the lab. At Accenture I spent 540
+                  hours developing Salesforce Agentforce agents that create, update, and close
+                  support cases and automate account-billing workflows.
+                </p>
+                <p>
+                  Based in Cebu City, Philippines. Actively looking for new opportunities —
+                  especially Salesforce, Agentforce, or building smarter customer-experience
+                  tooling.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-5 md:col-span-4 md:col-start-9">
-            <div className="flex items-baseline gap-2">
-              <span aria-hidden="true" className="font-mono text-xs uppercase tracking-widest text-em-text-dim">P./</span>
-              <span className="font-cursive text-4xl leading-none text-em-accent md:text-5xl">
-                Debug &amp; Build
-              </span>
-            </div>
-            <div className="space-y-4 text-base leading-relaxed text-em-text-muted md:text-lg">
-              <p>
-                Computer Engineering graduate who builds at both ends of the stack — enterprise AI
-                agents at Accenture and low-level firmware in the lab. At Accenture I spent 540
-                hours developing Salesforce Agentforce agents that create, update, and close
-                support cases and automate account-billing workflows.
-              </p>
-              <p>
-                Based in Cebu City, Philippines. Actively looking for new opportunities —
-                especially Salesforce, Agentforce, or building smarter customer-experience
-                tooling.
-              </p>
-            </div>
+          <div className="md:col-span-3 md:col-start-1 md:self-end">
+            <p className="max-w-xs font-display text-lg leading-snug text-em-text">
+              Skilled in both <em className="italic">developing</em> and <em className="italic">design</em>
+            </p>
           </div>
         </div>
-
-        <p className="mt-10 max-w-xs font-display text-lg leading-snug text-em-text md:mt-16">
-          Skilled in both <em className="italic">developing</em> and <em className="italic">design</em>
-        </p>
       </div>
     </section>
   );
