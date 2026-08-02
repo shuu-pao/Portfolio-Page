@@ -293,3 +293,89 @@ Run: `npm run dev`, open the site and check:
 git add src/components/sections/HeroSection.tsx
 git commit -m "feat: rebuild Hero in Mees Verberne composition — name split, centered photo, repositioned bio/cursive"
 ```
+
+---
+
+### Task 3: Overlay bio/cursive on the photo, move subheading to a left-gutter column
+
+**Added after the final whole-branch review, based on a closer look at `mees-0.jpeg`.** The earlier reading of the reference put the "M./" label, cursive, and bio paragraphs in a separate column *beside* a narrower portrait photo. A closer look shows they actually sit **overlaid on top of the photo's right portion** — the reference photo is wider than originally modeled, with soft/blurred background on its right side that the text sits over. The subheading, by contrast, sits **outside the photo entirely**, in a left gutter, roughly level with the photo's bottom edge — not below the whole block as Task 2 built it.
+
+**Files:**
+- Modify: `src/components/sections/HeroSection.tsx`
+
+**Interfaces:**
+- Consumes: `ImagePlaceholder` (unchanged), `cn`/Tailwind only — no new dependencies.
+
+- [ ] **Step 1: Restructure the center band**
+
+Replace the `<div className="mx-auto mt-16 max-w-6xl md:mt-20">...</div>` block (everything from that div through its closing tag, i.e. the grid + the old standalone subheading `<p>`) with:
+
+```tsx
+      <div className="mx-auto mt-16 max-w-6xl md:mt-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-end md:gap-6">
+          <div className="relative md:col-span-9 md:col-start-4">
+            <ImagePlaceholder
+              alt="A wide project photo of Paolo at work"
+              aspectRatio="3 / 2"
+              label="Project photo"
+              className="w-full rounded-sm"
+            />
+
+            <div className="mt-6 flex flex-col gap-3 md:absolute md:right-10 md:top-10 md:mt-0 md:max-w-sm">
+              <div className="flex items-baseline gap-2">
+                <span aria-hidden="true" className="font-mono text-xs uppercase tracking-widest text-em-text-dim">
+                  P./
+                </span>
+                <span className="font-cursive text-3xl leading-none text-em-accent sm:text-4xl md:text-5xl">
+                  Debug &amp; Build
+                </span>
+              </div>
+              <div className="space-y-3 text-sm leading-relaxed text-em-text-muted sm:text-base">
+                <p>
+                  Computer Engineering graduate who builds at both ends of the stack — enterprise AI
+                  agents at Accenture and low-level firmware in the lab. At Accenture I spent 540
+                  hours developing Salesforce Agentforce agents that create, update, and close
+                  support cases and automate account-billing workflows.
+                </p>
+                <p>
+                  Based in Cebu City, Philippines. Actively looking for new opportunities —
+                  especially Salesforce, Agentforce, or building smarter customer-experience
+                  tooling.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="md:col-span-3 md:col-start-1 md:self-end">
+            <p className="max-w-xs font-display text-lg leading-snug text-em-text">
+              Skilled in both <em className="italic">developing</em> and <em className="italic">design</em>
+            </p>
+          </div>
+        </div>
+      </div>
+```
+
+Notes for the implementer:
+- The image goes from `aspectRatio="4 / 5"` (portrait) to `"3 / 2"` (landscape) because it's now ~9/12 of the container's width instead of ~5/12 — at the old portrait ratio it would render absurdly tall. `3 / 2` is a starting point, not a hard requirement: if it looks visually wrong once rendered (too short/too tall relative to how much text needs to sit over it), adjust the ratio — the goal is "reads as a wide photo with room for the label/cursive/bio text over its right portion," matching the proportions in `mees-0.jpeg` (repo root) as closely as is reasonable for a placeholder box.
+- On mobile (below `md:`), the label/cursive/bio block is **not** absolutely positioned (no `absolute` until `md:`) — it flows normally below the full-width image, matching the original mobile stacking order (image, then label+cursive, then bio paragraphs). Cramming overlay text onto a narrow mobile image would hurt readability; the reference likely also drops the overlay treatment on mobile.
+- The subheading's grid item has no explicit row placement beyond `md:col-start-1 md:col-span-3` — with the image item explicitly placed at `md:col-start-4`, CSS grid's default sparse auto-placement puts the subheading in the same row's remaining columns (1-3), which combined with `md:items-end` (on the parent) lands it roughly level with the image's bottom edge, in the left gutter. Confirm this visually rather than assuming — if it lands somewhere unexpected, an explicit `md:row-start-1` on both grid children is the fallback.
+
+- [ ] **Step 2: Verify**
+
+Run: `npx tsc --noEmit` — expect no errors.
+Run: `npm run lint` — expect no errors.
+Run: `npm run dev` and compare against `mees-0.jpeg` (repo root) at desktop width (~1440px):
+  - "P./ Debug & Build" and the two bio paragraphs sit on top of the photo's right portion, not in a separate column to its right.
+  - The subheading sits to the left of the photo, outside it, roughly level with the photo's bottom edge — not below the whole photo+text block.
+  - Text over the photo stays legible against the placeholder's border/background (it will look different once a real photo is swapped in later — that's expected, this is still a placeholder).
+  At mobile width (~375px):
+  - The label/cursive/bio block stacks normally below the full-width image (not overlaid).
+  - The subheading still renders after the image/text block, left-aligned.
+  Check keyboard/tab order isn't affected (this section still has no interactive elements).
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/components/sections/HeroSection.tsx
+git commit -m "feat: overlay Hero bio/cursive on the photo, move subheading to a left-gutter column"
+```
