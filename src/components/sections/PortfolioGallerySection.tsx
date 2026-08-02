@@ -7,6 +7,9 @@ import { useDialogBehavior } from "@/hooks/use-dialog-behavior";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { PillTag } from "@/components/ui/PillTag";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { cn } from "@/lib/utils";
+
+type CardPosition = "start" | "center" | "end";
 
 interface Project {
   id: number;
@@ -14,6 +17,8 @@ interface Project {
   year: string;
   description: string;
   tags: string[];
+  position: CardPosition;
+  aspectRatio: string;
   imageSrc?: string;
   githubUrl?: string;
   liveUrl?: string;
@@ -27,6 +32,8 @@ const projects: Project[] = [
     description:
       "A full turn-based RPG battle system built from scratch — a game-like developer portfolio with boss battles, dialogue, and a chat-driven AI guide.",
     tags: ["React", "Vite", "JavaScript", "CSS"],
+    position: "end",
+    aspectRatio: "16 / 9",
     githubUrl: "https://github.com/shuu-pao",
   },
   {
@@ -36,6 +43,8 @@ const projects: Project[] = [
     description:
       "A microcontroller scoreboard written in C (XC8) with real-time match timers and 7-segment display integration — a hands-on embedded-systems lab build.",
     tags: ["C", "XC8", "Embedded", "Microcontrollers"],
+    position: "start",
+    aspectRatio: "4 / 3",
     githubUrl: "https://github.com/shuu-pao",
   },
   {
@@ -45,9 +54,34 @@ const projects: Project[] = [
     description:
       "A YOLOv8-powered waste-sorting bin with a motorized platform for auto-segregation. Diagnosed a flawed classification approach that had stalled the team for two months and proposed the object-detection redesign that cleared it — reaching 98.67% accuracy on standard waste.",
     tags: ["YOLOv8", "Computer Vision", "Python", "Deep Learning"],
+    position: "center",
+    aspectRatio: "3 / 4",
     githubUrl: "https://github.com/shuu-pao",
   },
+  {
+    id: 4,
+    title: "Premium Portfolio",
+    year: "2026",
+    description:
+      "This site — a cinematic, reference-matched personal portfolio built with pixel-precise fidelity to hand-picked design references.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    position: "end",
+    aspectRatio: "16 / 10",
+    githubUrl: "https://github.com/shuu-pao/premium-portfolio",
+  },
 ];
+
+const JUSTIFY_CLASS: Record<CardPosition, string> = {
+  start: "md:justify-start",
+  center: "md:justify-center",
+  end: "md:justify-end",
+};
+
+const MARGIN_CLASS: Record<CardPosition, string> = {
+  start: "mb-[15vw]",
+  center: "mb-[15vw]",
+  end: "mb-[10vw]",
+};
 
 function ProjectCard({ project, onSelect }: { project: Project; onSelect: (p: Project) => void }) {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
@@ -58,35 +92,44 @@ function ProjectCard({ project, onSelect }: { project: Project; onSelect: (p: Pr
   };
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5 }}
-      className="relative z-10 cursor-pointer bg-em-bg py-8"
-      onClick={() => onSelect(project)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-    >
-      <ImagePlaceholder
-        imageSrc={project.imageSrc}
-        alt={`Screenshot of ${project.title}`}
-        aspectRatio="16 / 10"
-        label="Project image"
-        className="rounded-sm transition-opacity hover:opacity-90"
-      />
-      <div className="mt-4 flex items-baseline justify-between">
-        <h3 className="font-display text-2xl font-bold text-em-text md:text-3xl">{project.title}</h3>
-        <span className="font-mono text-sm text-em-text-muted">{project.year}</span>
-      </div>
-      <p className="mt-2 max-w-xl text-sm leading-relaxed text-em-text-muted">{project.description}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.tags.map((tag) => (
-          <PillTag key={tag}>{tag}</PillTag>
-        ))}
-      </div>
-    </motion.article>
+    <div className={cn("flex justify-center", JUSTIFY_CLASS[project.position], MARGIN_CLASS[project.position])}>
+      <motion.article
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.5 }}
+        className="group relative z-10 w-full cursor-pointer bg-em-bg sm:max-w-[60vw] md:max-w-[30vw]"
+        onClick={() => onSelect(project)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+      >
+        <div className="relative overflow-hidden rounded-sm">
+          <ImagePlaceholder
+            imageSrc={project.imageSrc}
+            alt={`Screenshot of ${project.title}`}
+            aspectRatio={project.aspectRatio}
+            label="Project image"
+            className="transition-opacity group-hover:opacity-90"
+          />
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-em-invert-bg/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-em-invert-text">
+              View Details
+            </span>
+          </div>
+        </div>
+        <div className="mt-4 flex flex-row-reverse items-start justify-between">
+          <span className="font-mono text-sm text-em-text-muted">{project.year}</span>
+          <h3 className="font-display text-2xl font-bold text-em-text md:text-3xl">{project.title}</h3>
+        </div>
+        <p className="mt-2 text-sm leading-relaxed text-em-text-muted">{project.description}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <PillTag key={tag}>{tag}</PillTag>
+          ))}
+        </div>
+      </motion.article>
+    </div>
   );
 }
 
@@ -97,16 +140,22 @@ export default function PortfolioGallerySection() {
 
   return (
     <section id="work" className="relative w-full bg-em-bg px-6 py-24 md:px-16">
-      <div className="relative mx-auto max-w-4xl">
-        <h2
-          className="font-display sticky top-28 z-0 text-center text-[13vw] font-black leading-none text-em-text/90 md:text-[7vw]"
-          aria-hidden="true"
-        >
-          SELECTED WORK
-        </h2>
+      <div className="relative">
+        <div className="sticky top-[8vh] z-0" aria-hidden="true">
+          <div className="overflow-hidden">
+            <h2 className="font-heading text-[calc((100vw_-_48px)*0.1715)] uppercase leading-[1] tracking-tighter text-em-text/90 md:text-[calc((100vw_-_128px)*0.1715)]">
+              Selected
+            </h2>
+          </div>
+          <div className="flex justify-center overflow-hidden">
+            <h2 className="font-heading text-[calc((100vw_-_48px)*0.1715)] uppercase leading-[1] tracking-tighter text-em-text/90 md:text-[calc((100vw_-_128px)*0.1715)]">
+              Projects
+            </h2>
+          </div>
+        </div>
 
-        <div className="relative -mt-[12vw] space-y-16 md:-mt-[6vw]">
-          <h2 className="sr-only">Selected Work</h2>
+        <div className="relative z-10">
+          <h2 className="sr-only">Selected Projects</h2>
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} onSelect={setSelectedProject} />
           ))}
