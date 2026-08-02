@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Caveat, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Archivo_Black, Bodoni_Moda, Caveat, Space_Grotesk, Space_Mono, Spectral } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Providers } from "@/components/layout/Providers";
@@ -8,6 +8,19 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const archivoBlack = Archivo_Black({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["400"],
+});
+
+const spectral = Spectral({
+  subsets: ["latin"],
+  variable: "--font-tagline",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
 });
 
 const bodoniModa = Bodoni_Moda({
@@ -46,6 +59,8 @@ export default function RootLayout({
       className={cn(
         "h-full scroll-smooth antialiased",
         spaceGrotesk.variable,
+        archivoBlack.variable,
+        spectral.variable,
         bodoniModa.variable,
         spaceMono.variable,
         caveat.variable

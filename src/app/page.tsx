@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
+import TaglineSection from "@/components/sections/TaglineSection";
 import IntroBioSection from "@/components/sections/IntroBioSection";
 import PortfolioGallerySection from "@/components/sections/PortfolioGallerySection";
 import SkillsStackSection from "@/components/sections/SkillsStackSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <SectionIndexTab />
       <main className="relative min-h-screen w-full bg-em-bg">
         <HeroSection />
+        <TaglineSection />
         <IntroBioSection />
         <PortfolioGallerySection />
         <SkillsStackSection />
