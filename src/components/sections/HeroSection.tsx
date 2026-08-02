@@ -52,7 +52,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col gap-5 md:col-span-4 md:col-start-9">
             <div className="flex items-baseline gap-2">
-              <span className="font-mono text-xs uppercase tracking-widest text-em-text-dim">P./</span>
+              <span aria-hidden="true" className="font-mono text-xs uppercase tracking-widest text-em-text-dim">P./</span>
               <span className="font-cursive text-4xl leading-none text-em-accent md:text-5xl">
                 Debug &amp; Build
               </span>
