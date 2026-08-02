@@ -379,3 +379,110 @@ Run: `npm run dev` and compare against `mees-0.jpeg` (repo root) at desktop widt
 git add src/components/sections/HeroSection.tsx
 git commit -m "feat: overlay Hero bio/cursive on the photo, move subheading to a left-gutter column"
 ```
+
+---
+
+### Task 4: Pixel-measured correction — photo size/position, overlay columns, row-alignment fix
+
+**Why this task exists.** The user reported that after Task 3, the Hero still didn't read as 1:1 with the reference: the photo was too large/mispositioned, and the "P./" label, cursive, and bio text weren't positioned correctly relative to it. Task 3's `3 / 2` aspect ratio and `md:col-span-9 md:col-start-4` sizing were both eyeballed from a compressed screenshot crop and were significantly off. This task replaces those eyeballed values with values derived from **programmatic pixel measurement** of `mees-hero-top.png` (1440×900, the reference's native capture width) using Python/PIL: sampling exact pixel colors to find the photo's rectangular bounding box (by classifying pixels as "page checker background" vs. "photo content" against the measured background color cluster `rgb(212,195,171) ± 25`), and finding text bounding boxes by color-thresholding (navy text, orange cursive).
+
+**Measured values (in the reference's 1440px-wide viewport):**
+- Photo: left edge x=491 (34.1% of viewport), right edge x=947 (65.8%) → width 31.7% of viewport, positioned starting at 34.1%
+- Photo aspect ratio: photo top ≈ y=495; exact bottom wasn't visible in the top-of-page screenshot, but a second, scrolled reference screenshot (`mees-1.jpeg`) shows the photo's bottom edge — combined with the width measurement, the photo reads as close to **square (1:1)**, not portrait (`4/5`, Task 1-2's guess) or landscape (`3/2`, Task 3's guess).
+- "P./" label: x=869-889 (60.3%-61.7%), y=546-557 — inside the photo's bounds, starting ~51px (≈10% of photo height) below the photo's top edge.
+- Cursive "Creative"-equivalent: roughly x=750-969 (52.1%-67.3%) — starts inside the photo, extends slightly past its right edge (947/65.8%).
+- Bio paragraph block: x=868-1204 (60.3%-83.6%), y=674-863 — **starts inside the photo's right portion (60.3% is within the photo's 34.1%-65.8% span) and continues well past the photo's right edge (65.8%) onto the open page background**. This is the key finding: the text column is NOT fully "on" or fully "beside" the photo — it deliberately straddles the photo's right edge, mostly overlapping only the photo's rightmost ~5-6 percentage points.
+- Subheading: x=268-499 (18.6%-34.7%), y=861-899 — entirely to the left of the photo (photo starts at 34.1%), roughly level with the bottom of the bio paragraph block.
+
+**Grid translation (12-column grid, columns are 8.33% each):** matching these percentages onto column start/span:
+- Subheading: `col-start-3 col-span-2` (16.7%-33.3%) — close to measured 18.6%-34.7%
+- Photo: `col-start-5 col-span-4` (33.3%-66.7%) — close to measured 34.1%-65.8%
+- Overlay text (label+cursive+bio): `col-start-8 col-span-3` (58.3%-83.3%) — close to measured 60.3%-83.6%
+
+Note the photo (`col-start-5` through column 8) and the overlay text (`col-start-8` onward) **share grid column 8** — this is the deliberate overlap the measurements found. In CSS Grid, items with fully explicit `grid-row` + `grid-column` placement are allowed to overlap (later DOM order paints on top); this is different from relying on auto-placement, which is also why this task fixes the auto-placement bug described below.
+
+**Second source of correction — the final whole-branch review (post-Task-3) found two real, separate bugs to fix in the same pass:**
+1. **Overlay overflow at 768-835px.** Task 3's overlay activated at `md:` (768px), but at that width the image was short enough that the bio text visibly overflowed below/past the photo's border. Since this task also shrinks the photo significantly (33% width instead of 75%), re-verify this doesn't recur — but as a safety margin, this task moves the overlay activation breakpoint from `md:` (768px) to `lg:` (1024px).
+2. **`items-end`/`self-end` were dead CSS.** Task 3's plan text incorrectly assumed CSS Grid's sparse auto-placement would land the subheading in row 1 automatically. It doesn't — per the grid placement algorithm, an auto-row item whose explicit column-start is *before* the current placement cursor gets pushed to a new row instead, so the subheading silently landed in its own row 2, making `items-end`/`self-end` no-ops. Fix: give **every** grid child an explicit `row-start-1` so they're forced onto one shared row regardless of auto-placement quirks (this is also a prerequisite for the intentional photo/text-overlay column overlap above, since overlap requires fully explicit placement on both axes).
+
+**Files:**
+- Modify: `src/components/sections/HeroSection.tsx`
+
+- [ ] **Step 1: Replace the center-band block**
+
+Replace everything from `<div className="mx-auto mt-16 max-w-6xl md:mt-20">` (Task 3's version) through its closing `</div>` with:
+
+```tsx
+      <div className="relative -mx-6 mt-16 md:-mx-16 md:mt-20">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-0">
+          <div className="order-3 px-6 lg:order-none lg:col-span-2 lg:col-start-3 lg:row-start-1 lg:self-end lg:px-0">
+            <p className="max-w-xs font-display text-lg leading-snug text-em-text">
+              Skilled in both <em className="italic">developing</em> and <em className="italic">design</em>
+            </p>
+          </div>
+
+          <div className="order-1 px-6 lg:order-none lg:col-span-4 lg:col-start-5 lg:row-start-1 lg:px-0">
+            <ImagePlaceholder
+              alt="A project photo of Paolo at work"
+              aspectRatio="1 / 1"
+              label="Project photo"
+              className="w-full rounded-sm"
+            />
+          </div>
+
+          <div className="order-2 mt-6 flex flex-col gap-3 px-6 lg:order-none lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:mt-0 lg:self-start lg:px-0 lg:pt-10">
+            <div className="flex items-baseline gap-2">
+              <span aria-hidden="true" className="font-mono text-xs uppercase tracking-widest text-em-text-dim">
+                P./
+              </span>
+              <span className="font-cursive text-3xl leading-none text-em-accent sm:text-4xl lg:text-5xl">
+                Debug &amp; Build
+              </span>
+            </div>
+            <div className="space-y-3 text-sm leading-relaxed text-em-text-muted sm:text-base">
+              <p>
+                Computer Engineering graduate who builds at both ends of the stack — enterprise AI
+                agents at Accenture and low-level firmware in the lab. At Accenture I spent 540
+                hours developing Salesforce Agentforce agents that create, update, and close
+                support cases and automate account-billing workflows.
+              </p>
+              <p>
+                Based in Cebu City, Philippines. Actively looking for new opportunities —
+                especially Salesforce, Agentforce, or building smarter customer-experience
+                tooling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+```
+
+Notes for the implementer:
+- The wrapper bleeds to the true viewport edge (`-mx-6 md:-mx-16`, no compensating `px-*` on the wrapper itself) because the measured percentages are fractions of the *full* 1440px viewport, matching how the marquee/name lockup above it already bleed edge-to-edge. Each grid child gets its own `px-6 lg:px-0` so mobile/tablet still has readable side padding while the `lg:` grid columns compute against the true full-bleed width, matching the measurement's reference frame.
+- `lg:row-start-1` on all three children is load-bearing, not decoration — without it, the subheading silently falls into its own grid row and `self-end` does nothing (see the "second source of correction" note above). Verify this actually worked by checking computed styles or just visually confirming the subheading sits close to the photo's bottom edge, not noticeably below the whole block.
+- The photo (`col-start-5 col-span-4`, occupying columns 5-8) and the overlay text (`col-start-8 col-span-3`, occupying columns 8-10) deliberately share column 8 — this is intentional overlap, not a bug. Since both have fully explicit row+column placement, CSS Grid allows this; the overlay div comes after the photo div in DOM order, so it paints on top.
+- `lg:pt-10` on the overlay text block approximates the measured ~10%-of-photo-height offset between the photo's top edge and where "P./" starts. This is an approximation (fixed px, not percentage-of-dynamic-height) — if it looks visibly off once rendered next to the actual photo height at your test viewport, adjust it, but don't restructure the approach.
+- Aspect ratio `1 / 1` is a considered estimate (see measurement notes above), not a hard-coded exact value — if visual comparison against `mees-0.jpeg` suggests a slightly different ratio reads closer to the reference, adjust it, but stay close to square (roughly `4/5` to `1/1` range, not `3/2` landscape like Task 3 had).
+
+- [ ] **Step 2: Verify against the reference at matching viewport width**
+
+Run: `npx tsc --noEmit` — expect no errors.
+Run: `npm run lint` — expect no errors.
+Run: `npm run dev`, then using Playwright (available as MCP tools), set the viewport to **exactly 1440×900** (matching the reference screenshot's native capture size) and screenshot the Hero. Read `mees-hero-top.png` (repo root) directly and compare side-by-side:
+  - The photo should occupy roughly the middle third of the viewport width (not half, not three-quarters).
+  - "P./" and the cursive text should sit inside the photo's upper-right area, not far outside it.
+  - The bio paragraphs should start just inside the photo's right edge and extend rightward onto the open background — most of each paragraph line should be *outside* the photo, only the first word or two of each line inside it.
+  - The subheading should sit to the photo's left, roughly level with its bottom, not touching or overlapping the photo.
+  This comparison doesn't need to be pixel-perfect (this is still a placeholder box, not the real photo), but the *proportions* — how wide the photo reads relative to the viewport, how much of the text sits over vs. beside it — should clearly match, not just "be in the same general area."
+
+  Then check responsive behavior:
+  - At 768px, 900px, and 1023px (below the new `lg:` breakpoint): confirm the overlay text is NOT absolutely/grid-overlapping the photo — it should flow normally below the full-width photo (this is the fix for the final review's overflow finding; explicitly verify no text renders outside the photo's visible border at these widths, since that's exactly what broke before).
+  - At 1024px and 1440px: confirm the overlay activates and reads as "on top of" the photo per the comparison above.
+  - At 375px: confirm mobile stacking order (photo, then label+cursive+bio, then subheading) still holds.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/components/sections/HeroSection.tsx
+git commit -m "fix: correct Hero photo size/position and overlay layout to match measured reference proportions"
+```
