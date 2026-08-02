@@ -27,7 +27,7 @@ Current, authoritative docs for this effort (one spec + one plan per phase, list
 |---|-------|-----------|--------|------|------|
 | 1 | Hero (name lockup, marquee, photo, overlay bio/cursive, subheading) | meesverberne.com | **Done** | `specs/2026-08-02-hero-mees-redesign-design.md` (§1 has a "superseded by Task 4" note — Task 4's plan text is authoritative over that spec's original layout numbers) | `plans/2026-08-02-hero-mees-redesign.md` |
 | 2 | Intro tagline (4-line reveal) + two-image staggered bio block | jasminemaduafokwa.com | **Done** | `specs/2026-08-02-intro-tagline-bio-redesign-design.md` | `plans/2026-08-02-intro-tagline-bio-redesign.md` |
-| 3 | Selected Work section polish (project cards: year + skills tags, card layout) | jasminemaduafokwa.com | Not started | — | — |
+| 3 | Selected Work section polish (project cards: year + skills tags, card layout) | jasminemaduafokwa.com | **Done** | `specs/2026-08-03-selected-work-redesign-design.md` | `plans/2026-08-03-selected-work-redesign.md` |
 | 4 | Skills/Services section: 4 tabs (Frontend Dev / Backend Dev / UI Design / Brand Identity) with hover-swapped image pair (one large + one smaller inset) | jasminemaduafokwa.com | Not started | — | — |
 | 5 | Mission statement section polish | jasminemaduafokwa.com | Not started | — | — |
 | 6 | Process section: hover-to-reveal-more-info cards | jasminemaduafokwa.com | Not started | — | — |
