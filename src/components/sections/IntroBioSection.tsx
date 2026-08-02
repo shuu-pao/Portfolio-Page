@@ -14,37 +14,42 @@ export default function IntroBioSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="flex flex-col gap-6 md:flex-row md:items-start md:gap-[5%]"
+        className="flex flex-col gap-6 md:flex-row md:items-center"
       >
         <ImagePlaceholder
           alt="Paolo working on Salesforce Agentforce configuration"
           aspectRatio="695 / 894"
           label="Workspace photo"
-          className="w-full rounded-sm md:w-[54.8%]"
+          className="w-full rounded-sm md:flex-1"
         />
-        <ImagePlaceholder
-          alt="Close-up of embedded hardware Paolo built"
-          aspectRatio="442 / 696"
-          label="Hardware photo"
-          className="w-full rounded-sm md:mt-[13.3%] md:w-[34.9%]"
-        />
+        <div className="flex md:flex-1 md:items-center md:justify-center">
+          <ImagePlaceholder
+            alt="Close-up of embedded hardware Paolo built"
+            aspectRatio="442 / 696"
+            label="Hardware photo"
+            className="w-full rounded-sm md:w-[70%]"
+          />
+        </div>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.15 }}
-        className="mt-10 grid grid-cols-1 gap-6 text-base leading-relaxed text-[#8a3f22] md:grid-cols-[54.8%_34.9%] md:gap-[5%]"
+        className="mt-10 flex flex-col gap-6 text-base leading-relaxed text-[#8a3f22] md:flex-row"
       >
-        <p>
-          As an engineer, I prioritize root causes over quick patches — whether that&apos;s an
-          Agentforce action that&apos;s misfiring or a computer-vision model that&apos;s stalled
-          for two months. I trace the problem, rebuild around the real constraint, then ship.
-        </p>
-        <p>
-          That instinct carries across every layer I work in: enterprise AI agents at Accenture,
-          PIC microcontroller firmware in C, and applied computer vision in my thesis work.
-        </p>
+        <div className="hidden md:block md:flex-[1]" aria-hidden="true" />
+        <div className="flex flex-col gap-6 md:flex-[1.2] md:flex-row md:gap-8">
+          <p className="md:flex-1">
+            As an engineer, I prioritize root causes over quick patches — whether that&apos;s an
+            Agentforce action that&apos;s misfiring or a computer-vision model that&apos;s stalled
+            for two months. I trace the problem, rebuild around the real constraint, then ship.
+          </p>
+          <p className="md:flex-1">
+            That instinct carries across every layer I work in: enterprise AI agents at Accenture,
+            PIC microcontroller firmware in C, and applied computer vision in my thesis work.
+          </p>
+        </div>
       </motion.div>
     </section>
   );
