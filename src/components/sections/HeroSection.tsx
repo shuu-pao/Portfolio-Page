@@ -12,31 +12,19 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full overflow-hidden bg-em-bg px-6 pb-20 pt-16 md:px-16 md:pt-24"
     >
-      <h1 className="font-heading -mx-6 overflow-hidden text-center text-[10vw] font-normal leading-[0.85] tracking-[-0.02em] text-em-text md:-mx-16 md:text-[11vw]">
-        <BlurText text="Paolo" delay={0.04} duration={0.7} ease="easeOut" className="block px-6 md:px-16" />
+      <h1 className="font-heading -mx-6 overflow-hidden text-center uppercase text-[calc((100vw_-_48px)*0.103)] font-normal leading-[0.78] tracking-normal text-em-text md:-mx-16 md:text-[calc((100vw_-_128px)*0.103)]">
+        <BlurText text="Paolo" delay={0.04} duration={0.7} ease="easeOut" className="block whitespace-nowrap px-6 md:px-16" />
         <BlurText
           text="Jansen Enrera"
           delay={0.1}
           duration={0.7}
           ease="easeOut"
-          className="block px-6 md:px-16"
+          className="block whitespace-nowrap px-6 md:px-16"
         />
       </h1>
 
       <div className="relative -mx-6 mt-2 md:-mx-16">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute left-2 top-1/2 z-10 hidden -translate-y-1/2 bg-em-bg px-1 text-em-text-dim md:block"
-        >
-          |
-        </span>
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute right-2 top-1/2 z-10 hidden -translate-y-1/2 bg-em-bg px-1 text-em-text-dim md:block"
-        >
-          |
-        </span>
-        <Marquee items={MARQUEE_ITEMS} className="border-y border-em-text/10 py-3" />
+        <Marquee items={MARQUEE_ITEMS} className="py-3" />
       </div>
 
       <div className="relative -mx-6 mt-16 md:-mx-16 md:mt-20">
