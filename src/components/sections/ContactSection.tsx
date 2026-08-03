@@ -1,112 +1,77 @@
 "use client";
 
-import { useRef, useState, FormEvent } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send } from "lucide-react";
+import { ChevronDown, Sparkle } from "lucide-react";
+import { Marquee } from "@/components/ui/Marquee";
 import { GradientButton } from "@/components/ui/GradientButton";
-import { BlurText } from "@/components/reactbits/BlurText";
 import { Footer } from "@/components/layout/Footer";
+
+interface SocialLink {
+  label: string;
+  href: string;
+}
+
+const socialLinks: SocialLink[] = [
+  { label: "Email", href: "mailto:paolo.enrera@gmail.com" },
+  { label: "GitHub", href: "https://github.com/shuu-pao" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/paolo-jansen-enrera/" },
+  { label: "Instagram", href: "https://www.instagram.com/shuu_paoo/" },
+];
 
 export default function ContactSection() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <div className="relative w-full bg-em-invert-bg">
-      <section id="contact" ref={ref} className="relative px-6 py-32 md:px-16">
-        <div className="mx-auto max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mb-12 text-center"
-          >
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-em-accent-text">Contact</p>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-em-invert-text md:text-5xl">
-              <BlurText text="Let's build something" delay={0.03} duration={0.6} ease="easeOut" />
-            </h2>
-            <p className="mt-4 text-em-invert-muted">
-              Actively looking for new opportunities — happy to talk Salesforce, Agentforce, or the
-              engineering behind this site.
-            </p>
-          </motion.div>
-
-          {submitted ? (
-            <motion.div
-              role="status"
-              aria-live="polite"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="rounded-sm border border-em-accent/30 bg-em-accent/5 p-10 text-center"
-            >
-              <p className="text-lg font-medium text-em-invert-text">Message received.</p>
-              <p className="mt-2 text-em-invert-muted">I&apos;ll get back to you soon.</p>
-            </motion.div>
-          ) : (
-            <motion.form
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              onSubmit={handleSubmit}
-              className="space-y-5"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-em-invert-muted">
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full rounded-sm border border-em-invert-text/15 bg-em-invert-text/5 px-4 py-3 text-em-invert-text placeholder-em-invert-muted transition-colors focus:border-em-accent focus:outline-none focus:ring-2 focus:ring-em-accent/30"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-em-invert-muted">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    className="w-full rounded-sm border border-em-invert-text/15 bg-em-invert-text/5 px-4 py-3 text-em-invert-text placeholder-em-invert-muted transition-colors focus:border-em-accent focus:outline-none focus:ring-2 focus:ring-em-accent/30"
-                    placeholder="you@email.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="mb-2 block text-sm font-medium text-em-invert-muted">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  className="w-full resize-none rounded-sm border border-em-invert-text/15 bg-em-invert-text/5 px-4 py-3 text-em-invert-text placeholder-em-invert-muted transition-colors focus:border-em-accent focus:outline-none focus:ring-2 focus:ring-em-accent/30"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
-
-              <div className="flex justify-center pt-2">
-                <GradientButton type="submit" size="lg" className="gap-2" magnetic>
-                  <Send size={16} />
-                  Send message
-                </GradientButton>
-              </div>
-            </motion.form>
-          )}
+      <section id="contact" ref={ref} className="relative px-6 py-[10vh] md:px-16">
+        <div className="w-[120%] overflow-hidden">
+          <Marquee
+            items={["LET'S TALK"]}
+            separator={<ChevronDown size={32} aria-hidden="true" className="text-em-invert-text" />}
+            baseVelocity={40}
+            className="text-[12vw] uppercase leading-none tracking-tighter text-em-invert-text"
+          />
         </div>
+
+        <div className="mb-[4vh] flex justify-center md:mb-[8vh]">
+          <Sparkle
+            aria-hidden="true"
+            className="w-[16vw] animate-spin text-em-accent [animation-duration:20s] sm:w-[12vw] lg:w-[8vw]"
+          />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col-reverse gap-y-6 md:flex-row md:justify-between"
+        >
+          <ul className="flex flex-1 flex-row justify-between md:flex-col md:justify-normal md:gap-y-1">
+            {socialLinks.map(({ label, href }) => (
+              <li
+                key={label}
+                className="relative w-fit text-[14px] capitalize text-em-invert-text after:absolute after:top-full after:left-0 after:h-[2px] after:w-0 after:bg-em-accent after:duration-300 after:ease-in-out hover:after:w-full md:text-[18px]"
+              >
+                <a href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noopener noreferrer"}>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div>
+            <h3 className="text-[8vw] leading-none text-em-invert-text md:text-[4vw]">
+              Got a project in mind? I&apos;d love to hear about it.
+            </h3>
+            <div className="mt-2">
+              <GradientButton href="mailto:paolo.enrera@gmail.com" variant="outline" size="lg">
+                Email Me
+              </GradientButton>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       <Footer />
