@@ -7,6 +7,7 @@ import { useDialogBehavior } from "@/hooks/use-dialog-behavior";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { PillTag } from "@/components/ui/PillTag";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { GridDistortion } from "@/components/reactbits/GridDistortion";
 import { cn } from "@/lib/utils";
 
 type CardPosition = "start" | "center" | "end";
@@ -34,6 +35,7 @@ const projects: Project[] = [
     tags: ["React", "Vite", "JavaScript", "CSS"],
     position: "end",
     aspectRatio: "16 / 9",
+    imageSrc: "/images/PortfolioMon.png",
     githubUrl: "https://github.com/shuu-pao",
   },
   {
@@ -45,6 +47,7 @@ const projects: Project[] = [
     tags: ["C", "XC8", "Embedded", "Microcontrollers"],
     position: "start",
     aspectRatio: "4 / 3",
+    imageSrc: "/images/Futsal%20Scoreboard.jpg",
     githubUrl: "https://github.com/shuu-pao",
   },
   {
@@ -56,6 +59,7 @@ const projects: Project[] = [
     tags: ["YOLOv8", "Computer Vision", "Python", "Deep Learning"],
     position: "center",
     aspectRatio: "3 / 4",
+    imageSrc: "/images/Thesis.jpg",
     githubUrl: "https://github.com/shuu-pao",
   },
   {
@@ -105,13 +109,21 @@ function ProjectCard({ project, onSelect }: { project: Project; onSelect: (p: Pr
         onKeyDown={handleKeyDown}
       >
         <div className="relative overflow-hidden rounded-sm bg-em-bg">
-          <ImagePlaceholder
-            imageSrc={project.imageSrc}
-            alt={`Screenshot of ${project.title}`}
-            aspectRatio={project.aspectRatio}
-            label="Project image"
-            className="transition-opacity group-hover:opacity-90"
-          />
+          {project.imageSrc ? (
+            <GridDistortion
+              imageSrc={project.imageSrc}
+              alt={`Screenshot of ${project.title}`}
+              aspectRatio={project.aspectRatio}
+              className="transition-opacity group-hover:opacity-90"
+            />
+          ) : (
+            <ImagePlaceholder
+              alt={`Screenshot of ${project.title}`}
+              aspectRatio={project.aspectRatio}
+              label="Project image"
+              className="transition-opacity group-hover:opacity-90"
+            />
+          )}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-em-invert-bg/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-em-invert-text">
               View Details

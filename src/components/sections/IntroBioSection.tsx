@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { GridDistortion } from "@/components/reactbits/GridDistortion";
 
 export default function IntroBioSection() {
   const ref = useRef<HTMLElement>(null);
@@ -16,17 +16,17 @@ export default function IntroBioSection() {
         transition={{ duration: 0.6 }}
         className="flex flex-col gap-6 md:flex-row md:items-center"
       >
-        <ImagePlaceholder
+        <GridDistortion
+          imageSrc="/images/aesthetic%20plant.jpg"
           alt="Paolo working on Salesforce Agentforce configuration"
           aspectRatio="695 / 894"
-          label="Workspace photo"
           className="w-full rounded-sm md:flex-1"
         />
         <div className="flex md:flex-1 md:items-center md:justify-center">
-          <ImagePlaceholder
+          <GridDistortion
+            imageSrc="/images/aesthetic%20work.jpg"
             alt="Close-up of embedded hardware Paolo built"
             aspectRatio="442 / 696"
-            label="Hardware photo"
             className="w-full rounded-sm md:w-[70%]"
           />
         </div>

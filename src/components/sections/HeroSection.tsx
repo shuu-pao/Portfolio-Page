@@ -1,12 +1,15 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { BlurText } from "@/components/reactbits/BlurText";
 import { Marquee } from "@/components/ui/Marquee";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { GridDistortion } from "@/components/reactbits/GridDistortion";
 
 const MARQUEE_ITEMS = ["Developer", "Engineer", "Builder", "Creative"];
 
 export default function HeroSection() {
+  const { theme } = useTheme();
+  const imageSrc = theme === "dark" ? "/images/mimikyu9.jpg" : "/images/mimikyu8.jpg";
   return (
     <section
       id="hero"
@@ -38,24 +41,24 @@ export default function HeroSection() {
           </div>
 
           <div className="order-1 px-6 lg:order-none lg:col-span-4 lg:col-start-5 lg:row-start-1 lg:px-0">
-            <ImagePlaceholder
+            <GridDistortion
+              imageSrc={imageSrc}
               alt="A project photo of Paolo at work"
               aspectRatio="7 / 9"
-              label="Project photo"
               className="w-full rounded-sm"
             />
           </div>
 
-          <div className="order-2 mt-6 flex flex-col gap-3 px-6 lg:order-none lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:mt-0 lg:self-start lg:px-0 lg:pt-10">
+          <div className="relative z-10 order-2 mt-6 flex flex-col gap-3 px-6 lg:order-none lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:mt-0 lg:self-start lg:px-0 lg:pt-10">
             <div className="flex items-baseline gap-2 lg:-ml-[21%]">
-              <span aria-hidden="true" className="font-mono text-xs uppercase tracking-widest text-em-text-dim">
+              <span aria-hidden="true" className="font-mono text-xs font-bold uppercase tracking-widest text-em-text">
                 P./
               </span>
               <span className="font-cursive text-3xl leading-none text-em-accent sm:text-4xl lg:text-5xl">
                 Debug &amp; Build
               </span>
             </div>
-            <div className="space-y-3 text-sm leading-relaxed text-em-text-muted sm:text-base">
+            <div className="space-y-3 font-bold text-sm leading-relaxed text-em-text sm:text-base">
               <p>
                 Computer Engineering graduate who builds at both ends of the stack — enterprise AI
                 agents at Accenture and low-level firmware in the lab. At Accenture I spent 540

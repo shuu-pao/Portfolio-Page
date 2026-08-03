@@ -36,6 +36,16 @@ yarn-error.log*
 # vercel
 .vercel
 
+# firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
+# dev reference/screenshot images (repo root only; public/images is real site assets)
+/*.png
+/*.jpg
+/*.jpeg
+
 # brainstorming visual companion
 .superpowers/
 
