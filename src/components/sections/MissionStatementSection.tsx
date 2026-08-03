@@ -26,7 +26,7 @@ export default function MissionStatementSection() {
               reducedMotion ? (
                 <p
                   key={line}
-                  className="font-display text-[5.3vw] leading-[1] overflow-hidden text-em-text"
+                  className="font-display text-[5.3vw] leading-[1.15] overflow-hidden text-em-text"
                 >
                   {line}
                 </p>
@@ -37,7 +37,7 @@ export default function MissionStatementSection() {
                   delay={0.02}
                   duration={0.6}
                   ease="easeOut"
-                  className="block font-display text-[5.3vw] leading-[1] overflow-hidden text-em-text"
+                  className="block font-display text-[5.3vw] leading-[1.15] overflow-hidden text-em-text"
                 />
               )
             )}
