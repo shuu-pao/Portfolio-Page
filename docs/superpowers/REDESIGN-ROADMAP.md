@@ -29,7 +29,7 @@ Current, authoritative docs for this effort (one spec + one plan per phase, list
 | 2 | Intro tagline (4-line reveal) + two-image staggered bio block | jasminemaduafokwa.com | **Done** | `specs/2026-08-02-intro-tagline-bio-redesign-design.md` | `plans/2026-08-02-intro-tagline-bio-redesign.md` |
 | 3 | Selected Work section polish (project cards: year + skills tags, card layout) | jasminemaduafokwa.com | **Done** | `specs/2026-08-03-selected-work-redesign-design.md` | `plans/2026-08-03-selected-work-redesign.md` |
 | 4 | Skills/Services section: 4 tabs (Frontend Dev / Backend Dev / UI Design / Brand Identity) with hover-swapped image pair (one large + one smaller inset) | jasminemaduafokwa.com | **Done** | `specs/2026-08-03-skills-services-redesign-design.md` | `plans/2026-08-03-skills-services-redesign.md` |
-| 5 | Mission statement section polish | jasminemaduafokwa.com | Not started | — | — |
+| 5 | Mission statement section polish | jasminemaduafokwa.com | **Done** | `specs/2026-08-03-mission-statement-redesign-design.md` | `plans/2026-08-03-mission-statement-redesign.md` |
 | 6 | Process section: hover-to-reveal-more-info cards | jasminemaduafokwa.com | Not started | — | — |
 | 7 | "Let's Talk" CTA section + Contact section (Email/GitHub/LinkedIn/Instagram, no Behance) + `/contact` page | jasminemaduafokwa.com | Not started | — | — |
 | 8 | Loading screen (evaluate need — reference site has one, to prevent animation-heavy first paint jank) | jasminemaduafokwa.com | Not started | — | — |
