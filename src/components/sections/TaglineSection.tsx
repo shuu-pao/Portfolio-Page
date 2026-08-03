@@ -22,8 +22,9 @@ export default function TaglineSection() {
             <p
               key={line.text}
               className={
-                "text-[5vw] leading-[1] overflow-hidden sm:text-[5.3vw] " +
-                (line.indent ? "pl-[15vw]" : "pr-[15vw]")
+                "text-[5vw] leading-[1.25] overflow-hidden sm:text-[5.3vw] " +
+                (line.indent ? "pl-[15vw]" : "pr-[15vw]") +
+                (index < LINES.length - 1 ? " mb-[-0.25em]" : "")
               }
             >
               {line.text}
@@ -36,9 +37,10 @@ export default function TaglineSection() {
               duration={0.6}
               ease="easeOut"
               className={
-                "block text-[5vw] leading-[1] overflow-hidden sm:text-[5.3vw] " +
+                "block text-[5vw] leading-[1.25] overflow-hidden sm:text-[5.3vw] " +
                 (line.indent ? "pl-[15vw]" : "pr-[15vw]") +
-                (index > 0 ? " mt-0" : "")
+                (index > 0 ? " mt-0" : "") +
+                (index < LINES.length - 1 ? " mb-[-0.25em]" : "")
               }
             />
           )

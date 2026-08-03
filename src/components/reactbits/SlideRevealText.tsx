@@ -40,8 +40,19 @@ export const SlideRevealText: React.FC<SlideRevealTextProps> = ({
   const renderChar = (char: string, index: number) => (
     // Static outer box: its height is set by normal layout (untransformed),
     // so overflow-hidden clips the inner span's pre-reveal offset no matter
-    // which visual row this character lands on.
-    <span key={`${char}-${index}`} style={{ display: "inline-block", overflow: "hidden" }}>
+    // which visual row this character lands on. paddingRight/marginRight
+    // cancel out (zero net width) but give overflow-hidden's clip box a
+    // sliver of extra room on the right, where glyphs like "f" ink past
+    // their own advance width (Bodoni Moda's "f" hook was getting clipped).
+    <span
+      key={`${char}-${index}`}
+      style={{
+        display: "inline-block",
+        overflow: "hidden",
+        paddingRight: "0.08em",
+        marginRight: "-0.08em",
+      }}
+    >
       <motion.span
         initial={{ y: "100%", rotateZ: 5 }}
         animate={isVisible ? { y: 0, rotateZ: 0 } : undefined}
