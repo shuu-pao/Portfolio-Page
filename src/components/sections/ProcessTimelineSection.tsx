@@ -39,7 +39,7 @@ function StepCard({ step, index, inView }: { step: Step; index: number; inView: 
     >
       <div className="group flex flex-col rounded-xl border-[1.5px] border-em-accent p-6 text-em-accent duration-300 hover:bg-em-accent hover:text-em-invert-text lg:h-[55vh] 2xl:p-10">
         <h3 className="mb-[6vh] font-display text-[26px] lg:mb-0 2xl:text-[48px]">{step.title}</h3>
-        <div className="mt-auto opacity-0 duration-300 group-hover:opacity-100">
+        <div className="mt-auto opacity-0 duration-300 group-hover:opacity-100 [@media(hover:none)]:opacity-100">
           <p className="text-[15px] sm:text-[16px] 2xl:text-[24px]">{step.description}</p>
         </div>
       </div>
