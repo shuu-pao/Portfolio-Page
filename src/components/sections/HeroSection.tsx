@@ -12,16 +12,18 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full overflow-hidden bg-em-bg px-6 pb-20 pt-16 md:px-16 md:pt-24"
     >
-      <h1 className="font-heading -mx-6 overflow-hidden text-center uppercase text-[calc((100vw_-_48px)*0.103)] font-normal leading-[0.78] tracking-normal text-em-text md:-mx-16 md:text-[calc((100vw_-_128px)*0.103)]">
-        <BlurText text="Paolo" delay={0.04} duration={0.7} ease="easeOut" className="block whitespace-nowrap px-6 md:px-16" />
-        <BlurText
-          text="Jansen Enrera"
-          delay={0.1}
-          duration={0.7}
-          ease="easeOut"
-          className="block whitespace-nowrap px-6 md:px-16"
-        />
-      </h1>
+      <div className="-mx-6 md:-mx-16 [container-type:inline-size]">
+        <h1 className="font-heading overflow-hidden text-center uppercase text-[8.98cqw] font-normal leading-[0.78] tracking-normal text-em-text md:text-[9.38cqw]">
+          <BlurText text="Paolo" delay={0.04} duration={0.7} ease="easeOut" className="block whitespace-nowrap px-6 md:px-16" />
+          <BlurText
+            text="Jansen Enrera"
+            delay={0.1}
+            duration={0.7}
+            ease="easeOut"
+            className="block whitespace-nowrap px-6 md:px-16"
+          />
+        </h1>
+      </div>
 
       <div className="relative -mx-6 mt-2 md:-mx-16">
         <Marquee items={MARQUEE_ITEMS} className="py-3" />
@@ -45,7 +47,7 @@ export default function HeroSection() {
           </div>
 
           <div className="order-2 mt-6 flex flex-col gap-3 px-6 lg:order-none lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:mt-0 lg:self-start lg:px-0 lg:pt-10">
-            <div className="flex items-baseline gap-2">
+            <div className="flex items-baseline gap-2 lg:-ml-[21%]">
               <span aria-hidden="true" className="font-mono text-xs uppercase tracking-widest text-em-text-dim">
                 P./
               </span>

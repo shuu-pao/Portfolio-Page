@@ -28,7 +28,9 @@ function wrap(min: number, max: number, v: number): number {
   return mod + min;
 }
 
-const COPY_COUNT = 6;
+// Fallback copy count for the pre-measurement/SSR render only; the real
+// count is computed dynamically once copyWidth/trackWidth are measured.
+const FALLBACK_COPY_COUNT = 10;
 
 export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -38,6 +40,7 @@ export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
   const running = inViewport && !reducedMotion;
 
   const [copyWidth, setCopyWidth] = useState(0);
+  const [trackWidth, setTrackWidth] = useState(0);
 
   useLayoutEffect(() => {
     const node = copyRef.current;
@@ -52,6 +55,24 @@ export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
+
+  useLayoutEffect(() => {
+    const node = trackRef.current;
+    if (!node) return;
+
+    function updateWidth() {
+      if (trackRef.current) setTrackWidth(trackRef.current.offsetWidth);
+    }
+    updateWidth();
+
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  // A seamless [-copyWidth, 0] wrap needs copies * copyWidth >= trackWidth + copyWidth.
+  const copies =
+    copyWidth > 0 ? Math.ceil(trackWidth / copyWidth) + 1 : FALLBACK_COPY_COUNT;
 
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
@@ -101,7 +122,7 @@ export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
     <div ref={trackRef} className={cn("w-full overflow-hidden", className)}>
       <span className="sr-only">{items.join(", ")}</span>
       <motion.div className="flex w-max" style={{ x }} aria-hidden="true">
-        {Array.from({ length: COPY_COUNT }).map((_, copyIndex) => (
+        {Array.from({ length: copies }).map((_, copyIndex) => (
           <div key={copyIndex} className="flex" ref={copyIndex === 0 ? copyRef : undefined}>
             {renderItems(copyIndex)}
           </div>
