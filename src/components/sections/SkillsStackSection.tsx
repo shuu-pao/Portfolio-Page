@@ -48,18 +48,20 @@ const categories: SkillCategory[] = [
 function CategoryBlock({
   category,
   isLast,
-  onActive,
+  index,
+  setActiveIndex,
 }: {
   category: SkillCategory;
   isLast: boolean;
-  onActive: () => void;
+  index: number;
+  setActiveIndex: (index: number) => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { margin: "-45% 0px -45% 0px" });
 
   useEffect(() => {
-    if (inView) onActive();
-  }, [inView, onActive]);
+    if (inView) setActiveIndex(index);
+  }, [inView, index, setActiveIndex]);
 
   return (
     <div
@@ -110,7 +112,8 @@ export default function SkillsStackSection() {
               key={category.title}
               category={category}
               isLast={index === categories.length - 1}
-              onActive={() => setActiveIndex(index)}
+              index={index}
+              setActiveIndex={setActiveIndex}
             />
           ))}
         </div>
@@ -121,7 +124,7 @@ export default function SkillsStackSection() {
             label="Backdrop photo"
             className="h-full w-full"
           />
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[20%] w-[40%] -translate-x-1/2 -translate-y-1/2 md:h-[30%] md:w-[50%]">
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[20%] w-[40%] -translate-x-1/2 -translate-y-1/2 md:w-[50%] lg:w-[40%] 2xl:h-[30%] 2xl:w-[50%]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
