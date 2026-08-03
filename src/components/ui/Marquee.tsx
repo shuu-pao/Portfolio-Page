@@ -64,12 +64,19 @@ export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
     return `${wrap(-copyWidth, 0, v)}px`;
   });
 
+  const directionRef = useRef(-1);
+
   useAnimationFrame((_t, delta) => {
     if (!running || copyWidth === 0) return;
     const vf = velocityFactor.get();
-    // Default/idle and scroll-down both read right-to-left (-1); only an
-    // active upward scroll (past a small deadzone) reverses to left-to-right.
-    const direction = vf < -0.5 ? 1 : -1;
+    // Direction is sticky: it only flips when scroll velocity clears the
+    // deadzone in the opposite sense, and otherwise holds through the idle
+    // decay back to 0 (so scrolling up then stopping keeps crawling
+    // left-to-right until the user scrolls down again, not just for the
+    // instant the velocity spike lasts).
+    if (vf < -0.5) directionRef.current = 1;
+    else if (vf > 0.5) directionRef.current = -1;
+    const direction = directionRef.current;
     const speedMultiplier = 1 + Math.abs(vf);
     const moveBy = direction * baseVelocity * (delta / 1000) * speedMultiplier;
     baseX.set(baseX.get() + moveBy);
@@ -79,7 +86,7 @@ export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
     items.map((item, i) => (
       <span
         key={`${copy}-${i}`}
-        className="inline-flex items-center gap-3 whitespace-nowrap px-3 font-mono text-sm uppercase tracking-[0.15em] text-em-text"
+        className="inline-flex items-center gap-3 whitespace-nowrap px-3 font-sans text-sm text-em-text"
       >
         {item}
         <X
