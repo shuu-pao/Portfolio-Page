@@ -25,7 +25,7 @@ export default function ContactSection() {
 
   return (
     <div className="relative w-full bg-em-invert-bg">
-      <section id="contact" ref={ref} className="relative px-6 py-[10vh] md:px-16">
+      <section id="contact" ref={ref} className="relative overflow-hidden px-6 py-[10vh] md:px-16">
         <div className="w-[120%] overflow-hidden">
           <Marquee
             items={["LET'S TALK"]}
