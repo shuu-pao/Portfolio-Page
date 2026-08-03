@@ -20,6 +20,8 @@ interface MarqueeProps {
   className?: string;
   /** Idle crawl speed in pixels/second. */
   baseVelocity?: number;
+  /** Element rendered between repeated items. Defaults to the spinning X. */
+  separator?: React.ReactNode;
 }
 
 function wrap(min: number, max: number, v: number): number {
@@ -32,7 +34,7 @@ function wrap(min: number, max: number, v: number): number {
 // count is computed dynamically once copyWidth/trackWidth are measured.
 const FALLBACK_COPY_COUNT = 10;
 
-export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
+export function Marquee({ items, className, baseVelocity = 40, separator }: MarqueeProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const copyRef = useRef<HTMLDivElement>(null);
   const inViewport = useInViewport(trackRef, { threshold: 0 });
@@ -110,11 +112,13 @@ export function Marquee({ items, className, baseVelocity = 40 }: MarqueeProps) {
         className="inline-flex items-center gap-3 whitespace-nowrap px-3 font-sans text-sm text-em-text"
       >
         {item}
-        <X
-          size={12}
-          aria-hidden="true"
-          style={{ animation: running ? "marquee-x-spin 4s linear infinite" : "none" }}
-        />
+        {separator ?? (
+          <X
+            size={12}
+            aria-hidden="true"
+            style={{ animation: running ? "marquee-x-spin 4s linear infinite" : "none" }}
+          />
+        )}
       </span>
     ));
 
