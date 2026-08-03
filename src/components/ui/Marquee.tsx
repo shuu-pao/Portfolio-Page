@@ -109,7 +109,7 @@ export function Marquee({ items, className, baseVelocity = 40, separator }: Marq
     items.map((item, i) => (
       <span
         key={`${copy}-${i}`}
-        className="inline-flex items-center gap-3 whitespace-nowrap px-3 font-sans"
+        className="inline-flex items-center gap-3 whitespace-nowrap px-3"
       >
         {item}
         {separator ?? (
@@ -123,7 +123,7 @@ export function Marquee({ items, className, baseVelocity = 40, separator }: Marq
     ));
 
   return (
-    <div ref={trackRef} className={cn("w-full overflow-hidden text-sm text-em-text", className)}>
+    <div ref={trackRef} className={cn("w-full overflow-hidden font-sans text-sm text-em-text", className)}>
       <span className="sr-only">{items.join(", ")}</span>
       <motion.div className="flex w-max" style={{ x }} aria-hidden="true">
         {Array.from({ length: copies }).map((_, copyIndex) => (

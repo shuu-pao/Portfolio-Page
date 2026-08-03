@@ -12,8 +12,10 @@ interface SocialLink {
   href: string;
 }
 
+const EMAIL_HREF = "mailto:paolo.enrera@gmail.com";
+
 const socialLinks: SocialLink[] = [
-  { label: "Email", href: "mailto:paolo.enrera@gmail.com" },
+  { label: "Email", href: EMAIL_HREF },
   { label: "GitHub", href: "https://github.com/shuu-pao" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/paolo-jansen-enrera/" },
   { label: "Instagram", href: "https://www.instagram.com/shuu_paoo/" },
@@ -29,9 +31,11 @@ export default function ContactSection() {
         <div className="w-[120%] overflow-hidden">
           <Marquee
             items={["LET'S TALK"]}
-            separator={<ChevronDown size={32} aria-hidden="true" className="text-em-invert-text" />}
+            separator={
+              <ChevronDown aria-hidden="true" className="mx-[2.5vw] size-[4vw] text-em-invert-text" />
+            }
             baseVelocity={40}
-            className="text-[12vw] uppercase leading-none tracking-tighter text-em-invert-text"
+            className="font-heading text-[12vw] uppercase leading-none tracking-tighter text-em-invert-text"
           />
         </div>
 
@@ -49,16 +53,23 @@ export default function ContactSection() {
           className="flex flex-col-reverse gap-y-6 md:flex-row md:justify-between"
         >
           <ul className="flex flex-1 flex-row justify-between md:flex-col md:justify-normal md:gap-y-1">
-            {socialLinks.map(({ label, href }) => (
-              <li
-                key={label}
-                className="relative w-fit text-[14px] capitalize text-em-invert-text after:absolute after:top-full after:left-0 after:h-[2px] after:w-0 after:bg-em-accent after:duration-300 after:ease-in-out hover:after:w-full md:text-[18px]"
-              >
-                <a href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noopener noreferrer"}>
-                  {label}
-                </a>
-              </li>
-            ))}
+            {socialLinks.map(({ label, href }) => {
+              const external = !href.startsWith("mailto:");
+              return (
+                <li
+                  key={label}
+                  className="relative w-fit text-[14px] capitalize text-em-invert-text after:absolute after:top-full after:left-0 after:h-[2px] after:w-0 after:bg-em-accent after:duration-300 after:ease-in-out hover:after:w-full md:text-[18px]"
+                >
+                  <a
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           <div>
@@ -66,7 +77,7 @@ export default function ContactSection() {
               Got a project in mind? I&apos;d love to hear about it.
             </h3>
             <div className="mt-2">
-              <GradientButton href="mailto:paolo.enrera@gmail.com" variant="outline" size="lg">
+              <GradientButton href={EMAIL_HREF} variant="outline" size="lg" className="rounded-full">
                 Email Me
               </GradientButton>
             </div>
