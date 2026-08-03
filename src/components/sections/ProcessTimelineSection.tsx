@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { BlurText } from "@/components/reactbits/BlurText";
 
 interface Step {
   title: string;
@@ -31,34 +30,46 @@ const steps: Step[] = [
   },
 ];
 
+function StepCard({ step, index, inView }: { step: Step; index: number; inView: boolean }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <div className="group flex flex-col rounded-xl border-[1.5px] border-em-accent p-6 text-em-accent duration-300 hover:bg-em-accent hover:text-em-invert-text lg:h-[55vh] 2xl:p-10">
+        <h3 className="mb-[6vh] font-display text-[26px] lg:mb-0 2xl:text-[48px]">{step.title}</h3>
+        <div className="mt-auto opacity-0 duration-300 group-hover:opacity-100">
+          <p className="text-[15px] sm:text-[16px] 2xl:text-[24px]">{step.description}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function ProcessTimelineSection() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="process" ref={ref} className="relative w-full bg-em-bg px-6 py-24 md:px-16">
-      <div className="mx-auto flex max-w-5xl flex-col gap-12 md:flex-row md:items-start">
-        <div className="flex h-40 w-40 shrink-0 items-end justify-start rounded-tr-full bg-em-accent p-6 md:h-56 md:w-56">
-          <span className="font-display text-2xl font-bold text-em-invert-text md:text-3xl">PROCESS</span>
+    <section id="process" ref={ref} className="w-full bg-em-bg px-6 py-[20vh] md:px-16">
+      <div className="mx-auto grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:w-[90%] xl:grid-cols-3">
+        <div className="flex h-[30vh] items-end rounded-xl rounded-tl-[100%] bg-em-accent px-8 py-4 sm:h-auto lg:h-[55vh]">
+          <h2 className="font-display text-[40px] text-em-invert-text 2xl:text-[60px]">PROCESS</h2>
         </div>
 
-        <div className="grid flex-1 gap-6 sm:grid-cols-2">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-sm border border-em-text/15 p-6"
-            >
-              <span className="font-mono text-xs text-em-accent">0{i + 1}</span>
-              <h3 className="font-display mt-2 text-xl font-semibold text-em-text">
-                {i === 0 ? <BlurText text={step.title} delay={0.03} duration={0.5} /> : step.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-em-text-muted">{step.description}</p>
-            </motion.div>
-          ))}
-        </div>
+        <StepCard step={steps[0]} index={0} inView={inView} />
+
+        <div className="hidden xl:block" />
+        <div className="hidden xl:block" />
+
+        <StepCard step={steps[1]} index={1} inView={inView} />
+        <StepCard step={steps[2]} index={2} inView={inView} />
+        <StepCard step={steps[3]} index={3} inView={inView} />
+
+        <div className="hidden xl:block" />
+
+        <div className="hidden h-[55vh] rounded-xl rounded-br-[100%] bg-em-accent sm:block" />
       </div>
     </section>
   );
