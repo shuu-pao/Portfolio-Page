@@ -98,13 +98,13 @@ function ProjectCard({ project, onSelect }: { project: Project; onSelect: (p: Pr
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.5 }}
-        className="group w-full cursor-pointer bg-em-bg sm:max-w-[60vw] md:max-w-[30vw]"
+        className="group w-full cursor-pointer sm:max-w-[60vw] md:max-w-[30vw]"
         onClick={() => onSelect(project)}
         role="button"
         tabIndex={0}
         onKeyDown={handleKeyDown}
       >
-        <div className="relative overflow-hidden rounded-sm">
+        <div className="relative overflow-hidden rounded-sm bg-em-bg">
           <ImagePlaceholder
             imageSrc={project.imageSrc}
             alt={`Screenshot of ${project.title}`}
@@ -141,14 +141,14 @@ export default function PortfolioGallerySection() {
   return (
     <section id="work" className="relative w-full bg-em-bg px-6 py-24 md:px-16">
       <div className="relative">
-        <div className="sticky top-[8vh] z-0" aria-hidden="true">
+        <div className="sticky top-[8vh] z-0 [container-type:inline-size]" aria-hidden="true">
           <div className="overflow-hidden">
-            <h2 className="font-heading text-[calc((100vw_-_48px)*0.18406)] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90 md:text-[calc((100vw_-_128px)*0.18406)]">
+            <h2 className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90">
               Selected
             </h2>
           </div>
           <div className="flex justify-center overflow-hidden">
-            <h2 className="font-heading text-[calc((100vw_-_48px)*0.18406)] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90 md:text-[calc((100vw_-_128px)*0.18406)]">
+            <h2 className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90">
               Projects
             </h2>
           </div>
