@@ -4,11 +4,11 @@ import { BlurText } from "@/components/reactbits/BlurText";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const LINES = [
-  { text: "I turn complex problems", indent: false },
-  { text: "into dependable systems.", indent: false },
-  { text: "With deliberate engineering,", indent: true },
-  { text: "I ship things that hold up", indent: true },
-  { text: "under real use.", indent: true },
+  { text: "Turning ideas", indent: false },
+  { text: "into real products.", indent: false },
+  { text: "Through creative development,", indent: true },
+  { text: "I craft experiences", indent: true },
+  { text: "that engage and delight.", indent: true },
 ];
 
 export default function TaglineSection() {

@@ -10,23 +10,24 @@ interface Step {
 
 const steps: Step[] = [
   {
-    title: "Diagnose",
+    title: "Discover",
     description:
-      "Trace a problem to its root cause instead of patching symptoms — whether that's a wrong Agentforce action or a stalled model architecture.",
+      "Uncover your business goals, audience needs, and opportunities to pursue through discovery sessions and analysis.",
   },
   {
-    title: "Redesign",
+    title: "Design",
     description:
-      "Rebuild the approach around the real constraint, like the object-detection redesign that cleared a two-month stall on SMARTBIN 3.",
+      "Craft intuitive, distinctive interfaces and user flows using AI-assisted design tools and modern design systems.",
   },
   {
-    title: "Build",
-    description: "Ship working systems — Agentforce agents in production, firmware on real hardware, code that runs.",
+    title: "Develop",
+    description:
+      "Build scalable, high-quality web apps and automation tools using React, Node.js, and other modern technologies.",
   },
   {
-    title: "Verify",
+    title: "Deliver",
     description:
-      "Test against the real target, not assumptions — 98.67% detection accuracy, mandatory case-closure reasons, checks that hold.",
+      "Deploy and monitor polished products that delight users, meet business goals, and grow your brand.",
   },
 ];
 

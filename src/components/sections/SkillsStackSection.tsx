@@ -23,25 +23,25 @@ const categories: SkillCategory[] = [
     insetAlt: "Screenshot of a React/Next.js interface in progress",
   },
   {
-    title: "Salesforce / Agentforce",
+    title: "Backend & Automation",
+    tags: ["Node.js", "REST APIs", "Database Design", "Workflow Automation"],
+    description:
+      "Building server-side logic, RESTful APIs, and automated workflows that connect frontend experiences to reliable data pipelines — the backbone of every polished web application.",
+    insetAlt: "Screenshot of a Node.js backend dashboard",
+  },
+  {
+    title: "AI-Assisted Development",
+    tags: ["Claude Code", "GitHub Copilot", "AI Workflows", "Prompt Engineering"],
+    description:
+      "Leveraging AI tools to accelerate development — from generating boilerplate code and debugging workflows to prototyping interfaces faster. AI is a core part of my daily workflow, not just a side tool.",
+    insetAlt: "Screenshot of AI-assisted code editing in VS Code",
+  },
+  {
+    title: "Salesforce / CRM Automation",
     tags: ["Agentforce", "Flow Builder", "Apex Basics", "Lightning"],
     description:
       "Configuring Agentforce actions and Flow Builder automations to handle case management and agentic workflows on the Salesforce platform — turning manual processes into guided, self-serve ones.",
     insetAlt: "Screenshot of a Salesforce Flow Builder canvas",
-  },
-  {
-    title: "AI / Computer Vision",
-    tags: ["YOLOv8", "Python", "Deep Learning", "Computer Vision"],
-    description:
-      "Applied machine learning for real-world detection and classification systems, including the object-detection redesign behind SMARTBIN 3's 98.67% sorting accuracy after diagnosing why the team's original approach had stalled.",
-    insetAlt: "Screenshot of a YOLOv8 object-detection model output",
-  },
-  {
-    title: "Embedded Systems",
-    tags: ["C / C++", "XC8", "Microcontrollers", "PIC"],
-    description:
-      "Low-level firmware and hardware integration for microcontroller-based systems — real-time timers, display drivers, and sensor I/O written close to the metal in C.",
-    insetAlt: "Photo of a PIC microcontroller scoreboard build",
   },
 ];
 

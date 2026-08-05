@@ -40,15 +40,14 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "PIC-Based Futsal Scoreboard",
-    year: "2024",
+    title: "Premium Portfolio",
+    year: "2026",
     description:
-      "A microcontroller scoreboard written in C (XC8) with real-time match timers and 7-segment display integration — a hands-on embedded-systems lab build.",
-    tags: ["C", "XC8", "Embedded", "Microcontrollers"],
+      "This site — a cinematic, reference-matched personal portfolio built with pixel-precise fidelity to hand-picked design references.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     position: "start",
-    aspectRatio: "4 / 3",
-    imageSrc: "/images/Futsal%20Scoreboard.jpg",
-    githubUrl: "https://github.com/shuu-pao",
+    aspectRatio: "16 / 10",
+    githubUrl: "https://github.com/shuu-pao/premium-portfolio",
   },
   {
     id: 3,
@@ -64,14 +63,15 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Premium Portfolio",
-    year: "2026",
+    title: "PIC-Based Futsal Scoreboard",
+    year: "2024",
     description:
-      "This site — a cinematic, reference-matched personal portfolio built with pixel-precise fidelity to hand-picked design references.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "A microcontroller scoreboard written in C (XC8) with real-time match timers and 7-segment display integration — a hands-on embedded-systems lab build.",
+    tags: ["C", "XC8", "Embedded", "Microcontrollers"],
     position: "end",
-    aspectRatio: "16 / 10",
-    githubUrl: "https://github.com/shuu-pao/premium-portfolio",
+    aspectRatio: "4 / 3",
+    imageSrc: "/images/Futsal%20Scoreboard.jpg",
+    githubUrl: "https://github.com/shuu-pao",
   },
 ];
 

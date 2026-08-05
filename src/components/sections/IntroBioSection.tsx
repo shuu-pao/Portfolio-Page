@@ -41,13 +41,10 @@ export default function IntroBioSection() {
         <div className="hidden md:block md:flex-[1]" aria-hidden="true" />
         <div className="flex flex-col gap-6 md:flex-[1.2] md:flex-row md:gap-8">
           <p className="md:flex-1">
-            As an engineer, I prioritize root causes over quick patches — whether that&apos;s an
-            Agentforce action that&apos;s misfiring or a computer-vision model that&apos;s stalled
-            for two months. I trace the problem, rebuild around the real constraint, then ship.
+            As a Software Engineering Associate at Accenture, I build cloud-based automation tools that streamline customer workflows — all while exploring how AI (like Claude Code) can speed up development and elevate our work.
           </p>
           <p className="md:flex-1">
-            That instinct carries across every layer I work in: enterprise AI agents at Accenture,
-            PIC microcontroller firmware in C, and applied computer vision in my thesis work.
+            Outside of my role, I love turning ideas into real websites, leaning heavily on AI assistance to bring designs to life faster and with higher quality. My focus is always on creating products that work — and that delight users.
           </p>
         </div>
       </motion.div>

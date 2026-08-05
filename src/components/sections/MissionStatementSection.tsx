@@ -4,11 +4,8 @@ import { SlideRevealText } from "@/components/reactbits/SlideRevealText";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const LINES = [
-  "I trace every problem",
-  "to its root cause",
-  "before I touch a fix.",
-  "Systems built that way",
-  "keep working after I'm gone.",
+  "I seek to create tools that work seamlessly for my clients,",
+  "offering quality results that satisfy business needs and grow their digital presence."
 ];
 
 export default function MissionStatementSection() {

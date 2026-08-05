@@ -9,7 +9,7 @@ const MARQUEE_ITEMS = ["Developer", "Engineer", "Builder", "Creative"];
 
 export default function HeroSection() {
   const { theme } = useTheme();
-  const imageSrc = theme === "dark" ? "/images/mimikyu9.jpg" : "/images/mimikyu8.jpg";
+  const imageSrc = theme === "dark" ? "/images/Yoichi_Nagumo.webp" : "/images/japan8.jpg";
   return (
     <section
       id="hero"
@@ -44,7 +44,7 @@ export default function HeroSection() {
             <GridDistortion
               imageSrc={imageSrc}
               alt="A project photo of Paolo at work"
-              aspectRatio="7 / 9"
+              aspectRatio="2 / 3"
               className="w-full rounded-sm"
             />
           </div>
@@ -60,15 +60,15 @@ export default function HeroSection() {
             </div>
             <div className="space-y-3 font-bold text-sm leading-relaxed text-em-text sm:text-base">
               <p>
-                Computer Engineering graduate who builds at both ends of the stack — enterprise AI
-                agents at Accenture and low-level firmware in the lab. At Accenture I spent 540
-                hours developing Salesforce Agentforce agents that create, update, and close
-                support cases and automate account-billing workflows.
+                With a strong focus on creative development, I build websites and automation tools using AI (Claude Code), blending design and engineering to solve real problems.
               </p>
+              <br></br>
               <p>
-                Based in Cebu City, Philippines. Actively looking for new opportunities —
-                especially Salesforce, Agentforce, or building smarter customer-experience
-                tooling.
+                At Accenture, I specialize in Salesforce CRM automation — cloud-based solutions that streamline workflows without tying me to a single platform. My work extends beyond Salesforce to tools that genuinely delight users.
+              </p>
+              <br></br>
+              <p>
+                Whether it's AI-driven interfaces or polished web apps, every project is crafted to convert ideas into meaningful digital experiences.
               </p>
             </div>
           </div>
