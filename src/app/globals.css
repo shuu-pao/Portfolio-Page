@@ -116,9 +116,6 @@
   --em-invert-bg: #17130f;
   --em-invert-text: #f3ede2;
   --em-invert-muted: #b5aa98;
-  --tile-bg-light: url("/textures/tile-light.svg");
-  --tile-bg-dark: url("/textures/tile-dark.svg");
-  --tile-bg: var(--tile-bg-light);
 }
 
 .dark {
@@ -156,7 +153,6 @@
   --em-bg: var(--em-invert-bg);
   --em-text: var(--em-invert-text);
   --em-text-muted: var(--em-invert-muted);
-  --tile-bg: var(--tile-bg-dark);
 }
 
 @layer base {
