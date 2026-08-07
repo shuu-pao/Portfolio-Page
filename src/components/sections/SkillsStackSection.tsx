@@ -96,7 +96,7 @@ export default function SkillsStackSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="skills" className="relative w-full bg-em-bg px-6 py-24 md:px-16">
+    <section id="skills" className="relative w-full px-6 py-24 md:px-16">
       <div className="[container-type:inline-size]">
         <div className="overflow-hidden">
           <h2 className="font-heading text-[26.2cqw] uppercase leading-[1] tracking-tighter text-em-text/90">

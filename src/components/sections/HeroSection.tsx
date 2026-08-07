@@ -13,7 +13,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden bg-em-bg px-6 pb-20 pt-16 md:px-16 md:pt-24"
+      className="relative w-full overflow-hidden px-6 pb-20 pt-16 md:px-16 md:pt-24"
     >
       <div className="-mx-6 md:-mx-16 [container-type:inline-size]">
         <h1 className="font-heading overflow-hidden text-center uppercase text-[8.98cqw] font-normal leading-[0.78] tracking-normal text-em-text md:text-[9.38cqw]">

@@ -12,7 +12,7 @@ export default function MissionStatementSection() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="mission" className="w-full bg-em-bg px-6 py-[15vh] md:px-16">
+    <section id="mission" className="w-full px-6 py-[15vh] md:px-16">
       <div className="w-[90%] mx-auto md:ml-auto md:mr-0">
         <div className="flex items-start gap-[8vw]">
           <p className="shrink-0 font-mono text-xs uppercase tracking-[0.25em] text-em-accent">

@@ -151,7 +151,7 @@ export default function PortfolioGallerySection() {
   const modalRef = useDialogBehavior(!!selectedProject, closeModal);
 
   return (
-    <section id="work" className="relative w-full bg-em-bg px-6 py-24 md:px-16">
+    <section id="work" className="relative w-full px-6 py-24 md:px-16">
       <div className="relative">
         <div className="sticky top-[8vh] z-0 [container-type:inline-size]" aria-hidden="true">
           <div className="overflow-hidden">

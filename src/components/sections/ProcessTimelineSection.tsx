@@ -53,7 +53,7 @@ export default function ProcessTimelineSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="process" ref={ref} className="w-full bg-em-bg px-6 py-[20vh] md:px-16">
+    <section id="process" ref={ref} className="w-full px-6 py-[20vh] md:px-16">
       <div className="mx-auto grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:w-[90%] xl:grid-cols-3">
         <div className="flex h-[30vh] items-end rounded-xl rounded-tl-[100%] bg-em-accent px-8 py-4 sm:h-auto min-[1200px]:h-[55vh]">
           <h2 className="font-display text-[40px] text-em-invert-text 2xl:text-[60px]">PROCESS</h2>

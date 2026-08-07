@@ -9,7 +9,7 @@ export default function IntroBioSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="intro" ref={ref} className="relative w-full bg-em-bg px-6 pb-24 md:px-16">
+    <section id="intro" ref={ref} className="relative w-full px-6 pb-24 md:px-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}

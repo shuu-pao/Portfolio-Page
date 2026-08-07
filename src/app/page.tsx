@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Navbar />
       <SectionIndexTab />
-      <main className="relative min-h-screen w-full bg-em-bg">
+      <main className="relative min-h-screen w-full">
         <HeroSection />
         <TaglineSection />
         <IntroBioSection />

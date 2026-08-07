@@ -65,7 +65,9 @@ export default function RootLayout({
         caveat.variable
       )}
     >
-      <body className="min-h-full bg-em-bg font-sans text-em-text">
+      <body
+        className="min-h-full bg-em-bg font-sans text-em-text [background-image:var(--tile-bg)] [background-repeat:repeat] [background-size:360px_360px]"
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

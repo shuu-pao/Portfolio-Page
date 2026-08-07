@@ -15,7 +15,7 @@ export default function TaglineSection() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="tagline" className="w-full bg-em-bg px-6 py-[15vh] md:px-16">
+    <section id="tagline" className="w-full px-6 py-[15vh] md:px-16">
       <div className="font-tagline text-em-accent">
         {LINES.map((line, index) =>
           reducedMotion ? (
