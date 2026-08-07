@@ -11,9 +11,14 @@ const FADE_SPEED = 4.8; // rad/sec — matches the reference shader's nominal-60
 const FADE_BIAS = 1.1;
 const REDRAW_INTERVAL_MS = 66; // ~15fps; plenty for a ~1.3s-period shimmer
 
+// Dark palette's lo/hi are deliberately a much smaller RGB delta than light's
+// (±1-2 vs ±6 per channel). Near-black colors sit on the steep part of the sRGB
+// gamma curve, so light's ±6 delta ported unchanged produced a >2x relative
+// luminance swing (vs light's own +13%) — same numbers, much louder animation.
+// This dark delta is solved to match light's ~13% luminance swing instead.
 const PALETTES = {
   light: { lo: [0xd1, 0xc1, 0xa9] as const, hi: [0xdd, 0xcc, 0xb4] as const },
-  dark: { lo: [0x11, 0x0e, 0x09] as const, hi: [0x1d, 0x19, 0x14] as const },
+  dark: { lo: [0x16, 0x12, 0x0e] as const, hi: [0x18, 0x14, 0x10] as const },
 };
 
 function hash(col: number, row: number): number {
