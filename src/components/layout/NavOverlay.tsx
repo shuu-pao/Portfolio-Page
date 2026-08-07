@@ -31,7 +31,7 @@ export function NavOverlay({ open, onClose, links }: NavOverlayProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[60] flex flex-col"
+          className="fixed inset-0 z-[60] flex flex-col bg-em-bg"
         >
           <button
             type="button"

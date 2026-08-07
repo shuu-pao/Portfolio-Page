@@ -65,7 +65,7 @@ export default function RootLayout({
         caveat.variable
       )}
     >
-      <body className="min-h-full bg-em-bg font-sans text-em-text">
+      <body className="min-h-full bg-[#d7c7af] font-sans text-em-text dark:bg-em-bg">
         <Providers>{children}</Providers>
       </body>
     </html>
