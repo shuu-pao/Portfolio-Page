@@ -7,7 +7,11 @@ import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 const CELL_SIZE_DESKTOP = 45;
 const CELL_SIZE_MOBILE = 15;
 const MOBILE_BREAKPOINT = 580;
-const FADE_SPEED = 4.8; // rad/sec — matches the reference shader's nominal-60fps rate
+// Dark mode keeps the same color amplitude as before but runs at half speed —
+// the same swing read as calmer when it takes longer to happen, without
+// narrowing the colors further (which previously undershot into invisible).
+const FADE_SPEED_LIGHT = 4.8; // rad/sec — matches the reference shader's nominal-60fps rate, ~1.3s period
+const FADE_SPEED_DARK = 2.4; // half of light's rate, ~2.6s period
 const FADE_BIAS = 1.1;
 const REDRAW_INTERVAL_MS = 66; // ~15fps; plenty for a ~1.3s-period shimmer
 
@@ -29,8 +33,8 @@ function hash(col: number, row: number): number {
   return s - Math.floor(s);
 }
 
-function fadeAt(elapsedSeconds: number, phase: number): number {
-  const v = 0.5 * (FADE_BIAS + Math.sin(elapsedSeconds * FADE_SPEED + phase * Math.PI * 2));
+function fadeAt(elapsedSeconds: number, phase: number, speed: number): number {
+  const v = 0.5 * (FADE_BIAS + Math.sin(elapsedSeconds * speed + phase * Math.PI * 2));
   return Math.min(1, Math.max(0, v));
 }
 
@@ -46,6 +50,7 @@ export function TileShimmerBackground() {
     if (!ctx) return;
 
     const palette = theme === "dark" ? PALETTES.dark : PALETTES.light;
+    const fadeSpeed = theme === "dark" ? FADE_SPEED_DARK : FADE_SPEED_LIGHT;
     let cellSize = CELL_SIZE_DESKTOP;
     let cols = 0;
     let rows = 0;
@@ -74,7 +79,7 @@ export function TileShimmerBackground() {
       const [hr, hg, hb] = palette.hi;
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
-          const fade = fadeAt(elapsedSeconds, phases[row * cols + col]);
+          const fade = fadeAt(elapsedSeconds, phases[row * cols + col], fadeSpeed);
           const r = Math.round(lr + (hr - lr) * fade);
           const g = Math.round(lg + (hg - lg) * fade);
           const b = Math.round(lb + (hb - lb) * fade);
