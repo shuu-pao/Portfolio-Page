@@ -8,7 +8,7 @@ import { RevealHeadingLine } from "@/components/reactbits/RevealHeadingLine";
 type SubmitStatus = "idle" | "sending" | "sent" | "error" | "not-configured";
 
 const HEADING_CLASS =
-  "text-center text-[20vw] uppercase leading-none text-em-invert-text sm:text-[12vw]";
+  "text-center text-[18vw] uppercase leading-none text-em-invert-text sm:text-[11vw]";
 
 /**
  * ContactFormSection - heading, paragraph, and EmailJS-wired contact form
