@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
 import { PillTag } from "@/components/ui/PillTag";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { RevealHeadingLine } from "@/components/reactbits/RevealHeadingLine";
 import { cn } from "@/lib/utils";
 
 interface SkillCategory {
@@ -98,11 +99,9 @@ export default function SkillsStackSection() {
   return (
     <section id="skills" className="relative w-full px-6 py-24 md:px-16">
       <div className="[container-type:inline-size]">
-        <div className="overflow-hidden">
-          <h2 className="font-heading text-[26.2cqw] uppercase leading-[1] tracking-tighter text-em-text/90">
-            Skills
-          </h2>
-        </div>
+        <RevealHeadingLine className="font-heading text-[26.2cqw] uppercase leading-[1] tracking-tighter text-em-text/90">
+          Skills
+        </RevealHeadingLine>
       </div>
 
       <div className="relative mt-16 flex flex-col-reverse gap-4 border-y border-em-text/15 md:flex-row">

@@ -8,6 +8,7 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { PillTag } from "@/components/ui/PillTag";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { GridDistortion } from "@/components/reactbits/GridDistortion";
+import { RevealHeadingLine } from "@/components/reactbits/RevealHeadingLine";
 import { cn } from "@/lib/utils";
 
 type CardPosition = "start" | "center" | "end";
@@ -154,16 +155,16 @@ export default function PortfolioGallerySection() {
     <section id="work" className="relative w-full px-6 py-24 md:px-16">
       <div className="relative">
         <div className="sticky top-[8vh] z-0 [container-type:inline-size]" aria-hidden="true">
-          <div className="overflow-hidden">
-            <h2 className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90">
-              Selected
-            </h2>
-          </div>
-          <div className="flex justify-center overflow-hidden">
-            <h2 className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90">
-              Projects
-            </h2>
-          </div>
+          <RevealHeadingLine className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90">
+            Selected
+          </RevealHeadingLine>
+          <RevealHeadingLine
+            delay={0.1}
+            wrapperClassName="flex justify-center overflow-hidden"
+            className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90"
+          >
+            Projects
+          </RevealHeadingLine>
         </div>
 
         <div className="relative z-10">
