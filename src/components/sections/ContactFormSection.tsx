@@ -33,11 +33,12 @@ export function ContactFormSection() {
       return;
     }
 
+    const form = event.currentTarget;
     setStatus("sending");
     try {
-      await emailjs.sendForm(serviceId, templateId, event.currentTarget, { publicKey });
+      await emailjs.sendForm(serviceId, templateId, form, { publicKey });
       setStatus("sent");
-      event.currentTarget.reset();
+      form.reset();
     } catch {
       setStatus("error");
     }
@@ -76,7 +77,7 @@ export function ContactFormSection() {
               name="user_name"
               type="text"
               required
-              className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none"
+              className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none focus-visible:border-b-em-accent"
             />
           </div>
           <div className="flex flex-1 flex-col gap-y-2">
@@ -88,7 +89,7 @@ export function ContactFormSection() {
               name="user_email"
               type="email"
               required
-              className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none"
+              className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none focus-visible:border-b-em-accent"
             />
           </div>
         </div>
@@ -102,7 +103,7 @@ export function ContactFormSection() {
             name="user_message"
             rows={3}
             required
-            className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none"
+            className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none focus-visible:border-b-em-accent"
           />
         </div>
 
@@ -110,23 +111,25 @@ export function ContactFormSection() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="w-full rounded-full border border-em-invert-text py-2 text-[16px] text-em-invert-text duration-300 hover:bg-em-accent hover:text-em-invert-bg disabled:opacity-50 sm:w-[45%] 2xl:text-[26px]"
+            className="w-full rounded-full border border-em-invert-text py-2 text-[16px] text-em-invert-text duration-300 hover:bg-em-accent hover:text-em-invert-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-em-accent focus-visible:outline-offset-2 disabled:opacity-50 sm:w-[45%] 2xl:text-[26px]"
           >
             {status === "sending" ? "Sending..." : "Submit"}
           </button>
-          {status === "sent" && (
-            <p className="mt-3 text-[13px] text-em-invert-muted">Message sent — thank you!</p>
-          )}
-          {status === "error" && (
-            <p className="mt-3 text-[13px] text-em-accent">
-              Something went wrong sending that — email me directly instead.
-            </p>
-          )}
-          {status === "not-configured" && (
-            <p className="mt-3 text-[13px] text-em-accent">
-              The contact form isn&apos;t wired up yet — email me directly instead.
-            </p>
-          )}
+          <div role="status" aria-live="polite">
+            {status === "sent" && (
+              <p className="mt-3 text-[13px] text-em-invert-muted">Message sent — thank you!</p>
+            )}
+            {status === "error" && (
+              <p className="mt-3 text-[13px] text-em-accent">
+                Something went wrong sending that — email me directly instead.
+              </p>
+            )}
+            {status === "not-configured" && (
+              <p className="mt-3 text-[13px] text-em-accent">
+                The contact form isn&apos;t wired up yet — email me directly instead.
+              </p>
+            )}
+          </div>
         </div>
       </form>
     </section>

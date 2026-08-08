@@ -9,10 +9,10 @@ import { SECTIONS } from "@/lib/sections";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "Skills", href: "#skills" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Process", href: "/#process" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
@@ -25,7 +25,7 @@ export function Navbar() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-16">
         <a
-          href="#hero"
+          href="/#hero"
           className={cn(
             "font-display cursor-pointer text-lg font-bold transition-colors",
             isDark ? "text-em-invert-text" : "text-em-text"
