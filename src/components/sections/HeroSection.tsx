@@ -1,50 +1,68 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import { BlurText } from "@/components/reactbits/BlurText";
+import { Anton } from "next/font/google";
 import { Marquee } from "@/components/ui/Marquee";
 import { GridDistortion } from "@/components/reactbits/GridDistortion";
+import { SlideRevealText } from "@/components/reactbits/SlideRevealText";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+
+// Scoped to the hero name lockup only (mirrors meesverberne.com's tight,
+// condensed black-weight display face — their "Doner Display" is a paid
+// self-hosted font we can't legally copy).
+const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 const MARQUEE_ITEMS = ["Developer", "Engineer", "Builder", "Creative"];
+const HERO_IMAGE_SRC = "/images/mimikyu.webp";
 
 export default function HeroSection() {
-  const { theme } = useTheme();
-  const imageSrc = theme === "dark" ? "/images/Yoichi_Nagumo.webp" : "/images/japan8.jpg";
+  const reducedMotion = usePrefersReducedMotion();
+
   return (
     <section
       id="hero"
       className="relative w-full overflow-hidden px-6 pb-20 pt-16 md:px-16 md:pt-24"
     >
       <div className="-mx-6 md:-mx-16 [container-type:inline-size]">
-        <h1 className="font-heading overflow-hidden text-center uppercase text-[8.98cqw] font-normal leading-[0.78] tracking-normal text-em-text md:text-[9.38cqw]">
-          <BlurText text="Paolo" delay={0.04} duration={0.7} ease="easeOut" className="block whitespace-nowrap px-6 md:px-16" />
-          <BlurText
-            text="Jansen Enrera"
-            delay={0.1}
-            duration={0.7}
-            ease="easeOut"
-            className="block whitespace-nowrap px-6 md:px-16"
-          />
+        <h1 className={`${anton.className} overflow-clip text-center uppercase text-[15.64cqw] font-normal leading-[0.94] tracking-normal text-em-text md:text-[16.34cqw]`}>
+          {reducedMotion ? (
+            <>
+              <span className="block whitespace-nowrap">Paolo</span>
+              <span className="block whitespace-nowrap">Jansen Enrera</span>
+            </>
+          ) : (
+            <>
+              <SlideRevealText text="Paolo" delay={0.03} duration={0.7} ease="easeOut" className="block whitespace-nowrap" />
+              <SlideRevealText text="Jansen Enrera" delay={0.03} duration={0.7} ease="easeOut" className="block whitespace-nowrap" />
+            </>
+          )}
         </h1>
       </div>
 
       <div className="relative -mx-6 mt-2 md:-mx-16">
-        <Marquee items={MARQUEE_ITEMS} className="py-3" />
+        <Marquee
+          items={MARQUEE_ITEMS}
+          className="py-3 text-[clamp(11px,0.875vw,16.8px)]"
+          itemClassName="gap-[3.5714em] px-[1.7857em]"
+          separatorSize="1em"
+        />
       </div>
 
       <div className="relative -mx-6 mt-16 md:-mx-16 md:mt-20">
-        <div className="grid grid-cols-1 gap-10 lg:relative lg:grid-cols-12 lg:gap-0">
-          <div className="order-3 px-6 lg:absolute lg:top-[61%] lg:col-start-3 lg:col-span-2 lg:px-0">
-            <p className="max-w-xs font-display text-lg leading-snug text-em-text">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-0">
+          <div className="order-3 px-6 lg:order-none lg:relative lg:col-start-3 lg:col-span-2 lg:row-start-1 lg:px-0">
+            {/* Vertical anchor matches meesverberne.com's caption position relative to
+                its hero photo: bottom edge sits ~31.6% of the image's height above its
+                base, not flush with it (measured live at 1440px and 1920px viewports). */}
+            <p className="max-w-xs font-display text-lg leading-snug text-em-text lg:absolute lg:inset-x-0 lg:bottom-[31.6%]">
               Skilled in both <em className="italic">developing</em> and <em className="italic">design</em>
             </p>
           </div>
 
           <div className="order-1 px-6 lg:order-none lg:col-span-4 lg:col-start-5 lg:row-start-1 lg:px-0">
             <GridDistortion
-              imageSrc={imageSrc}
-              alt="A project photo of Paolo at work"
-              aspectRatio="2 / 3"
+              imageSrc={HERO_IMAGE_SRC}
+              alt="Mimikyu, in the plain-background style of the reference hero photo"
+              aspectRatio="1 / 1"
               className="w-full rounded-sm"
             />
           </div>

@@ -22,6 +22,10 @@ interface MarqueeProps {
   baseVelocity?: number;
   /** Element rendered between repeated items. Defaults to the spinning X. */
   separator?: React.ReactNode;
+  /** Gap/padding classes around each item+separator pair. Defaults to the original spacing. */
+  itemClassName?: string;
+  /** Size of the default spinning X separator (ignored when `separator` is passed). */
+  separatorSize?: number | string;
 }
 
 function wrap(min: number, max: number, v: number): number {
@@ -34,7 +38,14 @@ function wrap(min: number, max: number, v: number): number {
 // count is computed dynamically once copyWidth/trackWidth are measured.
 const FALLBACK_COPY_COUNT = 10;
 
-export function Marquee({ items, className, baseVelocity = 40, separator }: MarqueeProps) {
+export function Marquee({
+  items,
+  className,
+  baseVelocity = 40,
+  separator,
+  itemClassName,
+  separatorSize = 12,
+}: MarqueeProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const copyRef = useRef<HTMLDivElement>(null);
   const inViewport = useInViewport(trackRef, { threshold: 0 });
@@ -109,12 +120,12 @@ export function Marquee({ items, className, baseVelocity = 40, separator }: Marq
     items.map((item, i) => (
       <span
         key={`${copy}-${i}`}
-        className="inline-flex items-center gap-3 whitespace-nowrap px-3"
+        className={cn("inline-flex items-center gap-3 whitespace-nowrap px-3", itemClassName)}
       >
         {item}
         {separator ?? (
           <X
-            size={12}
+            size={separatorSize}
             aria-hidden="true"
             style={{ animation: running ? "marquee-x-spin 4s linear infinite" : "none" }}
           />

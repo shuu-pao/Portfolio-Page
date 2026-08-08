@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import gsap from "gsap";
 import { cn } from "@/lib/utils";
 
 interface GridDistortionProps {
@@ -9,9 +10,7 @@ interface GridDistortionProps {
   alt: string;
   aspectRatio?: string;
   grid?: number;
-  mouse?: number;
   strength?: number;
-  relaxation?: number;
   className?: string;
 }
 
@@ -24,21 +23,42 @@ void main() {
 `;
 
 const fragmentShader = `
-uniform sampler2D uDataTexture;
 uniform sampler2D uTexture;
 uniform sampler2D uPrevTexture;
 uniform float uProgress;
 uniform float uHasTransition;
 uniform float uGridSize;
+uniform vec2 uMouse;
+uniform float uStrength;
 varying vec2 vUv;
 
 float hash(vec2 p) {
   return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
 }
 
+// Distance-from-mouse-to-cell-center falloff, offset applied along whichever
+// axis the mouse is further off on — a single-axis "shatter" rather than a
+// smooth 2D push. Ported from meesverberne.com's hover-distortion shader.
+vec2 distortedUv(vec2 uv) {
+  vec2 gridSize = vec2(uGridSize);
+  vec2 gridCoord = floor(uv * gridSize) / gridSize;
+  vec2 gridCenter = gridCoord + 0.5 / gridSize;
+  vec2 mouseDist = (uMouse - gridCenter) * gridSize;
+  float distToMouse = length(mouseDist);
+  float effectStrength = 1.0 - smoothstep(0.0, uGridSize * 0.4, distToMouse);
+  vec2 offset = mouseDist * effectStrength * uStrength;
+
+  vec2 result = uv;
+  if (abs(mouseDist.x) > abs(mouseDist.y)) {
+    result.x += offset.x / gridSize.x;
+  } else {
+    result.y += offset.y / gridSize.y;
+  }
+  return clamp(result, 0.0, 1.0);
+}
+
 void main() {
-  vec4 offset = texture2D(uDataTexture, vUv);
-  vec2 mouseUv = vUv - 0.02 * offset.rg;
+  vec2 mouseUv = distortedUv(vUv);
 
   if (uHasTransition < 0.5) {
     gl_FragColor = texture2D(uTexture, mouseUv);
@@ -60,24 +80,31 @@ void main() {
 }
 `;
 
+// Tuning constants ported verbatim from meesverberne.com's hover-distortion
+// interaction (mousemove/mouseenter/mouseleave handlers driving GSAP tweens
+// on the same u_mouse/u_strength uniforms this shader reads).
+const MOVE_DURATION = 0.3; // seconds — mouse-position tween while actively moving
+const INITIAL_DELAY = 0.2; // seconds — one-time delay before this instance's first tween
+const STRENGTH_RAMP_DURATION = 0.6; // seconds — ramp up to peak strength, and back down
+const STRENGTH_DECAY_DELAY = 0.3; // seconds — pause before decaying strength after motion stops
+
 export function GridDistortion({
   imageSrc,
   alt,
   aspectRatio,
   grid = 15,
-  mouse = 0.15,
-  strength = 0.1,
-  relaxation = 0.92,
+  strength = 0.8,
   className,
 }: GridDistortionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const uniformsRef = useRef<{
     uTexture: { value: THREE.Texture | null };
     uPrevTexture: { value: THREE.Texture | null };
-    uDataTexture: { value: THREE.DataTexture | null };
     uProgress: { value: number };
     uHasTransition: { value: number };
     uGridSize: { value: number };
+    uMouse: { value: THREE.Vector2 };
+    uStrength: { value: number };
   } | null>(null);
   const resizeRef = useRef<() => void>(() => {});
   const transitionFrameRef = useRef<number | null>(null);
@@ -102,20 +129,13 @@ export function GridDistortion({
     const uniforms = {
       uTexture: { value: null as THREE.Texture | null },
       uPrevTexture: { value: null as THREE.Texture | null },
-      uDataTexture: { value: null as THREE.DataTexture | null },
       uProgress: { value: 1 },
       uHasTransition: { value: 0 },
       uGridSize: { value: grid },
+      uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+      uStrength: { value: 0 },
     };
     uniformsRef.current = uniforms;
-
-    const size = grid;
-    // Zeroed rather than seeded with noise, so the image renders undistorted on
-    // mount instead of settling out of a random "shatter" over the first second.
-    const data = new Float32Array(4 * size * size);
-    const dataTexture = new THREE.DataTexture(data, size, size, THREE.RGBAFormat, THREE.FloatType);
-    dataTexture.needsUpdate = true;
-    uniforms.uDataTexture.value = dataTexture;
 
     const material = new THREE.ShaderMaterial({
       side: THREE.DoubleSide,
@@ -125,6 +145,7 @@ export function GridDistortion({
       transparent: true,
     });
 
+    const size = grid;
     const geometry = new THREE.PlaneGeometry(1, 1, size - 1, size - 1);
     const plane = new THREE.Mesh(geometry, material);
     scene.add(plane);
@@ -150,20 +171,59 @@ export function GridDistortion({
     const resizeObserver = new ResizeObserver(handleResize);
     resizeObserver.observe(container);
 
-    // Target position updates instantly on mousemove; x/y/vX/vY are eased toward
-    // it once per animation frame below, so velocity reflects a steady rAF cadence
-    // instead of the browser's bursty mousemove event timing (which read as jitter).
-    const mouseState = { targetX: 0, targetY: 0, x: 0, y: 0, prevX: 0, prevY: 0, vX: 0, vY: 0 };
-    const smoothing = 0.12;
+    // ponytail: firstMove/delayMove are tracked per component instance, not
+    // shared across every GridDistortion on the page like meesverberne.com's
+    // single global state — so each image gets its own one-time initial
+    // delay/snap instead of only the very first one on the whole page.
+    // Upgrade path: hoist this state to a module-level singleton if strict
+    // cross-instance parity ever matters.
+    const state = { firstMove: true, delayMove: true, rampingUp: false };
 
     function handleMouseMove(e: MouseEvent) {
-      if (!container) return;
+      if (!container || !uniformsRef.current) return;
       const rect = container.getBoundingClientRect();
-      mouseState.targetX = (e.clientX - rect.left) / rect.width;
-      mouseState.targetY = 1 - (e.clientY - rect.top) / rect.height;
+      const mouseX = (e.clientX - rect.left) / rect.width;
+      const mouseY = 1 - (e.clientY - rect.top) / rect.height;
+
+      const duration = state.firstMove ? MOVE_DURATION : 0;
+      const delay = state.delayMove ? INITIAL_DELAY : 0;
+      state.delayMove = false;
+      state.firstMove = true;
+
+      const u = uniformsRef.current;
+      if (!state.rampingUp) {
+        state.rampingUp = true;
+        gsap.to(u.uStrength, { value: strength, duration: STRENGTH_RAMP_DURATION, overwrite: true, delay });
+      }
+
+      gsap.to(u.uMouse.value, {
+        x: mouseX,
+        y: mouseY,
+        duration,
+        delay,
+        overwrite: true,
+        onComplete() {
+          state.rampingUp = false;
+          gsap.to(u.uStrength, { value: 0, duration: STRENGTH_RAMP_DURATION, delay: STRENGTH_DECAY_DELAY });
+        },
+      });
+    }
+
+    function handleMouseEnter() {
+      state.rampingUp = false;
+    }
+
+    function handleMouseLeave() {
+      state.firstMove = false;
+      state.rampingUp = false;
+      if (uniformsRef.current) {
+        gsap.to(uniformsRef.current.uStrength, { value: 0, duration: STRENGTH_RAMP_DURATION, overwrite: true });
+      }
     }
 
     container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("mouseenter", handleMouseEnter);
+    container.addEventListener("mouseleave", handleMouseLeave);
     handleResize();
 
     // ponytail: rAF only runs while the canvas is on-screen (IntersectionObserver-gated);
@@ -173,37 +233,6 @@ export function GridDistortion({
 
     function animate() {
       animationId = requestAnimationFrame(animate);
-
-      mouseState.prevX = mouseState.x;
-      mouseState.prevY = mouseState.y;
-      mouseState.x += (mouseState.targetX - mouseState.x) * smoothing;
-      mouseState.y += (mouseState.targetY - mouseState.y) * smoothing;
-      mouseState.vX = mouseState.x - mouseState.prevX;
-      mouseState.vY = mouseState.y - mouseState.prevY;
-
-      const dtData = dataTexture.image.data as Float32Array;
-      for (let i = 0; i < size * size; i++) {
-        dtData[i * 4] *= relaxation;
-        dtData[i * 4 + 1] *= relaxation;
-      }
-
-      const gridMouseX = size * mouseState.x;
-      const gridMouseY = size * mouseState.y;
-      const maxDist = size * mouse;
-
-      for (let i = 0; i < size; i++) {
-        for (let j = 0; j < size; j++) {
-          const distSq = (gridMouseX - i) ** 2 + (gridMouseY - j) ** 2;
-          if (distSq < maxDist * maxDist) {
-            const index = 4 * (i + size * j);
-            const power = Math.min(maxDist / Math.sqrt(distSq), 10);
-            dtData[index] += strength * 100 * mouseState.vX * power;
-            dtData[index + 1] -= strength * 100 * mouseState.vY * power;
-          }
-        }
-      }
-
-      dataTexture.needsUpdate = true;
       renderer.render(scene, camera);
     }
 
@@ -225,17 +254,20 @@ export function GridDistortion({
       resizeObserver.disconnect();
       visibilityObserver.disconnect();
       container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("mouseenter", handleMouseEnter);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+      gsap.killTweensOf(uniforms.uMouse.value);
+      gsap.killTweensOf(uniforms.uStrength);
       renderer.dispose();
       renderer.forceContextLoss();
       if (container.contains(renderer.domElement)) container.removeChild(renderer.domElement);
       geometry.dispose();
       material.dispose();
-      dataTexture.dispose();
       uniforms.uTexture.value?.dispose();
       uniforms.uPrevTexture.value?.dispose();
       uniformsRef.current = null;
     };
-  }, [grid, mouse, strength, relaxation]);
+  }, [grid, strength]);
 
   // Swaps the texture in place instead of tearing down the scene above, so
   // toggling imageSrc (e.g. light/dark theme) doesn't blank the canvas while

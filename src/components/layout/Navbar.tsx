@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { NavOverlay } from "@/components/layout/NavOverlay";
@@ -24,14 +25,14 @@ export function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-16">
-        <a
-          href="/#hero"
-          className={cn(
-            "font-display cursor-pointer text-lg font-bold transition-colors",
-            isDark ? "text-em-invert-text" : "text-em-text"
-          )}
-        >
-          PE<span className="text-em-accent">.</span>
+        <a href="/#hero" className="cursor-pointer">
+          <Image
+            src="/images/mimikyu-icon.webp"
+            alt="Paolo Jansen Enrera"
+            width={32}
+            height={32}
+            className="size-[3.0rem]"
+          />
         </a>
         <ThemeToggle />
         <button

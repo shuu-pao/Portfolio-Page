@@ -51,6 +51,13 @@ export const SlideRevealText: React.FC<SlideRevealTextProps> = ({
         overflow: "hidden",
         paddingRight: "0.08em",
         marginRight: "-0.08em",
+        // overflow != visible makes an inline-block's baseline its bottom
+        // margin edge (CSS spec), which pulls in the font's full descent
+        // metrics and inflates the line's real box height well past the
+        // set line-height (measured: leading-[1.25] computed 95.4px, but
+        // actual box height rendered 115.78px). vertical-align: top skips
+        // that baseline alignment, so the box height matches line-height.
+        verticalAlign: "top",
       }}
     >
       <motion.span

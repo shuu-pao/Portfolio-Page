@@ -21,6 +21,11 @@ interface Project {
   tags: string[];
   position: CardPosition;
   aspectRatio: string;
+  // Landscape aspect ratios render shorter at this gallery's fixed card width,
+  // which shrinks the default grid=15 cell size vertically. Set explicitly to
+  // keep cell size visually consistent with the portrait cards (e.g. Thesis
+  // at 3/4, grid=15) instead of reading as a denser/smaller grid.
+  grid?: number;
   imageSrc?: string;
   githubUrl?: string;
   liveUrl?: string;
@@ -36,8 +41,9 @@ const projects: Project[] = [
     tags: ["React", "Vite", "JavaScript", "CSS"],
     position: "end",
     aspectRatio: "16 / 9",
+    grid: 6,
     imageSrc: "/images/PortfolioMon.png",
-    githubUrl: "https://github.com/shuu-pao",
+    githubUrl: "https://github.com/shuu-pao/PortfolioMon",
   },
   {
     id: 2,
@@ -48,7 +54,8 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     position: "start",
     aspectRatio: "16 / 10",
-    githubUrl: "https://github.com/shuu-pao/premium-portfolio",
+    grid: 7,
+    githubUrl: "https://github.com/shuu-pao/Portfolio-Page",
   },
   {
     id: 3,
@@ -60,7 +67,6 @@ const projects: Project[] = [
     position: "center",
     aspectRatio: "3 / 4",
     imageSrc: "/images/Thesis.jpg",
-    githubUrl: "https://github.com/shuu-pao",
   },
   {
     id: 4,
@@ -71,8 +77,8 @@ const projects: Project[] = [
     tags: ["C", "XC8", "Embedded", "Microcontrollers"],
     position: "end",
     aspectRatio: "4 / 3",
+    grid: 8,
     imageSrc: "/images/Futsal%20Scoreboard.jpg",
-    githubUrl: "https://github.com/shuu-pao",
   },
 ];
 
@@ -115,6 +121,7 @@ function ProjectCard({ project, onSelect }: { project: Project; onSelect: (p: Pr
               imageSrc={project.imageSrc}
               alt={`Screenshot of ${project.title}`}
               aspectRatio={project.aspectRatio}
+              grid={project.grid}
               className="transition-opacity group-hover:opacity-90"
             />
           ) : (
@@ -195,6 +202,7 @@ export default function PortfolioGallerySection() {
               exit={{ opacity: 0, scale: 0.92, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 28 }}
               className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-sm border border-em-invert-text/10 bg-em-invert-bg p-8"
+              data-lenis-prevent
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -206,7 +214,18 @@ export default function PortfolioGallerySection() {
                 <X size={20} />
               </button>
 
-              <h2 id="project-modal-title" className="font-display text-3xl font-bold text-em-invert-text">
+              <ImagePlaceholder
+                imageSrc={selectedProject.imageSrc}
+                alt={`Screenshot of ${selectedProject.title}`}
+                aspectRatio={selectedProject.aspectRatio}
+                label="Project image"
+                className="mt-8 rounded-sm"
+              />
+
+              <h2
+                id="project-modal-title"
+                className="mt-6 font-display text-3xl font-bold text-em-invert-text"
+              >
                 {selectedProject.title}
               </h2>
               <p className="mt-4 leading-relaxed text-em-invert-muted">{selectedProject.description}</p>
