@@ -12,7 +12,7 @@ export default function ContactSection() {
       <section id="contact" className="relative overflow-hidden px-6 py-[10vh] md:px-16">
         <Link
           href="/contact"
-          className="block rounded-full py-5 text-em-invert-text duration-300 hover:bg-em-accent hover:text-em-invert-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-em-accent focus-visible:outline-offset-2"
+          className="block overflow-hidden rounded-full py-5 text-em-invert-text duration-300 hover:bg-em-accent hover:text-em-invert-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-em-accent focus-visible:outline-offset-2"
         >
           <div className="w-[120%] overflow-hidden">
             <Marquee
