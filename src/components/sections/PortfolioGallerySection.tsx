@@ -220,7 +220,8 @@ export default function PortfolioGallerySection() {
                 alt={`Screenshot of ${selectedProject.title}`}
                 aspectRatio={selectedProject.aspectRatio}
                 label="Project image"
-                className="mt-8 rounded-sm"
+                fit="contain"
+                className="mt-8 rounded-sm bg-em-invert-text/5"
               />
 
               <h2

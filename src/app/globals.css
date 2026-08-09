@@ -116,6 +116,7 @@
   --em-invert-bg: #17130f;
   --em-invert-text: #f3ede2;
   --em-invert-muted: #b5aa98;
+  --em-scrollbar: var(--em-accent);
 }
 
 .dark {
@@ -153,6 +154,7 @@
   --em-bg: var(--em-invert-bg);
   --em-text: var(--em-invert-text);
   --em-text-muted: var(--em-invert-muted);
+  --em-scrollbar: var(--em-invert-text);
 }
 
 @layer base {
@@ -172,6 +174,21 @@
   .font-display {
     font-family: var(--font-display), system-ui, sans-serif;
   }
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--em-scrollbar) 80%, transparent) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--em-scrollbar) 80%, transparent);
 }
 
 .bg-grain {
