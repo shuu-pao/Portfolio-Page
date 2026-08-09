@@ -1,7 +1,15 @@
-const creditFields = [
+// Flip this when your availability changes — label, dot color, and the
+// screen-reader text below all derive from it.
+const AVAILABLE_FOR_WORK = false;
+
+const creditFields: { label: string; value: string; isAvailability?: boolean }[] = [
   { label: "Design & Development", value: "Paolo Jansen Enrera" },
   { label: "Based In", value: "Cebu City, Philippines" },
-  { label: "Available For Work", value: "Salesforce, Agentforce, Full-time" },
+  {
+    label: AVAILABLE_FOR_WORK ? "Available For Work" : "Unavailable For Work",
+    value: "Salesforce, Agentforce, Full-time",
+    isAvailability: true,
+  },
 ];
 
 export function Footer() {
@@ -12,12 +20,18 @@ export function Footer() {
           {creditFields.map((field) => (
             <div key={field.label}>
               <p className="flex items-center gap-2 text-em-invert-muted/60">
-                {field.label === "Available For Work" && (
+                {field.isAvailability && (
                   <>
-                    <span className="sr-only">Currently unavailable — </span>
+                    <span className="sr-only">
+                      Currently {AVAILABLE_FOR_WORK ? "available" : "unavailable"} —{" "}
+                    </span>
                     <span
                       aria-hidden="true"
-                      className="inline-block size-2 shrink-0 animate-pulse rounded-full bg-red-500 shadow-[0_0_6px_2px_rgba(239,68,68,0.6)]"
+                      className={`inline-block size-2 shrink-0 animate-pulse rounded-full ${
+                        AVAILABLE_FOR_WORK
+                          ? "bg-emerald-500 shadow-[0_0_6px_2px_rgba(16,185,129,0.6)]"
+                          : "bg-red-500 shadow-[0_0_6px_2px_rgba(239,68,68,0.6)]"
+                      }`}
                     />
                   </>
                 )}
