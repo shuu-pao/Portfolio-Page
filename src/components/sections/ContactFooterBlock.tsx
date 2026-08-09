@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
+import { RevealHeadingLine } from "@/components/reactbits/RevealHeadingLine";
 import { GradientButton } from "@/components/ui/GradientButton";
 
 interface SocialLink {
@@ -65,12 +66,23 @@ export function ContactFooterBlock() {
           })}
         </ul>
 
-        <div>
-          <h3 className="text-[8vw] leading-none text-em-invert-text md:text-[4vw]">
-            Got a project in mind? I&apos;d love to hear about it.
-          </h3>
+        <div className="flex-1">
+          <RevealHeadingLine className="text-[8vw] leading-none text-em-invert-text md:text-[4vw]">
+            Got a project in mind?
+          </RevealHeadingLine>
+          <RevealHeadingLine
+            delay={0.1}
+            className="text-[8vw] leading-none text-em-invert-text md:text-[4vw]"
+          >
+            I&apos;d love to hear about it.
+          </RevealHeadingLine>
           <div className="mt-2">
-            <GradientButton href={EMAIL_HREF} variant="outline" size="lg" className="rounded-full">
+            <GradientButton
+              href={EMAIL_HREF}
+              variant="outline"
+              size="lg"
+              className="w-full rounded-full duration-500 hover:bg-em-accent hover:text-em-invert-bg sm:w-[45%] lg:w-[12em] h-[2.5em]"
+            >
               Email Me
             </GradientButton>
           </div>
