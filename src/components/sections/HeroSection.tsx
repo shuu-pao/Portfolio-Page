@@ -4,6 +4,8 @@ import { Anton } from "next/font/google";
 import { Marquee } from "@/components/ui/Marquee";
 import { GridDistortion } from "@/components/reactbits/GridDistortion";
 import { SlideRevealText } from "@/components/reactbits/SlideRevealText";
+import { DrawnText } from "@/components/reactbits/DrawnText";
+import { BUILD_DEBUG_PATH, BUILD_DEBUG_VIEWBOX } from "@/components/reactbits/build-debug-path";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 // Scoped to the hero name lockup only (mirrors meesverberne.com's tight,
@@ -68,13 +70,27 @@ export default function HeroSection() {
           </div>
 
           <div className="relative z-10 order-2 mt-6 flex flex-col gap-3 px-6 lg:order-none lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:mt-0 lg:self-start lg:px-0 lg:pt-10">
-            <div className="flex items-baseline gap-2 lg:-ml-[21%]">
+            {/* Stacked, not inline: matches meesverberne.com's "M./" label sitting
+                directly above its large cursive "Creative Developer" tagline,
+                rather than beside it. */}
+            <div className="flex flex-col lg:-ml-[21%]">
               <span aria-hidden="true" className="font-mono text-xs font-bold uppercase tracking-widest text-em-text">
                 P./
               </span>
-              <span className="font-cursive text-3xl leading-none text-em-accent sm:text-4xl lg:text-5xl">
-                Debug &amp; Build
-              </span>
+              {reducedMotion ? (
+                <span className="whitespace-nowrap font-cursive text-[clamp(2.25rem,8vw,7rem)] leading-none text-em-accent">
+                  Build &amp; Debug
+                </span>
+              ) : (
+                <>
+                  <DrawnText
+                    d={BUILD_DEBUG_PATH}
+                    viewBox={BUILD_DEBUG_VIEWBOX}
+                    className="h-[clamp(2.25rem,8vw,7rem)] w-auto text-em-accent"
+                  />
+                  <span className="sr-only">Build &amp; Debug</span>
+                </>
+              )}
             </div>
             <div className="space-y-3 font-bold text-sm leading-relaxed text-em-text sm:text-base">
               <p>
