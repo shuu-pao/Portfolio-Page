@@ -32,7 +32,7 @@ export function ContactFooterBlock() {
 
   return (
     <>
-      <div className="mb-[4vh] flex justify-center md:mb-[8vh]">
+      <div className="mt-[4vh] mb-[4vh] flex justify-center md:mt-[8vh] md:mb-[8vh]">
         <Sparkle
           aria-hidden="true"
           className="w-[16vw] animate-spin text-em-accent [animation-duration:20s] sm:w-[12vw] lg:w-[8vw]"
