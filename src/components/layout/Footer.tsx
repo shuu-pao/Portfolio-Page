@@ -13,10 +13,13 @@ export function Footer() {
             <div key={field.label}>
               <p className="flex items-center gap-2 text-em-invert-muted/60">
                 {field.label === "Available For Work" && (
-                  <span
-                    aria-hidden="true"
-                    className="inline-block size-2 shrink-0 animate-pulse rounded-full bg-red-500 shadow-[0_0_6px_2px_rgba(239,68,68,0.6)]"
-                  />
+                  <>
+                    <span className="sr-only">Currently unavailable — </span>
+                    <span
+                      aria-hidden="true"
+                      className="inline-block size-2 shrink-0 animate-pulse rounded-full bg-red-500 shadow-[0_0_6px_2px_rgba(239,68,68,0.6)]"
+                    />
+                  </>
                 )}
                 {field.label}
               </p>

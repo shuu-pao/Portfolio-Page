@@ -162,13 +162,13 @@ export default function PortfolioGallerySection() {
     <section id="work" className="relative w-full px-6 py-24 md:px-16">
       <div className="relative">
         <div className="sticky top-[8vh] z-0 [container-type:inline-size]" aria-hidden="true">
-          <RevealHeadingLine className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90">
+          <RevealHeadingLine className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.25em] tracking-tighter text-em-text/90">
             Selected
           </RevealHeadingLine>
           <RevealHeadingLine
             delay={0.1}
             wrapperClassName="flex justify-center overflow-hidden"
-            className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.1em] tracking-tighter text-em-text/90"
+            className="font-heading text-[17.95cqw] uppercase leading-[1] mb-[-.25em] tracking-tighter text-em-text/90"
           >
             Projects
           </RevealHeadingLine>
