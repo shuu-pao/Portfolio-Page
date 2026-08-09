@@ -7,7 +7,7 @@ const creditFields: { label: string; value: string; isAvailability?: boolean }[]
   { label: "Based In", value: "Cebu City, Philippines" },
   {
     label: AVAILABLE_FOR_WORK ? "Available For Work" : "Unavailable For Work",
-    value: "Salesforce, Agentforce, Full-time",
+    value: "Software Engineering Associate, Full-time",
     isAvailability: true,
   },
 ];
