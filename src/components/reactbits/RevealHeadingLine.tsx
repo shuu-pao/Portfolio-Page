@@ -40,6 +40,11 @@ export function RevealHeadingLine({
         initial={{ y: "100%" }}
         animate={isInView ? { y: "0%" } : undefined}
         transition={{ duration: 0.8, ease: "easeOut", delay }}
+        // leading-none/leading-[1] callers set line-height == font-size, which is
+        // shorter than most fonts' natural descent — the overflow-hidden mask
+        // above then clips descenders (e.g. "g", "j"). This buffer is em-relative
+        // to each caller's own font-size, so it self-scales at every heading size.
+        style={{ paddingBottom: "0.15em" }}
         className={className}
       >
         {children}
