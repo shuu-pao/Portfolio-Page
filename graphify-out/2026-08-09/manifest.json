@@ -1,7 +1,7 @@
 {
   ".claude/settings.local.json": {
-    "mtime": 1786262088.8406744,
-    "ast_hash": "c39e38f82d73cc90139fedadd564c26d",
+    "mtime": 1786284710.6768413,
+    "ast_hash": "89afeaf1940e92cfaf4c7be136a1c1e4",
     "semantic_hash": ""
   },
   ".claude/skills/brand/scripts/extract-colors.cjs": {
@@ -185,8 +185,8 @@
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1785662141.6785016,
-    "ast_hash": "1dec5a1fec0582c1482b7302cbcef6aa",
+    "mtime": 1786267469.7509809,
+    "ast_hash": "47edaf25b31ff5c6ccfe76ca2e0cdc42",
     "semantic_hash": ""
   },
   "package.json": {
@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "src/components/sections/PortfolioGallerySection.tsx": {
-    "mtime": 1786259233.6820993,
-    "ast_hash": "11f27662e4105701c16e9d54f3f8445f",
+    "mtime": 1786277295.982965,
+    "ast_hash": "a16c6d816e6e8b43d6ca7897a6421ffc",
     "semantic_hash": ""
   },
   "src/hooks/use-in-viewport.ts": {
@@ -570,8 +570,8 @@
     "semantic_hash": ""
   },
   "firebase.json": {
-    "mtime": 1785783486.4617543,
-    "ast_hash": "86cc3074ed891fb229235eefe021978d",
+    "mtime": 1786284565.3778112,
+    "ast_hash": "e735bf4bdb7509579a8c8322248ac8f8",
     "semantic_hash": ""
   },
   "src/app/contact/page.tsx": {
@@ -595,8 +595,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1786229299.700791,
-    "ast_hash": "cee6adfa1923ab2ae2ead35d3561e303",
+    "mtime": 1786267686.0571623,
+    "ast_hash": "d233f7a7f2fe526132f67fcae311648d",
     "semantic_hash": ""
   },
   "src/components/layout/Providers.tsx": {
@@ -615,8 +615,8 @@
     "semantic_hash": ""
   },
   "src/components/reactbits/GridDistortion.tsx": {
-    "mtime": 1786205914.511175,
-    "ast_hash": "f2e376df9e0bc1525fb3019efed6e79d",
+    "mtime": 1786269062.836608,
+    "ast_hash": "195b77d562fa3e4f2d23b5789684c76d",
     "semantic_hash": ""
   },
   "src/components/reactbits/RevealHeadingLine.tsx": {
@@ -665,8 +665,8 @@
     "semantic_hash": ""
   },
   "src/components/sections/SkillsStackSection.tsx": {
-    "mtime": 1786221117.2866888,
-    "ast_hash": "0793e4b0c2084c706d9e71239f0de6bf",
+    "mtime": 1786284102.6681583,
+    "ast_hash": "c9b13ef0f76b22b8bf0daedd6e04926a",
     "semantic_hash": ""
   },
   "src/components/sections/TaglineSection.tsx": {

@@ -1,16 +1,16 @@
 # Graph Report - premium-portfolio  (2026-08-09)
 
 ## Corpus Check
-- 163 files · ~146,985 words
+- 163 files · ~147,151 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2327 nodes · 2670 edges · 197 communities (145 shown, 52 thin omitted)
+- 2327 nodes · 2671 edges · 194 communities (142 shown, 52 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 105 edges (avg confidence: 0.74)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e428cb02`
+- Built from commit: `8b6d33e7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -207,15 +207,12 @@
 - useAudioVisualizer.ts
 - destructive-foreground
 - muted
-- primary-hover
-- ring
-- clsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `TailwindConfigGenerator` - 57 edges
 2. `TestTailwindConfigGenerator` - 35 edges
 3. `ShadcnInstaller` - 33 edges
-4. `cn()` - 27 edges
+4. `cn()` - 28 edges
 5. `TestShadcnInstaller` - 26 edges
 6. `usePrefersReducedMotion()` - 19 edges
 7. `DesignSystemGenerator` - 18 edges
@@ -238,7 +235,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (197 total, 52 thin omitted)
+## Communities (194 total, 52 thin omitted)
 
 ### Community 0 - "gray"
 Cohesion: 0.05
@@ -249,8 +246,8 @@ Cohesion: 0.06
 Nodes (42): BM25, detect_domain(), get_cip_brief(), _load_csv(), Load CSV and return list of dicts, Core search function using BM25, Auto-detect the most relevant domain from query, Main search function with auto-domain detection (+34 more)
 
 ### Community 2 - "color"
-Cohesion: 0.08
-Nodes (25): $type, $value, background, destructive, foreground, muted-foreground, primary, primary-foreground (+17 more)
+Cohesion: 0.04
+Nodes (48): $type, $value, background, destructive, destructive-foreground, foreground, muted, muted-foreground (+40 more)
 
 ### Community 3 - "button"
 Cohesion: 0.06
@@ -266,7 +263,7 @@ Nodes (36): format_context(), format_result(), main(), Format a single search re
 
 ### Community 6 - "dependencies"
 Cohesion: 0.12
-Nodes (17): @base-ui/react, class-variance-authority, @emailjs/browser, lenis, dependencies, @base-ui/react, class-variance-authority, @emailjs/browser (+9 more)
+Nodes (17): class-variance-authority, clsx, @emailjs/browser, lenis, dependencies, class-variance-authority, clsx, @emailjs/browser (+9 more)
 
 ### Community 7 - "design_system.py"
 Cohesion: 0.05
@@ -386,7 +383,7 @@ Nodes (19): _e(), generate_chart_slide(), generate_cta_slide(), generate_deck(),
 
 ### Community 36 - "layout.tsx"
 Cohesion: 0.13
-Nodes (21): NavLink, NavOverlay(), NavOverlayProps, CardPosition, JUSTIFY_CLASS, MARGIN_CLASS, PortfolioGallerySection(), Project (+13 more)
+Nodes (22): NavLink, NavOverlay(), NavOverlayProps, CardPosition, JUSTIFY_CLASS, MARGIN_CLASS, PortfolioGallerySection(), Project (+14 more)
 
 ### Community 37 - "._base_config"
 Cohesion: 0.22
@@ -625,8 +622,8 @@ Cohesion: 0.22
 Nodes (8): archivoBlack, bodoniModa, caveat, metadata, RootLayout(), spaceGrotesk, spaceMono, spectral
 
 ### Community 99 - "design-tokens-starter.json"
-Cohesion: 0.15
-Nodes (19): $type, $value, sm, $type, $value, $type, $value, primitive (+11 more)
+Cohesion: 0.24
+Nodes (10): $type, $value, $type, $value, primitive, radius, shadow, full (+2 more)
 
 ### Community 100 - "Core Visual Elements"
 Cohesion: 0.36
@@ -765,8 +762,8 @@ Cohesion: 0.40
 Nodes (4): Global Constraints, Task 1: Add the tile-pattern SVG assets and wire them into `globals.css`, Task 2: Apply the tiled background to `body` and strip redundant flat backgrounds from sections, Tiled Noise-Texture Background Implementation Plan
 
 ### Community 136 - "create.md"
-Cohesion: 0.17
-Nodes (11): $type, $value, dark, semantic, $schema, $type, $value, semantic (+3 more)
+Cohesion: 0.60
+Nodes (5): sm, sm, sm, $type, $value
 
 ### Community 137 - ".test_add_components_dry_run"
 Cohesion: 0.29
@@ -798,19 +795,7 @@ Nodes (4): CanvasVisualizer(), NOTE: This component currently has no consumers a
 
 ### Community 192 - "destructive-foreground"
 Cohesion: 0.67
-Nodes (3): destructive-foreground, $type, $value
-
-### Community 193 - "muted"
-Cohesion: 0.67
-Nodes (3): muted, $type, $value
-
-### Community 194 - "primary-hover"
-Cohesion: 0.67
-Nodes (3): primary-hover, $type, $value
-
-### Community 195 - "ring"
-Cohesion: 0.67
-Nodes (3): ring, $type, $value
+Nodes (4): $type, $value, default, default
 
 ## Knowledge Gaps
 - **1169 isolated node(s):** `$schema`, `$value`, `$type`, `$value`, `$type` (+1164 more)
@@ -820,11 +805,11 @@ Nodes (3): ring, $type, $value
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `primitive` connect `design-tokens-starter.json` to `gray`, `.test_add_components_no_components`, `create.md`, `BM25`, `Copywriting Formulas`?**
+- **Why does `primitive` connect `design-tokens-starter.json` to `gray`, `color`, `Copywriting Formulas`, `BM25`, `.test_add_components_no_components`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Why does `color` connect `gray` to `design-tokens-starter.json`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `component` connect `button` to `create.md`?**
+- **Why does `component` connect `button` to `color`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Are the 36 inferred relationships involving `TailwindConfigGenerator` (e.g. with `TestGeneratedConfigIsValidJs` and `.test_node_check_parses_generated_config()`) actually correct?**
   _`TailwindConfigGenerator` has 36 INFERRED edges - model-reasoned connections that need verification._

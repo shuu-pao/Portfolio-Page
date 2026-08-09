@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Third-party skill tooling, not part of this project's lint surface.
     ".claude/**",
+    // Firebase local deploy cache, not part of this project's lint surface.
+    ".firebase/**",
   ]),
 ]);
 

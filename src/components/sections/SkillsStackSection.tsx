@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkle } from "lucide-react";
 import { PillTag } from "@/components/ui/PillTag";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
@@ -54,24 +54,15 @@ const categories: SkillCategory[] = [
 function CategoryBlock({
   category,
   isLast,
-  index,
-  setActiveIndex,
+  blockRef,
 }: {
   category: SkillCategory;
   isLast: boolean;
-  index: number;
-  setActiveIndex: (index: number) => void;
+  blockRef: (el: HTMLDivElement | null) => void;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { margin: "-45% 0px -45% 0px" });
-
-  useEffect(() => {
-    if (inView) setActiveIndex(index);
-  }, [inView, index, setActiveIndex]);
-
   return (
     <div
-      ref={ref}
+      ref={blockRef}
       className={cn(
         "flex h-full flex-col py-8 pr-0 md:h-[65vh] md:pr-8",
         !isLast && "border-b border-em-text/15"
@@ -100,6 +91,34 @@ function CategoryBlock({
 
 export default function SkillsStackSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const rowRef = useRef<HTMLDivElement>(null);
+  const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const { scrollYProgress } = useScroll({ target: rowRef, offset: ["start start", "end end"] });
+  const backdropY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+
+  // Single source of truth for which block is "active": whichever block's
+  // center sits closest to the viewport center. Replaces per-block
+  // IntersectionObservers, which raced each other across boundaries.
+  useEffect(() => {
+    const pickActive = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let closest = 0;
+      let closestDist = Infinity;
+      blockRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const dist = Math.abs(rect.top + rect.height / 2 - viewportCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = i;
+        }
+      });
+      setActiveIndex(closest);
+    };
+    pickActive();
+    window.addEventListener("scroll", pickActive, { passive: true });
+    return () => window.removeEventListener("scroll", pickActive);
+  }, []);
 
   return (
     <section id="skills" className="relative w-full px-6 py-24 md:px-16">
@@ -109,44 +128,43 @@ export default function SkillsStackSection() {
         </RevealHeadingLine>
       </div>
 
-      <div className="relative mt-16 flex flex-col-reverse gap-4 border-y border-em-text/15 md:flex-row">
+      <div ref={rowRef} className="relative mt-16 flex flex-col-reverse gap-4 border-y border-em-text/15 md:flex-row">
         <div className="flex-1">
           {categories.map((category, index) => (
             <CategoryBlock
               key={category.title}
               category={category}
               isLast={index === categories.length - 1}
-              index={index}
-              setActiveIndex={setActiveIndex}
+              blockRef={(el) => {
+                blockRefs.current[index] = el;
+              }}
             />
           ))}
         </div>
 
         <div className="relative h-auto flex-1 overflow-hidden md:sticky md:top-0 md:h-screen">
-          <ImagePlaceholder
-            imageSrc="/images/Backdrop3.jpg"
-            alt="Backdrop photo behind the skills list"
-            label="Backdrop photo"
-            className="h-full w-full"
-          />
+          <motion.div style={{ y: backdropY }} className="h-full w-full scale-110">
+            <ImagePlaceholder
+              imageSrc="/images/Backdrop3.jpg"
+              alt="Backdrop photo behind the skills list"
+              label="Backdrop photo"
+              className="h-full w-full"
+            />
+          </motion.div>
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[20%] w-[40%] -translate-x-1/2 -translate-y-1/2 md:w-[50%] lg:w-[40%] 2xl:h-[30%] 2xl:w-[50%]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className="h-full w-full"
+            {categories.map((category, index) => (
+              <div
+                key={category.title}
+                className={cn("absolute inset-0 h-full w-full", index === activeIndex ? "visible" : "invisible")}
               >
                 <ImagePlaceholder
-                  imageSrc={categories[activeIndex].insetSrc}
-                  alt={categories[activeIndex].insetAlt}
+                  imageSrc={category.insetSrc}
+                  alt={category.insetAlt}
                   label="Inset image"
                   className="h-full w-full shadow-xl"
                 />
-              </motion.div>
-            </AnimatePresence>
+              </div>
+            ))}
           </div>
         </div>
       </div>

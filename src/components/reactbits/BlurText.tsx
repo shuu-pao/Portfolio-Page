@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView, HTMLMotionProps } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 /**
  * BlurText - Animated text component with blur effects

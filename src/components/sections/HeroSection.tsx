@@ -86,7 +86,7 @@ export default function HeroSection() {
               </p>
               <br></br>
               <p>
-                Whether it's AI-driven interfaces or polished web apps, every project is crafted to convert ideas into meaningful digital experiences.
+                Whether it&apos;s AI-driven interfaces or polished web apps, every project is crafted to convert ideas into meaningful digital experiences.
               </p>
             </div>
           </div>

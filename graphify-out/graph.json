@@ -1240,7 +1240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_json",
-      "community": 136,
+      "community": 2,
       "norm_label": "design-tokens-starter.json"
     },
     {
@@ -1250,7 +1250,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_schema",
-      "community": 136,
+      "community": 2,
       "norm_label": "$schema"
     },
     {
@@ -2180,7 +2180,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_fontsize_sm",
-      "community": 99,
+      "community": 136,
       "norm_label": "sm"
     },
     {
@@ -2190,7 +2190,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_sm_value",
-      "community": 99,
+      "community": 136,
       "norm_label": "$value"
     },
     {
@@ -2200,7 +2200,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_sm_type",
-      "community": 99,
+      "community": 136,
       "norm_label": "$type"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_radius_sm",
-      "community": 99,
+      "community": 136,
       "norm_label": "sm"
     },
     {
@@ -2440,7 +2440,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_radius_default",
-      "community": 99,
+      "community": 192,
       "norm_label": "default"
     },
     {
@@ -2450,7 +2450,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_default_value",
-      "community": 99,
+      "community": 192,
       "norm_label": "$value"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_default_type",
-      "community": 99,
+      "community": 192,
       "norm_label": "$type"
     },
     {
@@ -2570,7 +2570,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_shadow_sm",
-      "community": 99,
+      "community": 136,
       "norm_label": "sm"
     },
     {
@@ -2580,7 +2580,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_shadow_default",
-      "community": 99,
+      "community": 192,
       "norm_label": "default"
     },
     {
@@ -2710,7 +2710,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_semantic",
-      "community": 136,
+      "community": 2,
       "norm_label": "semantic"
     },
     {
@@ -2820,7 +2820,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_color_primary_hover",
-      "community": 194,
+      "community": 2,
       "norm_label": "primary-hover"
     },
     {
@@ -2830,7 +2830,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_primary_hover_value",
-      "community": 194,
+      "community": 2,
       "norm_label": "$value"
     },
     {
@@ -2840,7 +2840,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_primary_hover_type",
-      "community": 194,
+      "community": 2,
       "norm_label": "$type"
     },
     {
@@ -2940,7 +2940,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_color_muted",
-      "community": 193,
+      "community": 2,
       "norm_label": "muted"
     },
     {
@@ -2950,7 +2950,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_muted_value",
-      "community": 193,
+      "community": 2,
       "norm_label": "$value"
     },
     {
@@ -2960,7 +2960,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_muted_type",
-      "community": 193,
+      "community": 2,
       "norm_label": "$type"
     },
     {
@@ -3030,7 +3030,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_color_destructive_foreground",
-      "community": 192,
+      "community": 2,
       "norm_label": "destructive-foreground"
     },
     {
@@ -3040,7 +3040,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_destructive_foreground_value",
-      "community": 192,
+      "community": 2,
       "norm_label": "$value"
     },
     {
@@ -3050,7 +3050,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_destructive_foreground_type",
-      "community": 192,
+      "community": 2,
       "norm_label": "$type"
     },
     {
@@ -3090,7 +3090,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_color_ring",
-      "community": 195,
+      "community": 2,
       "norm_label": "ring"
     },
     {
@@ -3100,7 +3100,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_ring_value",
-      "community": 195,
+      "community": 2,
       "norm_label": "$value"
     },
     {
@@ -3110,7 +3110,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_ring_type",
-      "community": 195,
+      "community": 2,
       "norm_label": "$type"
     },
     {
@@ -3120,7 +3120,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_semantic_spacing",
-      "community": 136,
+      "community": 2,
       "norm_label": "spacing"
     },
     {
@@ -3130,7 +3130,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_spacing_component",
-      "community": 136,
+      "community": 2,
       "norm_label": "component"
     },
     {
@@ -3140,7 +3140,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_component_value",
-      "community": 136,
+      "community": 2,
       "norm_label": "$value"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_component_type",
-      "community": 136,
+      "community": 2,
       "norm_label": "$type"
     },
     {
@@ -3160,7 +3160,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_spacing_section",
-      "community": 136,
+      "community": 2,
       "norm_label": "section"
     },
     {
@@ -3170,7 +3170,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_section_value",
-      "community": 136,
+      "community": 2,
       "norm_label": "$value"
     },
     {
@@ -3180,7 +3180,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_section_type",
-      "community": 136,
+      "community": 2,
       "norm_label": "$type"
     },
     {
@@ -3610,7 +3610,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_dark",
-      "community": 136,
+      "community": 2,
       "norm_label": "dark"
     },
     {
@@ -3620,7 +3620,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_dark_semantic",
-      "community": 136,
+      "community": 2,
       "norm_label": "semantic"
     },
     {
@@ -7960,7 +7960,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_dependencies_base_ui_react",
-      "community": 6,
+      "community": 193,
       "norm_label": "@base-ui/react"
     },
     {
@@ -7970,7 +7970,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "base_ui_react",
-      "community": 6,
+      "community": 193,
       "norm_label": "@base-ui/react"
     },
     {
@@ -8060,7 +8060,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "package_dependencies_clsx",
-      "community": 196,
+      "community": 6,
       "norm_label": "clsx"
     },
     {
@@ -8070,7 +8070,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "clsx",
-      "community": 196,
+      "community": 6,
       "norm_label": "clsx"
     },
     {
@@ -8767,7 +8767,7 @@
       "label": "navLinks",
       "file_type": "code",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "src_components_layout_navbar_navlinks",
       "community": 86,
@@ -8777,7 +8777,7 @@
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "src_components_layout_navbar_navbar",
       "community": 51,
@@ -9347,7 +9347,7 @@
       "label": "SkillsStackSection()",
       "file_type": "code",
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L101",
+      "source_location": "L92",
       "_origin": "ast",
       "id": "src_components_sections_skillsstacksection_skillsstacksection",
       "community": 36,
@@ -35596,7 +35596,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navoverlay",
@@ -35681,7 +35681,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navoverlay_navoverlay",
@@ -35713,7 +35713,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navbar_navbar",
@@ -35723,7 +35723,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navbar_navlinks",
@@ -35734,7 +35734,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_ui_themetoggle",
@@ -35745,7 +35745,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_ui_themetoggle_themetoggle",
@@ -35756,7 +35756,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_hooks_use_active_section",
@@ -35767,7 +35767,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_hooks_use_active_section_useactivesection",
@@ -35778,7 +35778,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_lib_sections",
@@ -35789,7 +35789,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_lib_sections_sections",
@@ -35800,7 +35800,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_lib_utils",
@@ -35811,7 +35811,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_lib_utils_cn",
@@ -35823,7 +35823,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "source": "src_components_layout_navbar_navbar",
       "target": "src_hooks_use_active_section_useactivesection"
@@ -35834,7 +35834,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0,
       "source": "src_components_layout_navbar_navbar",
       "target": "src_lib_utils_cn"
@@ -36969,7 +36969,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L101",
+      "source_location": "L92",
       "weight": 1.0,
       "source": "src_components_sections_skillsstacksection",
       "target": "src_components_sections_skillsstacksection_skillsstacksection",
@@ -37047,9 +37047,20 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L75",
+      "source_location": "L66",
       "weight": 1.0,
       "source": "src_components_sections_skillsstacksection_categoryblock",
+      "target": "src_lib_utils_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/sections/SkillsStackSection.tsx",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "src_components_sections_skillsstacksection_skillsstacksection",
       "target": "src_lib_utils_cn"
     },
     {
@@ -50462,5 +50473,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e428cb02d101350060349ad758358f861b6a2f87"
+  "built_at_commit": "8b6d33e75f5650c695d4c3583291580a493424cd"
 }

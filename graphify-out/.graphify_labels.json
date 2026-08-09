@@ -192,8 +192,5 @@
   "190": "tailwind.config.js",
   "191": "useAudioVisualizer.ts",
   "192": "destructive-foreground",
-  "193": "muted",
-  "194": "primary-hover",
-  "195": "ring",
-  "196": "clsx"
+  "193": "muted"
 }
