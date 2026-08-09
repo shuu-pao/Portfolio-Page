@@ -49,8 +49,11 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative -mx-6 mt-16 md:-mx-16 md:mt-20">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-0">
+      {/* Mobile-only: mt-8/gap-6 (was mt-16/gap-10) tighten the marquee→image and
+          image→text gaps, which measured ~56px each — too much space per user
+          feedback. md:/lg: values (tablet+/desktop) are unaffected. */}
+      <div className="relative -mx-6 mt-8 md:-mx-16 md:mt-20">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-0">
           <div className="order-3 px-6 lg:order-none lg:relative lg:col-start-3 lg:col-span-2 lg:row-start-1 lg:px-0">
             {/* Vertical anchor matches meesverberne.com's caption position relative to
                 its hero photo: bottom edge sits ~31.6% of the image's height above its
@@ -69,7 +72,7 @@ export default function HeroSection() {
             />
           </div>
 
-          <div className="relative z-10 order-2 mt-6 flex flex-col gap-3 px-6 lg:order-none lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:mt-0 lg:self-start lg:px-0 lg:pt-10">
+          <div className="relative z-10 order-2 mt-0 flex flex-col gap-3 px-6 lg:order-none lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:mt-0 lg:self-start lg:px-0 lg:pt-10">
             {/* Stacked, not inline: matches meesverberne.com's "M./" label sitting
                 directly above its large cursive "Creative Developer" tagline,
                 rather than beside it. */}

@@ -89,7 +89,12 @@ export function NavOverlay({ open, onClose, links }: NavOverlayProps) {
                   i % 2 === 1 ? "md:translate-x-10" : "md:-translate-x-10"
                 )}
               >
-                <span className="font-mono text-base text-em-accent">
+                {/* relative: without it this span is a non-positioned descendant of
+                    the fixed dialog, which CSS paints behind the two absolutely-
+                    positioned curtain background divs regardless of DOM order —
+                    silently invisible. The label span already has `relative` for
+                    the same reason; this just brings the number span in line. */}
+                <span className="relative font-mono text-base text-em-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="font-display relative text-5xl font-bold text-em-text transition-colors group-hover:text-em-accent md:text-7xl">

@@ -148,6 +148,7 @@ export default function SkillsStackSection() {
               imageSrc="/images/Backdrop3.jpg"
               alt="Backdrop photo behind the skills list"
               label="Backdrop photo"
+              aspectRatio="2 / 3"
               className="h-full w-full"
             />
           </motion.div>

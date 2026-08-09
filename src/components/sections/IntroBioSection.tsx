@@ -14,7 +14,7 @@ export default function IntroBioSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="flex flex-col gap-6 md:flex-row md:items-center"
+        className="flex flex-col gap-2 md:flex-row md:items-center md:gap-6"
       >
         <GridDistortion
           imageSrc="/images/aesthetic%20plant.jpg"
@@ -22,6 +22,11 @@ export default function IntroBioSection() {
           aspectRatio="695 / 894"
           className="w-full rounded-sm md:flex-1"
         />
+        {/* Mobile only: gap-2 (~8px) between the two images, both full-width/
+            same-size — matches jasminemaduafokwa.com's mobile stack (measured
+            live via each image's clipping frame, not its raw oversized <img>
+            tag: both frames are the same width with a narrow gap between them,
+            not a bleed+overlap). Desktop's side-by-side layout is untouched. */}
         <div className="flex md:flex-1 md:items-center md:justify-center">
           <GridDistortion
             imageSrc="/images/aesthetic%20work.jpg"

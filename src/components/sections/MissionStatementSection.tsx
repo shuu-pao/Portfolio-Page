@@ -3,9 +3,13 @@
 import { SlideRevealText } from "@/components/reactbits/SlideRevealText";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
+// Lines 1-2 sit beside the "My approach" label in a narrow flex column (see
+// INDENTED_COUNT below) — kept short deliberately so they render as one row
+// each on mobile instead of wrapping, which was doubling their line-height
+// and making the block noticeably taller/less uniform than the reference.
 const LINES = [
-  "I seek to create tools",
-  "that work seamlessly",
+  "I build tools",
+  "that hold up",
   "for my clients, offering",
   "quality results that satisfy",
   "business needs and grow",
@@ -49,7 +53,15 @@ export default function MissionStatementSection() {
   };
 
   return (
-    <section id="mission" className="w-full px-6 py-[15vh] md:px-16">
+    // Mobile-only tighter vertical padding: our site uses non-collapsing padding
+    // for inter-section spacing (unlike the reference's margin-based my-[15vh],
+    // which collapses with neighboring sections' margins down to ~127px each
+    // side). Full parity would mean converting Skills/Process too — out of this
+    // phase's scope — so this borrows the reference's own smaller "edge" vh
+    // value (6vh, used on its neighboring sections' collapse-facing margins)
+    // instead of the full 15vh, to noticeably tighten the gap without touching
+    // other sections. Desktop's py-[15vh] (unaffected by this complaint) is untouched.
+    <section id="mission" className="w-full px-6 py-[6vh] md:px-16 md:py-[15vh]">
       <div className="w-[90%] mx-auto md:ml-auto md:mr-0">
         <div className="flex items-start gap-[8vw]">
           <p className="shrink-0 font-mono text-xs uppercase tracking-[0.25em] text-em-accent">
