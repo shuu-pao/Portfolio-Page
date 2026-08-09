@@ -8,7 +8,7 @@ import { RevealHeadingLine } from "@/components/reactbits/RevealHeadingLine";
 type SubmitStatus = "idle" | "sending" | "sent" | "error" | "not-configured";
 
 const HEADING_CLASS =
-  "text-center text-[18vw] uppercase leading-none text-em-invert-text sm:text-[11vw]";
+  "text-center text-[18vw] uppercase leading-none text-em-text sm:text-[11vw]";
 
 /**
  * ContactFormSection - heading, paragraph, and EmailJS-wired contact form
@@ -59,7 +59,7 @@ export function ContactFormSection() {
           initial={{ opacity: 0 }}
           animate={paragraphInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-[70%] text-[13.5px] text-em-invert-muted sm:w-[60%] sm:text-[15px] md:w-[55%] 2xl:text-[24px]"
+          className="w-[70%] text-[13.5px] text-em-text-muted sm:w-[60%] sm:text-[15px] md:w-[55%] 2xl:text-[24px]"
         >
           Have a project in mind or an opportunity to talk through? Fill out the form below and
           I&apos;ll get back to you shortly.
@@ -69,7 +69,7 @@ export function ContactFormSection() {
       <form onSubmit={handleSubmit} className="mt-14">
         <div className="flex flex-col gap-6 sm:flex-row">
           <div className="flex flex-1 flex-col gap-y-2">
-            <label htmlFor="name" className="text-[14px] text-em-invert-text">
+            <label htmlFor="name" className="text-[14px] text-em-text">
               Name *
             </label>
             <input
@@ -77,11 +77,11 @@ export function ContactFormSection() {
               name="user_name"
               type="text"
               required
-              className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none focus-visible:border-b-em-accent"
+              className="border-b-[1.5px] border-b-em-text bg-transparent px-2 py-2 text-em-text outline-none focus-visible:border-b-em-accent"
             />
           </div>
           <div className="flex flex-1 flex-col gap-y-2">
-            <label htmlFor="email" className="text-[14px] text-em-invert-text">
+            <label htmlFor="email" className="text-[14px] text-em-text">
               Email *
             </label>
             <input
@@ -89,13 +89,13 @@ export function ContactFormSection() {
               name="user_email"
               type="email"
               required
-              className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none focus-visible:border-b-em-accent"
+              className="border-b-[1.5px] border-b-em-text bg-transparent px-2 py-2 text-em-text outline-none focus-visible:border-b-em-accent"
             />
           </div>
         </div>
 
         <div className="mt-6 flex flex-col gap-y-2">
-          <label htmlFor="message" className="text-[14px] text-em-invert-text">
+          <label htmlFor="message" className="text-[14px] text-em-text">
             Message *
           </label>
           <textarea
@@ -103,7 +103,7 @@ export function ContactFormSection() {
             name="user_message"
             rows={3}
             required
-            className="border-b-[1.5px] border-b-em-invert-text bg-transparent px-2 py-2 text-em-invert-text outline-none focus-visible:border-b-em-accent"
+            className="border-b-[1.5px] border-b-em-text bg-transparent px-2 py-2 text-em-text outline-none focus-visible:border-b-em-accent"
           />
         </div>
 
@@ -111,13 +111,13 @@ export function ContactFormSection() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="w-full rounded-full border border-em-invert-text py-2 text-[16px] text-em-invert-text duration-300 hover:bg-em-accent hover:text-em-invert-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-em-accent focus-visible:outline-offset-2 disabled:opacity-50 sm:w-[45%] 2xl:text-[26px]"
+            className="w-full rounded-full border border-em-text py-2 text-[16px] text-em-text duration-300 hover:bg-em-accent hover:text-em-invert-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-em-accent focus-visible:outline-offset-2 disabled:opacity-50 sm:w-[45%] 2xl:text-[26px]"
           >
             {status === "sending" ? "Sending..." : "Submit"}
           </button>
           <div role="status" aria-live="polite">
             {status === "sent" && (
-              <p className="mt-3 text-[13px] text-em-invert-muted">Message sent — thank you!</p>
+              <p className="mt-3 text-[13px] text-em-text-muted">Message sent — thank you!</p>
             )}
             {status === "error" && (
               <p className="mt-3 text-[13px] text-em-accent">
