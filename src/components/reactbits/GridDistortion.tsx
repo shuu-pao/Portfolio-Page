@@ -275,55 +275,93 @@ export function GridDistortion({
   // dissolve (see fragment shader) rather than an instant cut.
   useEffect(() => {
     let cancelled = false;
-    const loader = new THREE.TextureLoader();
-    loader.load(imageSrc, (texture) => {
-      if (cancelled || !uniformsRef.current) {
-        texture.dispose();
-        return;
-      }
-      texture.minFilter = THREE.LinearFilter;
-      texture.magFilter = THREE.LinearFilter;
-      texture.wrapS = THREE.ClampToEdgeWrapping;
-      texture.wrapT = THREE.ClampToEdgeWrapping;
+    let image: HTMLImageElement | null = null;
 
-      const uniforms = uniformsRef.current;
-      const outgoing = uniforms.uTexture.value;
+    // Use native Image element for better cross-origin handling and error detection
+    const loadImage = (src: string): Promise<HTMLImageElement> => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous"; // Critical for WebGL textures
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+        img.src = src;
+      });
+    };
 
-      if (!outgoing) {
-        // First load: nothing to transition from.
-        uniforms.uTexture.value = texture;
-        resizeRef.current();
-        return;
-      }
+    loadImage(imageSrc)
+      .then((img) => {
+        if (cancelled || !uniformsRef.current) {
+          return;
+        }
 
-      if (transitionFrameRef.current !== null) {
-        cancelAnimationFrame(transitionFrameRef.current);
-        transitionFrameRef.current = null;
-      }
-      uniforms.uPrevTexture.value?.dispose();
-      uniforms.uPrevTexture.value = outgoing;
-      uniforms.uTexture.value = texture;
-      uniforms.uProgress.value = 0;
-      uniforms.uHasTransition.value = 1;
-      resizeRef.current();
+        image = img;
 
-      const duration = 900;
-      const start = performance.now();
-      const step = (now: number) => {
-        if (!uniformsRef.current) return;
-        const progress = Math.min((now - start) / duration, 1);
-        uniformsRef.current.uProgress.value = progress;
-        if (progress < 1) {
-          transitionFrameRef.current = requestAnimationFrame(step);
-        } else {
-          uniformsRef.current.uHasTransition.value = 0;
-          uniformsRef.current.uPrevTexture.value?.dispose();
-          uniformsRef.current.uPrevTexture.value = null;
+        // Create Three.js texture from the loaded image
+        const texture = new THREE.Texture(image);
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.wrapS = THREE.ClampToEdgeWrapping;
+        texture.wrapT = THREE.ClampToEdgeWrapping;
+        texture.needsUpdate = true;
+
+        const uniforms = uniformsRef.current;
+        const outgoing = uniforms.uTexture.value;
+
+        if (!outgoing) {
+          // First load: nothing to transition from.
+          uniforms.uTexture.value = texture;
+          resizeRef.current();
+          return;
+        }
+
+        if (transitionFrameRef.current !== null) {
+          cancelAnimationFrame(transitionFrameRef.current);
           transitionFrameRef.current = null;
         }
-      };
-      transitionFrameRef.current = requestAnimationFrame(step);
-    });
+        uniforms.uPrevTexture.value?.dispose();
+        uniforms.uPrevTexture.value = outgoing;
+        uniforms.uTexture.value = texture;
+        uniforms.uProgress.value = 0;
+        uniforms.uHasTransition.value = 1;
+        resizeRef.current();
+
+        const duration = 900;
+        const start = performance.now();
+        const step = (now: number) => {
+          if (!uniformsRef.current) return;
+          const progress = Math.min((now - start) / duration, 1);
+          uniformsRef.current.uProgress.value = progress;
+          if (progress < 1) {
+            transitionFrameRef.current = requestAnimationFrame(step);
+          } else {
+            uniformsRef.current.uHasTransition.value = 0;
+            uniformsRef.current.uPrevTexture.value?.dispose();
+            uniformsRef.current.uPrevTexture.value = null;
+            transitionFrameRef.current = null;
+          }
+        };
+        transitionFrameRef.current = requestAnimationFrame(step);
+      })
+      .catch((err) => {
+        console.error('[GridDistortion] Image load failed:', err);
+        // Fallback: show a colored placeholder if image fails
+        if (!cancelled && uniformsRef.current) {
+          // Create a 1x1 colored texture as fallback
+          const canvas = document.createElement('canvas');
+          canvas.width = 1;
+          canvas.height = 1;
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.fillStyle = '#1a1a2e'; // fallback color matching theme
+            ctx.fillRect(0, 0, 1, 1);
+            const fallbackTexture = new THREE.CanvasTexture(canvas);
+            fallbackTexture.minFilter = THREE.LinearFilter;
+            fallbackTexture.magFilter = THREE.LinearFilter;
+            uniformsRef.current.uTexture.value = fallbackTexture;
+            resizeRef.current();
+          }
+        }
+      });
     return () => {
       cancelled = true;
       if (transitionFrameRef.current !== null) {

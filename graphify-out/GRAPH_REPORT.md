@@ -1,16 +1,16 @@
 # Graph Report - premium-portfolio  (2026-08-09)
 
 ## Corpus Check
-- 159 files · ~141,662 words
+- 163 files · ~146,985 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2296 nodes · 2641 edges · 191 communities (139 shown, 52 thin omitted)
+- 2327 nodes · 2670 edges · 197 communities (145 shown, 52 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 105 edges (avg confidence: 0.74)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9fe8ad87`
+- Built from commit: `e428cb02`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -204,6 +204,12 @@
 - Path
 - Path
 - Path
+- useAudioVisualizer.ts
+- destructive-foreground
+- muted
+- primary-hover
+- ring
+- clsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `TailwindConfigGenerator` - 57 edges
@@ -232,7 +238,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (191 total, 52 thin omitted)
+## Communities (197 total, 52 thin omitted)
 
 ### Community 0 - "gray"
 Cohesion: 0.05
@@ -243,8 +249,8 @@ Cohesion: 0.06
 Nodes (42): BM25, detect_domain(), get_cip_brief(), _load_csv(), Load CSV and return list of dicts, Core search function using BM25, Auto-detect the most relevant domain from query, Main search function with auto-domain detection (+34 more)
 
 ### Community 2 - "color"
-Cohesion: 0.04
-Nodes (46): $type, $value, background, destructive, destructive-foreground, foreground, muted, muted-foreground (+38 more)
+Cohesion: 0.08
+Nodes (25): $type, $value, background, destructive, foreground, muted-foreground, primary, primary-foreground (+17 more)
 
 ### Community 3 - "button"
 Cohesion: 0.06
@@ -260,7 +266,7 @@ Nodes (36): format_context(), format_result(), main(), Format a single search re
 
 ### Community 6 - "dependencies"
 Cohesion: 0.12
-Nodes (17): class-variance-authority, clsx, @emailjs/browser, lenis, dependencies, class-variance-authority, clsx, @emailjs/browser (+9 more)
+Nodes (17): @base-ui/react, class-variance-authority, @emailjs/browser, lenis, dependencies, @base-ui/react, class-variance-authority, @emailjs/browser (+9 more)
 
 ### Community 7 - "design_system.py"
 Cohesion: 0.05
@@ -367,8 +373,8 @@ Cohesion: 0.09
 Nodes (22): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+14 more)
 
 ### Community 33 - "duration"
-Cohesion: 0.17
-Nodes (13): CanvasVisualizer(), NOTE: This component currently has no consumers anywhere in the app (dead code)., Providers(), PALETTES, TileShimmerBackground(), GradientButton(), GradientButtonProps, useLenis() (+5 more)
+Cohesion: 0.16
+Nodes (13): Providers(), BlurText(), BlurTextProps, PALETTES, TileShimmerBackground(), LINES, TaglineSection(), GradientButton() (+5 more)
 
 ### Community 34 - "patch"
 Cohesion: 0.10
@@ -439,7 +445,7 @@ Cohesion: 0.11
 Nodes (17): Editorial Portfolio Redesign Implementation Plan, Global Constraints, Self-Review Notes, Task 10: Mission statement (new), Task 11: Process rewrite — arch anchor + card grid, Task 12: Contact + Footer rewrite — palette inversion + spec-sheet credit line, Task 13: Persistent section-index side-tab, Task 14: Final assembly check & full-site verification (+9 more)
 
 ### Community 51 - "test_sync_brand_to_tokens.py"
-Cohesion: 0.16
+Cohesion: 0.17
 Nodes (11): creditFields, Footer(), Navbar(), RevealHeadingLine(), RevealHeadingLineProps, ContactFooterBlock(), SocialLink, socialLinks (+3 more)
 
 ### Community 52 - "main"
@@ -619,8 +625,8 @@ Cohesion: 0.22
 Nodes (8): archivoBlack, bodoniModa, caveat, metadata, RootLayout(), spaceGrotesk, spaceMono, spectral
 
 ### Community 99 - "design-tokens-starter.json"
-Cohesion: 0.29
-Nodes (8): $type, $value, $type, $value, radius, full, md, md
+Cohesion: 0.15
+Nodes (19): $type, $value, sm, $type, $value, $type, $value, primitive (+11 more)
 
 ### Community 100 - "Core Visual Elements"
 Cohesion: 0.36
@@ -695,8 +701,8 @@ Cohesion: 0.29
 Nodes (6): Context, Decisions (confirmed with user), Implementation outline, Live-DOM measurements (source of truth), Phase 4 Design Spec — Skills/Services Section Redesign, Verification (mandatory before marking Phase 4 done)
 
 ### Community 118 - "Pre-Delivery Checklist"
-Cohesion: 0.47
-Nodes (6): sm, shadow, sm, sm, $type, $value
+Cohesion: 0.20
+Nodes (9): Contact Section Polish Fixes — Design, Context, Files touched, Fix 1 — Descender clipping on `/contact` heading ("g" in "get"), Fix 2 — "Got a project in mind?" text: size, position, animation, Fix 3 — "Email Me" button: size and position, Fix 4 — "Email Me" hover animation, Fix 5 — Red "unavailable" indicator (net-new, not reference-sourced) (+1 more)
 
 ### Community 119 - "Brand Guidelines Template"
 Cohesion: 0.33
@@ -711,8 +717,8 @@ Cohesion: 0.33
 Nodes (5): Global Constraints, Mission Statement Section Redesign Implementation Plan, Task 1: Create `SlideRevealText`, Task 2: Rebuild `MissionStatementSection.tsx`, Task 3: Verify against the reference and close out Phase 5
 
 ### Community 122 - "Common Rules for Professional UI"
-Cohesion: 0.40
-Nodes (4): BlurText(), BlurTextProps, LINES, TaglineSection()
+Cohesion: 0.25
+Nodes (7): /contact Page: Shimmer Zoning, Theme-Adaptive Text, Footer Spacing — Design, Context, Files touched, Fix 1 — Two-zone restructure of `/contact/page.tsx`, Fix 2 — Theme-adaptive text in `ContactFormSection.tsx`, Fix 3 — Email Me / Footer spacing, Verification plan
 
 ### Community 123 - "Example Workflow"
 Cohesion: 0.53
@@ -759,12 +765,12 @@ Cohesion: 0.40
 Nodes (4): Global Constraints, Task 1: Add the tile-pattern SVG assets and wire them into `globals.css`, Task 2: Apply the tiled background to `body` and strip redundant flat backgrounds from sections, Tiled Noise-Texture Background Implementation Plan
 
 ### Community 136 - "create.md"
-Cohesion: 0.50
-Nodes (3): dark, primitive, $schema
+Cohesion: 0.17
+Nodes (11): $type, $value, dark, semantic, $schema, $type, $value, semantic (+3 more)
 
 ### Community 137 - ".test_add_components_dry_run"
-Cohesion: 0.67
-Nodes (4): $type, $value, default, default
+Cohesion: 0.29
+Nodes (6): Contact Section Polish Fixes Implementation Plan, Final Verification (after all tasks), Global Constraints, Task 1: Fix descender clipping in `RevealHeadingLine`, Task 2: Fix ContactFooterBlock text column, heading reveal, and Email Me button, Task 3: Add red "unavailable" status dot to Footer
 
 ### Community 138 - ".test_add_components_success"
 Cohesion: 0.67
@@ -782,18 +788,42 @@ Nodes (3): _check_file(), main(), _read_rows()
 Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
+### Community 145 - ".test_init_default_typescript"
+Cohesion: 0.33
+Nodes (5): /contact Shimmer Zoning, Theme-Adaptive Text, Footer Spacing Implementation Plan, Final Verification (after both tasks), Global Constraints, Task 1: Restructure `/contact/page.tsx` into two zones, Task 2: Swap `ContactFormSection.tsx` to theme-adaptive tokens
+
+### Community 191 - "useAudioVisualizer.ts"
+Cohesion: 0.47
+Nodes (4): CanvasVisualizer(), NOTE: This component currently has no consumers anywhere in the app (dead code)., Particle, useScrollVisualizer()
+
+### Community 192 - "destructive-foreground"
+Cohesion: 0.67
+Nodes (3): destructive-foreground, $type, $value
+
+### Community 193 - "muted"
+Cohesion: 0.67
+Nodes (3): muted, $type, $value
+
+### Community 194 - "primary-hover"
+Cohesion: 0.67
+Nodes (3): primary-hover, $type, $value
+
+### Community 195 - "ring"
+Cohesion: 0.67
+Nodes (3): ring, $type, $value
+
 ## Knowledge Gaps
-- **1148 isolated node(s):** `$schema`, `$value`, `$type`, `$value`, `$type` (+1143 more)
+- **1169 isolated node(s):** `$schema`, `$value`, `$type`, `$value`, `$type` (+1164 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **52 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `primitive` connect `create.md` to `gray`, `design-tokens-starter.json`, `.test_add_components_no_components`, `BM25`, `Pre-Delivery Checklist`, `Copywriting Formulas`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **Why does `color` connect `gray` to `create.md`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **Why does `primitive` connect `design-tokens-starter.json` to `gray`, `.test_add_components_no_components`, `create.md`, `BM25`, `Copywriting Formulas`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `color` connect `gray` to `design-tokens-starter.json`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Why does `component` connect `button` to `create.md`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Are the 36 inferred relationships involving `TailwindConfigGenerator` (e.g. with `TestGeneratedConfigIsValidJs` and `.test_node_check_parses_generated_config()`) actually correct?**
@@ -801,6 +831,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 23 inferred relationships involving `ShadcnInstaller` (e.g. with `TestShadcnInstaller` and `.test_add_all_components_dry_run()`) actually correct?**
   _`ShadcnInstaller` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `$schema`, `$value`, `$type` to the rest of the system?**
-  _1148 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _1169 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `gray` be split into smaller, more focused modules?**
   _Cohesion score 0.05370101596516691 - nodes in this community are weakly interconnected._

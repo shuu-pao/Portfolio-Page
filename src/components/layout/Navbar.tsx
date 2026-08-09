@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import Image from "next/image";
 import { Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { NavOverlay } from "@/components/layout/NavOverlay";
@@ -26,12 +25,13 @@ export function Navbar() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-16">
         <a href="/#hero" className="cursor-pointer">
-          <Image
+          <img
             src="/images/mimikyu-icon.webp"
             alt="Paolo Jansen Enrera"
             width={32}
             height={32}
             className="size-[3.0rem]"
+            loading="lazy"
           />
         </a>
         <ThemeToggle />

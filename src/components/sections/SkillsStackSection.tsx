@@ -13,6 +13,7 @@ interface SkillCategory {
   tags: string[];
   description: string;
   insetAlt: string;
+  insetSrc: string;
 }
 
 const categories: SkillCategory[] = [
@@ -22,6 +23,7 @@ const categories: SkillCategory[] = [
     description:
       "I build performant, accessible interfaces with modern React tooling — leaning on Next.js for routing and image optimization, TypeScript to catch mistakes before they ship, and Framer Motion for interactions that feel deliberate rather than decorative.",
     insetAlt: "Screenshot of a React/Next.js interface in progress",
+    insetSrc: "/images/Frontend%20Development%20Image.png",
   },
   {
     title: "Backend & Automation",
@@ -29,6 +31,7 @@ const categories: SkillCategory[] = [
     description:
       "Building server-side logic, RESTful APIs, and automated workflows that connect frontend experiences to reliable data pipelines — the backbone of every polished web application.",
     insetAlt: "Screenshot of a Node.js backend dashboard",
+    insetSrc: "/images/Backend%20Development%20Image.png",
   },
   {
     title: "AI-Assisted Development",
@@ -36,6 +39,7 @@ const categories: SkillCategory[] = [
     description:
       "Leveraging AI tools to accelerate development — from generating boilerplate code and debugging workflows to prototyping interfaces faster. AI is a core part of my daily workflow, not just a side tool.",
     insetAlt: "Screenshot of AI-assisted code editing in VS Code",
+    insetSrc: "/images/AI%20Development%20Image.png",
   },
   {
     title: "Salesforce / CRM Automation",
@@ -43,6 +47,7 @@ const categories: SkillCategory[] = [
     description:
       "Configuring Agentforce actions and Flow Builder automations to handle case management and agentic workflows on the Salesforce platform — turning manual processes into guided, self-serve ones.",
     insetAlt: "Screenshot of a Salesforce Flow Builder canvas",
+    insetSrc: "/images/Salesforce%20Image.png",
   },
 ];
 
@@ -119,6 +124,7 @@ export default function SkillsStackSection() {
 
         <div className="relative h-auto flex-1 overflow-hidden md:sticky md:top-0 md:h-screen">
           <ImagePlaceholder
+            imageSrc="/images/Backdrop3.jpg"
             alt="Backdrop photo behind the skills list"
             label="Backdrop photo"
             className="h-full w-full"
@@ -134,6 +140,7 @@ export default function SkillsStackSection() {
                 className="h-full w-full"
               >
                 <ImagePlaceholder
+                  imageSrc={categories[activeIndex].insetSrc}
                   alt={categories[activeIndex].insetAlt}
                   label="Inset image"
                   className="h-full w-full shadow-xl"

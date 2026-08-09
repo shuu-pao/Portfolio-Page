@@ -189,5 +189,11 @@
   "187": "Path",
   "188": "Path",
   "189": "Path",
-  "190": "tailwind.config.js"
+  "190": "tailwind.config.js",
+  "191": "useAudioVisualizer.ts",
+  "192": "destructive-foreground",
+  "193": "muted",
+  "194": "primary-hover",
+  "195": "ring",
+  "196": "clsx"
 }

@@ -1,7 +1,7 @@
 {
   ".claude/settings.local.json": {
-    "mtime": 1785317610.609221,
-    "ast_hash": "1047f67ebc24ef4bc743ab6913242d7b",
+    "mtime": 1786262088.8406744,
+    "ast_hash": "c39e38f82d73cc90139fedadd564c26d",
     "semantic_hash": ""
   },
   ".claude/skills/brand/scripts/extract-colors.cjs": {
@@ -180,19 +180,19 @@
     "semantic_hash": "4cc68827171c844d989042549c766aac"
   },
   "eslint.config.mjs": {
-    "mtime": 1785257017.4891243,
-    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
-    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+    "mtime": 1785504725.0674531,
+    "ast_hash": "6adcfe5d704b8ea321af064b2a214bed",
+    "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1785257017.6030881,
-    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
-    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+    "mtime": 1785662141.6785016,
+    "ast_hash": "1dec5a1fec0582c1482b7302cbcef6aa",
+    "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785261974.770307,
-    "ast_hash": "867c8af944c17e603492e327e8c1c857",
-    "semantic_hash": "867c8af944c17e603492e327e8c1c857"
+    "mtime": 1786220622.7458944,
+    "ast_hash": "a151357beb641b3a308da4a5ea275174",
+    "semantic_hash": ""
   },
   "postcss.config.mjs": {
     "mtime": 1785257017.515701,
@@ -200,18 +200,13 @@
     "semantic_hash": "239f3ebf717465dc636818a1a619398d"
   },
   "src/app/layout.tsx": {
-    "mtime": 1785257243.8953302,
-    "ast_hash": "dc50150c0bb7ddb1d3a33c9eab1c706f",
-    "semantic_hash": "dc50150c0bb7ddb1d3a33c9eab1c706f"
-  },
-  "src/app/page.tsx": {
-    "mtime": 1785313044.0577686,
-    "ast_hash": "25884961922aaa705cda205ca04f9a6b",
+    "mtime": 1786103281.5461817,
+    "ast_hash": "fbcc2c73a6a4801cab8adba3b4af262e",
     "semantic_hash": ""
   },
-  "src/components/reactbits/Lightfall.tsx": {
-    "mtime": 1785310183.82454,
-    "ast_hash": "540b76baa9a0f4a206fd8e6f13e28f99",
+  "src/app/page.tsx": {
+    "mtime": 1786099766.1615307,
+    "ast_hash": "c8fde9090e91838dcfb1ab18b69a5641",
     "semantic_hash": ""
   },
   "src/components/ui/button.tsx": {
@@ -234,29 +229,19 @@
     "ast_hash": "9e6876a2692e569e7aac9232eb9675e2",
     "semantic_hash": ""
   },
-  "src/components/sections/AboutMeSection.tsx": {
-    "mtime": 1785313762.361309,
-    "ast_hash": "09cc6c6bffa945e8e4ed7c771b8f4162",
-    "semantic_hash": ""
-  },
   "src/components/sections/HeroSection.tsx": {
-    "mtime": 1785312344.7403622,
-    "ast_hash": "a01be76488ef2d7c302bfac9ca23e0c0",
+    "mtime": 1786214456.05117,
+    "ast_hash": "97749f00f3369fe2cf1a7002f89b44c0",
     "semantic_hash": ""
   },
   "src/components/sections/PortfolioGallerySection.tsx": {
-    "mtime": 1785313035.0437984,
-    "ast_hash": "8a9c88130b748a3540b044a5ae4df08b",
-    "semantic_hash": ""
-  },
-  "src/components/skills-grid.tsx": {
-    "mtime": 1785312628.073933,
-    "ast_hash": "edd924908b591187a48a00be5692aafd",
+    "mtime": 1786259233.6820993,
+    "ast_hash": "11f27662e4105701c16e9d54f3f8445f",
     "semantic_hash": ""
   },
   "src/hooks/use-in-viewport.ts": {
-    "mtime": 1785312374.3727093,
-    "ast_hash": "a506068ec1e923a96acde592013691c2",
+    "mtime": 1785323640.1413975,
+    "ast_hash": "db905b41d2bcd34320108641fd08c4df",
     "semantic_hash": ""
   },
   ".claude/skills/banner-design/SKILL.md": {
@@ -540,8 +525,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1785261014.615956,
-    "ast_hash": "01d302afe66aea4bc75f8e8429cbd503",
+    "mtime": 1785425920.1924236,
+    "ast_hash": "4897071ed96196428315c92a75cebbfe",
     "semantic_hash": ""
   },
   "README.md": {
@@ -577,6 +562,341 @@
   "public/window.svg": {
     "mtime": 1785257017.5756931,
     "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  ".claude/launch.json": {
+    "mtime": 1785666347.7409937,
+    "ast_hash": "c8183ab802964a143dd48d2e19469934",
+    "semantic_hash": ""
+  },
+  "firebase.json": {
+    "mtime": 1785783486.4617543,
+    "ast_hash": "86cc3074ed891fb229235eefe021978d",
+    "semantic_hash": ""
+  },
+  "src/app/contact/page.tsx": {
+    "mtime": 1786261297.9897523,
+    "ast_hash": "f769f057f261b9357424bfc2c3221783",
+    "semantic_hash": ""
+  },
+  "src/components/CanvasVisualizer.tsx": {
+    "mtime": 1785657170.509911,
+    "ast_hash": "151b2b258ed780b61d328c1e6981ce1e",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Footer.tsx": {
+    "mtime": 1786260067.6827688,
+    "ast_hash": "9df4dd4f477da7028c8697a2d648f73b",
+    "semantic_hash": ""
+  },
+  "src/components/layout/NavOverlay.tsx": {
+    "mtime": 1786103280.5751467,
+    "ast_hash": "e14f0415309f593698ee23a44e4a0f18",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Navbar.tsx": {
+    "mtime": 1786229299.700791,
+    "ast_hash": "cee6adfa1923ab2ae2ead35d3561e303",
+    "semantic_hash": ""
+  },
+  "src/components/layout/Providers.tsx": {
+    "mtime": 1786102338.9848309,
+    "ast_hash": "58c2abb297d661428a67bed2139db3bb",
+    "semantic_hash": ""
+  },
+  "src/components/layout/SectionIndexTab.tsx": {
+    "mtime": 1785657170.5144653,
+    "ast_hash": "c42ef64ee00d36877445c70c33c6284e",
+    "semantic_hash": ""
+  },
+  "src/components/reactbits/BlurText.tsx": {
+    "mtime": 1785504725.0740125,
+    "ast_hash": "55b4df64080b8224ff324a40583d3bd9",
+    "semantic_hash": ""
+  },
+  "src/components/reactbits/GridDistortion.tsx": {
+    "mtime": 1786205914.511175,
+    "ast_hash": "f2e376df9e0bc1525fb3019efed6e79d",
+    "semantic_hash": ""
+  },
+  "src/components/reactbits/RevealHeadingLine.tsx": {
+    "mtime": 1786258252.2490013,
+    "ast_hash": "105ba1ebb8df282e53eb7725d3113fe8",
+    "semantic_hash": ""
+  },
+  "src/components/reactbits/SlideRevealText.tsx": {
+    "mtime": 1786215218.1325314,
+    "ast_hash": "69e4a07a3dce6eb86706eeb0a75dbaef",
+    "semantic_hash": ""
+  },
+  "src/components/reactbits/TileShimmerBackground.tsx": {
+    "mtime": 1786106207.633108,
+    "ast_hash": "9de185386190e921abc9e96c74f3d22a",
+    "semantic_hash": ""
+  },
+  "src/components/sections/ContactFooterBlock.tsx": {
+    "mtime": 1786259917.003937,
+    "ast_hash": "050e5bedc9c0bbdf6135be09e574f5de",
+    "semantic_hash": ""
+  },
+  "src/components/sections/ContactFormSection.tsx": {
+    "mtime": 1786261829.7062669,
+    "ast_hash": "866300a46ef1f9bacf938a42f6774ac4",
+    "semantic_hash": ""
+  },
+  "src/components/sections/ContactSection.tsx": {
+    "mtime": 1786230104.6860683,
+    "ast_hash": "6ee16634a42261d861c1d2668ed1628b",
+    "semantic_hash": ""
+  },
+  "src/components/sections/IntroBioSection.tsx": {
+    "mtime": 1786099766.1630347,
+    "ast_hash": "811c1754f187dd611d43f06ee82f1bd2",
+    "semantic_hash": ""
+  },
+  "src/components/sections/MissionStatementSection.tsx": {
+    "mtime": 1786217230.3519416,
+    "ast_hash": "03932e10ff73df19014e7b0fe993344f",
+    "semantic_hash": ""
+  },
+  "src/components/sections/ProcessTimelineSection.tsx": {
+    "mtime": 1786099766.1650684,
+    "ast_hash": "5fee2fce72558e8d21c8fa8612e943a8",
+    "semantic_hash": ""
+  },
+  "src/components/sections/SkillsStackSection.tsx": {
+    "mtime": 1786221117.2866888,
+    "ast_hash": "0793e4b0c2084c706d9e71239f0de6bf",
+    "semantic_hash": ""
+  },
+  "src/components/sections/TaglineSection.tsx": {
+    "mtime": 1786099766.1660757,
+    "ast_hash": "03b72fa6f03b92f1b07b0fad3490c6f7",
+    "semantic_hash": ""
+  },
+  "src/components/ui/GradientButton.tsx": {
+    "mtime": 1785657170.5228274,
+    "ast_hash": "6dfc084ad53a9da569df6d22544e0f9e",
+    "semantic_hash": ""
+  },
+  "src/components/ui/ImagePlaceholder.tsx": {
+    "mtime": 1785657170.5238366,
+    "ast_hash": "2314e51a088a2339ca438758aa25d942",
+    "semantic_hash": ""
+  },
+  "src/components/ui/Marquee.tsx": {
+    "mtime": 1786212874.585852,
+    "ast_hash": "b5b5e57e03cfda72f3d85ba42a2dadcf",
+    "semantic_hash": ""
+  },
+  "src/components/ui/PillTag.tsx": {
+    "mtime": 1785657170.5248387,
+    "ast_hash": "09072772de230dda926ec86cd54c05b7",
+    "semantic_hash": ""
+  },
+  "src/components/ui/ThemeToggle.tsx": {
+    "mtime": 1785657170.5253417,
+    "ast_hash": "eb171d65d1a30363d73e8af9a0d131ea",
+    "semantic_hash": ""
+  },
+  "src/hooks/use-active-section.ts": {
+    "mtime": 1785657170.5258474,
+    "ast_hash": "26650492db05252e328a538f30739195",
+    "semantic_hash": ""
+  },
+  "src/hooks/use-dialog-behavior.ts": {
+    "mtime": 1785657170.5268536,
+    "ast_hash": "2e8f68704cc01135609fc671c77d8d90",
+    "semantic_hash": ""
+  },
+  "src/hooks/use-lenis.ts": {
+    "mtime": 1785657170.5268536,
+    "ast_hash": "cfca9e814ecaa736e3fa48765d65a76e",
+    "semantic_hash": ""
+  },
+  "src/hooks/use-magnetic.ts": {
+    "mtime": 1785504725.0840364,
+    "ast_hash": "7c05fc6c92b72260832769c7baac82b9",
+    "semantic_hash": ""
+  },
+  "src/hooks/use-prefers-reduced-motion.ts": {
+    "mtime": 1785657170.5278535,
+    "ast_hash": "b7de888809cbc6a4a5ee532fa41f82e7",
+    "semantic_hash": ""
+  },
+  "src/hooks/useAudioVisualizer.ts": {
+    "mtime": 1785657170.529607,
+    "ast_hash": "bf4c2d47159d53ed9c30b42bd6e3ebb5",
+    "semantic_hash": ""
+  },
+  "src/lib/sections.ts": {
+    "mtime": 1785680217.6177206,
+    "ast_hash": "27534203d5b914ab858464e7f343f38f",
+    "semantic_hash": ""
+  },
+  "tailwind.config.js": {
+    "mtime": 1785657170.530783,
+    "ast_hash": "926af2a681eeb2aee4d58c0b97c59795",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/REDESIGN-ROADMAP.md": {
+    "mtime": 1786228184.9210696,
+    "ast_hash": "5e28d5e1108e43054735b0b79bcac09f",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-07-31-lightfall-anchored-redesign.md": {
+    "mtime": 1785429231.4921298,
+    "ast_hash": "7b6eaa8635f6a77a49ef1bbcc417bf61",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-01-editorial-portfolio-redesign.md": {
+    "mtime": 1785657170.5017774,
+    "ast_hash": "e93a91ae062ef832c624bf92d804f210",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-02-hero-mees-redesign.md": {
+    "mtime": 1785670028.3738036,
+    "ast_hash": "9853dbb983db3249c450a6ee7b3ecb70",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-02-intro-tagline-bio-redesign.md": {
+    "mtime": 1785678173.3086026,
+    "ast_hash": "047ca47a004eb0e3046821c85e465fa8",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-03-contact-cta-redesign.md": {
+    "mtime": 1785756782.6860063,
+    "ast_hash": "a745831831ee01b957d70ff6f2d4d687",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-03-mission-statement-redesign.md": {
+    "mtime": 1785728982.5991476,
+    "ast_hash": "6eb4394dff1741b3acb8f7e986a984d4",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-03-process-section-redesign.md": {
+    "mtime": 1785743165.4383955,
+    "ast_hash": "4ba36bcd7a0fe6adfe1bc5228caca44b",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-03-selected-work-redesign.md": {
+    "mtime": 1785694736.822629,
+    "ast_hash": "b72445750d8c58f3dd3b59eaaaecb381",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-03-skills-services-redesign.md": {
+    "mtime": 1785699177.7675085,
+    "ast_hash": "8d6e9b48eff972e08b69ef22239c8603",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-07-tile-shimmer-animation.md": {
+    "mtime": 1786102233.2051377,
+    "ast_hash": "cc6fb9436a0d58bab9262f1758645bfb",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-07-tiled-noise-background.md": {
+    "mtime": 1786099313.15286,
+    "ast_hash": "98caf5c5ffd2e6a4a72686156c45050d",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-09-contact-page-letstalk-redesign.md": {
+    "mtime": 1786219500.613685,
+    "ast_hash": "4c9bd96830b79194eb7acaaf8fb63066",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-29-premium-portfolio-design.md": {
+    "mtime": 1785319358.8625245,
+    "ast_hash": "ad46c49052112df78be4c545be07d586",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-31-lightfall-anchored-redesign-design.md": {
+    "mtime": 1785428679.799929,
+    "ast_hash": "61d3577f9008dadb84e0cedcbbf0b7b3",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-01-editorial-portfolio-redesign-design.md": {
+    "mtime": 1785524941.966884,
+    "ast_hash": "6cd0747181e266edf4ed43220c58cdd7",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-02-hero-mees-redesign-design.md": {
+    "mtime": 1785670043.2321894,
+    "ast_hash": "e999d96350b25707dc774697d37332c5",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-02-intro-tagline-bio-redesign-design.md": {
+    "mtime": 1785677833.4065213,
+    "ast_hash": "ba64075b3da89922374e027eabb69bce",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-03-contact-cta-redesign-design.md": {
+    "mtime": 1785756681.0409746,
+    "ast_hash": "d03a3b03d9934a1fab9b724491eba268",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-03-mission-statement-redesign-design.md": {
+    "mtime": 1785728890.393875,
+    "ast_hash": "c5ab14be585b3ec2aa773024bf023a1a",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-03-process-section-redesign-design.md": {
+    "mtime": 1785742898.238129,
+    "ast_hash": "1da00274a1815ef16f1ca81b62704d21",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-03-selected-work-redesign-design.md": {
+    "mtime": 1785694336.5430698,
+    "ast_hash": "ffaab66e7fbf364df5262d396ad4cfdf",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-03-skills-services-redesign-design.md": {
+    "mtime": 1785698861.9238179,
+    "ast_hash": "4cf48d7ce95a062ecf3b59e135e97099",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-07-tile-shimmer-animation-design.md": {
+    "mtime": 1786102083.5218222,
+    "ast_hash": "72a9a4fe6ebcee1bfcd7b05abb8a06b0",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-07-tiled-noise-background-design.md": {
+    "mtime": 1786099171.1380808,
+    "ast_hash": "815c508fac15c8e926c27515edce9be6",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-09-contact-page-letstalk-redesign-design.md": {
+    "mtime": 1786219043.8192592,
+    "ast_hash": "9f6204fc8e51216787a145b7d4ecbae0",
+    "semantic_hash": ""
+  },
+  "public/images/mimikyu-icon.webp": {
+    "mtime": 1786213426.0403442,
+    "ast_hash": "52b8b2c88337d46e95aad1ba61f3f80c",
+    "semantic_hash": ""
+  },
+  "public/images/mimikyu.webp": {
+    "mtime": 1786213096.910118,
+    "ast_hash": "6ad805478c3e47fcf532b1b09044a328",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md": {
+    "mtime": 1786261212.134593,
+    "ast_hash": "9065e9d563e5e4c936701b9545cc4966",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md": {
+    "mtime": 1786258179.48982,
+    "ast_hash": "29d66f8550b63a68d0fb3abd1da9eb66",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md": {
+    "mtime": 1786261063.7815719,
+    "ast_hash": "615b511b851cebc65dbad31351392400",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md": {
+    "mtime": 1786258060.8329637,
+    "ast_hash": "ec185a59e06a183b020e405fb6103227",
     "semantic_hash": ""
   }
 }

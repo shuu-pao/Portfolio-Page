@@ -1260,7 +1260,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_primitive",
-      "community": 136,
+      "community": 99,
       "norm_label": "primitive"
     },
     {
@@ -2180,7 +2180,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_fontsize_sm",
-      "community": 118,
+      "community": 99,
       "norm_label": "sm"
     },
     {
@@ -2190,7 +2190,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_sm_value",
-      "community": 118,
+      "community": 99,
       "norm_label": "$value"
     },
     {
@@ -2200,7 +2200,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_sm_type",
-      "community": 118,
+      "community": 99,
       "norm_label": "$type"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_radius_sm",
-      "community": 118,
+      "community": 99,
       "norm_label": "sm"
     },
     {
@@ -2440,7 +2440,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_radius_default",
-      "community": 137,
+      "community": 99,
       "norm_label": "default"
     },
     {
@@ -2450,7 +2450,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_default_value",
-      "community": 137,
+      "community": 99,
       "norm_label": "$value"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_default_type",
-      "community": 137,
+      "community": 99,
       "norm_label": "$type"
     },
     {
@@ -2550,7 +2550,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_primitive_shadow",
-      "community": 118,
+      "community": 99,
       "norm_label": "shadow"
     },
     {
@@ -2570,7 +2570,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_shadow_sm",
-      "community": 118,
+      "community": 99,
       "norm_label": "sm"
     },
     {
@@ -2580,7 +2580,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_shadow_default",
-      "community": 137,
+      "community": 99,
       "norm_label": "default"
     },
     {
@@ -2710,7 +2710,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_semantic",
-      "community": 2,
+      "community": 136,
       "norm_label": "semantic"
     },
     {
@@ -2820,7 +2820,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_color_primary_hover",
-      "community": 2,
+      "community": 194,
       "norm_label": "primary-hover"
     },
     {
@@ -2830,7 +2830,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_primary_hover_value",
-      "community": 2,
+      "community": 194,
       "norm_label": "$value"
     },
     {
@@ -2840,7 +2840,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_primary_hover_type",
-      "community": 2,
+      "community": 194,
       "norm_label": "$type"
     },
     {
@@ -2940,7 +2940,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_color_muted",
-      "community": 2,
+      "community": 193,
       "norm_label": "muted"
     },
     {
@@ -2950,7 +2950,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_muted_value",
-      "community": 2,
+      "community": 193,
       "norm_label": "$value"
     },
     {
@@ -2960,7 +2960,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_muted_type",
-      "community": 2,
+      "community": 193,
       "norm_label": "$type"
     },
     {
@@ -3030,7 +3030,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_color_destructive_foreground",
-      "community": 2,
+      "community": 192,
       "norm_label": "destructive-foreground"
     },
     {
@@ -3040,7 +3040,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_destructive_foreground_value",
-      "community": 2,
+      "community": 192,
       "norm_label": "$value"
     },
     {
@@ -3050,7 +3050,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_destructive_foreground_type",
-      "community": 2,
+      "community": 192,
       "norm_label": "$type"
     },
     {
@@ -3090,7 +3090,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_color_ring",
-      "community": 2,
+      "community": 195,
       "norm_label": "ring"
     },
     {
@@ -3100,7 +3100,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_ring_value",
-      "community": 2,
+      "community": 195,
       "norm_label": "$value"
     },
     {
@@ -3110,7 +3110,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_ring_type",
-      "community": 2,
+      "community": 195,
       "norm_label": "$type"
     },
     {
@@ -3120,7 +3120,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_semantic_spacing",
-      "community": 2,
+      "community": 136,
       "norm_label": "spacing"
     },
     {
@@ -3130,7 +3130,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_spacing_component",
-      "community": 2,
+      "community": 136,
       "norm_label": "component"
     },
     {
@@ -3140,7 +3140,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_component_value",
-      "community": 2,
+      "community": 136,
       "norm_label": "$value"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_component_type",
-      "community": 2,
+      "community": 136,
       "norm_label": "$type"
     },
     {
@@ -3160,7 +3160,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_spacing_section",
-      "community": 2,
+      "community": 136,
       "norm_label": "section"
     },
     {
@@ -3170,7 +3170,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_section_value",
-      "community": 2,
+      "community": 136,
       "norm_label": "$value"
     },
     {
@@ -3180,7 +3180,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_section_type",
-      "community": 2,
+      "community": 136,
       "norm_label": "$type"
     },
     {
@@ -3620,7 +3620,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "c_users_paolo_onedrive_documents_repositories_premium_portfolio_claude_skills_design_system_templates_design_tokens_starter_dark_semantic",
-      "community": 2,
+      "community": 136,
       "norm_label": "semantic"
     },
     {
@@ -7960,7 +7960,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_dependencies_base_ui_react",
-      "community": 145,
+      "community": 6,
       "norm_label": "@base-ui/react"
     },
     {
@@ -7970,7 +7970,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "base_ui_react",
-      "community": 145,
+      "community": 6,
       "norm_label": "@base-ui/react"
     },
     {
@@ -8060,7 +8060,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "package_dependencies_clsx",
-      "community": 6,
+      "community": 196,
       "norm_label": "clsx"
     },
     {
@@ -8070,7 +8070,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "clsx",
-      "community": 6,
+      "community": 196,
       "norm_label": "clsx"
     },
     {
@@ -8660,7 +8660,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_canvasvisualizer",
-      "community": 33,
+      "community": 191,
       "norm_label": "canvasvisualizer.tsx"
     },
     {
@@ -8670,7 +8670,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_canvasvisualizer_canvasvisualizer",
-      "community": 33,
+      "community": 191,
       "norm_label": "canvasvisualizer()"
     },
     {
@@ -8680,7 +8680,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_components_canvasvisualizer_rationale_6",
-      "community": 33,
+      "community": 191,
       "norm_label": "note: this component currently has no consumers anywhere in the app (dead code)."
     },
     {
@@ -8697,7 +8697,7 @@
       "label": "creditFields",
       "file_type": "code",
       "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L1",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "src_components_layout_footer_creditfields",
       "community": 51,
@@ -8707,7 +8707,7 @@
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L7",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_layout_footer_footer",
       "community": 51,
@@ -8767,7 +8767,7 @@
       "label": "navLinks",
       "file_type": "code",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "src_components_layout_navbar_navlinks",
       "community": 86,
@@ -8777,7 +8777,7 @@
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L19",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "src_components_layout_navbar_navbar",
       "community": 51,
@@ -8830,7 +8830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_reactbits_blurtext",
-      "community": 122,
+      "community": 33,
       "norm_label": "blurtext.tsx"
     },
     {
@@ -8840,7 +8840,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_components_reactbits_blurtext_blurtextprops",
-      "community": 122,
+      "community": 33,
       "norm_label": "blurtextprops"
     },
     {
@@ -8850,7 +8850,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_components_reactbits_blurtext_blurtext",
-      "community": 122,
+      "community": 33,
       "norm_label": "blurtext()"
     },
     {
@@ -9007,7 +9007,7 @@
       "label": "SocialLink",
       "file_type": "code",
       "source_file": "src/components/sections/ContactFooterBlock.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_sections_contactfooterblock_sociallink",
       "community": 51,
@@ -9017,7 +9017,7 @@
       "label": "socialLinks",
       "file_type": "code",
       "source_file": "src/components/sections/ContactFooterBlock.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "src_components_sections_contactfooterblock_sociallinks",
       "community": 51,
@@ -9027,7 +9027,7 @@
       "label": "ContactFooterBlock()",
       "file_type": "code",
       "source_file": "src/components/sections/ContactFooterBlock.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "src_components_sections_contactfooterblock_contactfooterblock",
       "community": 51,
@@ -9217,7 +9217,7 @@
       "label": "JUSTIFY_CLASS",
       "file_type": "code",
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L85",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "src_components_sections_portfoliogallerysection_justify_class",
       "community": 36,
@@ -9227,7 +9227,7 @@
       "label": "MARGIN_CLASS",
       "file_type": "code",
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L91",
+      "source_location": "L92",
       "_origin": "ast",
       "id": "src_components_sections_portfoliogallerysection_margin_class",
       "community": 36,
@@ -9237,7 +9237,7 @@
       "label": "ProjectCard()",
       "file_type": "code",
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L97",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "src_components_sections_portfoliogallerysection_projectcard",
       "community": 36,
@@ -9247,7 +9247,7 @@
       "label": "PortfolioGallerySection()",
       "file_type": "code",
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L156",
+      "source_location": "L157",
       "_origin": "ast",
       "id": "src_components_sections_portfoliogallerysection_portfoliogallerysection",
       "community": 36,
@@ -9327,7 +9327,7 @@
       "label": "categories",
       "file_type": "code",
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "src_components_sections_skillsstacksection_categories",
       "community": 36,
@@ -9337,7 +9337,7 @@
       "label": "CategoryBlock()",
       "file_type": "code",
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L49",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "src_components_sections_skillsstacksection_categoryblock",
       "community": 36,
@@ -9347,7 +9347,7 @@
       "label": "SkillsStackSection()",
       "file_type": "code",
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L96",
+      "source_location": "L101",
       "_origin": "ast",
       "id": "src_components_sections_skillsstacksection_skillsstacksection",
       "community": 36,
@@ -9360,7 +9360,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_sections_taglinesection",
-      "community": 122,
+      "community": 33,
       "norm_label": "taglinesection.tsx"
     },
     {
@@ -9370,7 +9370,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_components_sections_taglinesection_lines",
-      "community": 122,
+      "community": 33,
       "norm_label": "lines"
     },
     {
@@ -9380,7 +9380,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_components_sections_taglinesection_taglinesection",
-      "community": 122,
+      "community": 33,
       "norm_label": "taglinesection()"
     },
     {
@@ -9710,7 +9710,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_useaudiovisualizer",
-      "community": 33,
+      "community": 191,
       "norm_label": "useaudiovisualizer.ts"
     },
     {
@@ -9720,7 +9720,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_hooks_useaudiovisualizer_particle",
-      "community": 33,
+      "community": 191,
       "norm_label": "particle"
     },
     {
@@ -9730,7 +9730,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_hooks_useaudiovisualizer_usescrollvisualizer",
-      "community": 33,
+      "community": 191,
       "norm_label": "usescrollvisualizer()"
     },
     {
@@ -21734,6 +21734,136 @@
       "norm_label": "task 7: full-branch verification against the reference"
     },
     {
+      "label": "2026-08-09-contact-page-shimmer-zoning.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning",
+      "community": 145,
+      "norm_label": "2026-08-09-contact-page-shimmer-zoning.md"
+    },
+    {
+      "label": "/contact Shimmer Zoning, Theme-Adaptive Text, Footer Spacing Implementation Plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_contact_shimmer_zoning_theme_adaptive_text_footer_spacing_implementation_plan",
+      "community": 145,
+      "norm_label": "/contact shimmer zoning, theme-adaptive text, footer spacing implementation plan"
+    },
+    {
+      "label": "Global Constraints",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_global_constraints",
+      "community": 145,
+      "norm_label": "global constraints"
+    },
+    {
+      "label": "Task 1: Restructure `/contact/page.tsx` into two zones",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_task_1_restructure_contact_page_tsx_into_two_zones",
+      "community": 145,
+      "norm_label": "task 1: restructure `/contact/page.tsx` into two zones"
+    },
+    {
+      "label": "Task 2: Swap `ContactFormSection.tsx` to theme-adaptive tokens",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L112",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_task_2_swap_contactformsection_tsx_to_theme_adaptive_tokens",
+      "community": 145,
+      "norm_label": "task 2: swap `contactformsection.tsx` to theme-adaptive tokens"
+    },
+    {
+      "label": "Final Verification (after both tasks)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L238",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_final_verification_after_both_tasks",
+      "community": 145,
+      "norm_label": "final verification (after both tasks)"
+    },
+    {
+      "label": "2026-08-09-contact-polish-fixes.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_polish_fixes",
+      "community": 137,
+      "norm_label": "2026-08-09-contact-polish-fixes.md"
+    },
+    {
+      "label": "Contact Section Polish Fixes Implementation Plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_contact_section_polish_fixes_implementation_plan",
+      "community": 137,
+      "norm_label": "contact section polish fixes implementation plan"
+    },
+    {
+      "label": "Global Constraints",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_global_constraints",
+      "community": 137,
+      "norm_label": "global constraints"
+    },
+    {
+      "label": "Task 1: Fix descender clipping in `RevealHeadingLine`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_task_1_fix_descender_clipping_in_revealheadingline",
+      "community": 137,
+      "norm_label": "task 1: fix descender clipping in `revealheadingline`"
+    },
+    {
+      "label": "Task 2: Fix ContactFooterBlock text column, heading reveal, and Email Me button",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_task_2_fix_contactfooterblock_text_column_heading_reveal_and_email_me_button",
+      "community": 137,
+      "norm_label": "task 2: fix contactfooterblock text column, heading reveal, and email me button"
+    },
+    {
+      "label": "Task 3: Add red \"unavailable\" status dot to Footer",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L152",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_task_3_add_red_unavailable_status_dot_to_footer",
+      "community": 137,
+      "norm_label": "task 3: add red \"unavailable\" status dot to footer"
+    },
+    {
+      "label": "Final Verification (after all tasks)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L213",
+      "_origin": "ast",
+      "id": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_final_verification_after_all_tasks",
+      "community": 137,
+      "norm_label": "final verification (after all tasks)"
+    },
+    {
       "label": "2026-07-29-premium-portfolio-design.md",
       "file_type": "document",
       "source_file": "docs/superpowers/specs/2026-07-29-premium-portfolio-design.md",
@@ -22962,6 +23092,186 @@
       "id": "docs_superpowers_specs_2026_08_09_contact_page_letstalk_redesign_design_verification_mandatory_before_marking_done",
       "community": 97,
       "norm_label": "verification (mandatory before marking done)"
+    },
+    {
+      "label": "2026-08-09-contact-page-shimmer-zoning-design.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design",
+      "community": 122,
+      "norm_label": "2026-08-09-contact-page-shimmer-zoning-design.md"
+    },
+    {
+      "label": "/contact Page: Shimmer Zoning, Theme-Adaptive Text, Footer Spacing \u2014 Design",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_contact_page_shimmer_zoning_theme_adaptive_text_footer_spacing_design",
+      "community": 122,
+      "norm_label": "/contact page: shimmer zoning, theme-adaptive text, footer spacing \u2014 design"
+    },
+    {
+      "label": "Context",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_context",
+      "community": 122,
+      "norm_label": "context"
+    },
+    {
+      "label": "Fix 1 \u2014 Two-zone restructure of `/contact/page.tsx`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_fix_1_two_zone_restructure_of_contact_page_tsx",
+      "community": 122,
+      "norm_label": "fix 1 \u2014 two-zone restructure of `/contact/page.tsx`"
+    },
+    {
+      "label": "Fix 2 \u2014 Theme-adaptive text in `ContactFormSection.tsx`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_fix_2_theme_adaptive_text_in_contactformsection_tsx",
+      "community": 122,
+      "norm_label": "fix 2 \u2014 theme-adaptive text in `contactformsection.tsx`"
+    },
+    {
+      "label": "Fix 3 \u2014 Email Me / Footer spacing",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_fix_3_email_me_footer_spacing",
+      "community": 122,
+      "norm_label": "fix 3 \u2014 email me / footer spacing"
+    },
+    {
+      "label": "Files touched",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_files_touched",
+      "community": 122,
+      "norm_label": "files touched"
+    },
+    {
+      "label": "Verification plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L109",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_verification_plan",
+      "community": 122,
+      "norm_label": "verification plan"
+    },
+    {
+      "label": "2026-08-09-contact-polish-fixes-design.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design",
+      "community": 118,
+      "norm_label": "2026-08-09-contact-polish-fixes-design.md"
+    },
+    {
+      "label": "Contact Section Polish Fixes \u2014 Design",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "community": 118,
+      "norm_label": "contact section polish fixes \u2014 design"
+    },
+    {
+      "label": "Context",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_context",
+      "community": 118,
+      "norm_label": "context"
+    },
+    {
+      "label": "Fix 1 \u2014 Descender clipping on `/contact` heading (\"g\" in \"get\")",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_1_descender_clipping_on_contact_heading_g_in_get",
+      "community": 118,
+      "norm_label": "fix 1 \u2014 descender clipping on `/contact` heading (\"g\" in \"get\")"
+    },
+    {
+      "label": "Fix 2 \u2014 \"Got a project in mind?\" text: size, position, animation",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_2_got_a_project_in_mind_text_size_position_animation",
+      "community": 118,
+      "norm_label": "fix 2 \u2014 \"got a project in mind?\" text: size, position, animation"
+    },
+    {
+      "label": "Fix 3 \u2014 \"Email Me\" button: size and position",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_3_email_me_button_size_and_position",
+      "community": 118,
+      "norm_label": "fix 3 \u2014 \"email me\" button: size and position"
+    },
+    {
+      "label": "Fix 4 \u2014 \"Email Me\" hover animation",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_4_email_me_hover_animation",
+      "community": 118,
+      "norm_label": "fix 4 \u2014 \"email me\" hover animation"
+    },
+    {
+      "label": "Fix 5 \u2014 Red \"unavailable\" indicator (net-new, not reference-sourced)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_5_red_unavailable_indicator_net_new_not_reference_sourced",
+      "community": 118,
+      "norm_label": "fix 5 \u2014 red \"unavailable\" indicator (net-new, not reference-sourced)"
+    },
+    {
+      "label": "Files touched",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L133",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_files_touched",
+      "community": 118,
+      "norm_label": "files touched"
+    },
+    {
+      "label": "Verification plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_verification_plan",
+      "community": 118,
+      "norm_label": "verification plan"
     }
   ],
   "links": [
@@ -35243,7 +35553,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L1",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "src_components_layout_footer",
       "target": "src_components_layout_footer_creditfields",
@@ -35253,7 +35563,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L7",
+      "source_location": "L15",
       "weight": 1.0,
       "source": "src_components_layout_footer",
       "target": "src_components_layout_footer_footer",
@@ -35286,7 +35596,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navoverlay",
@@ -35371,7 +35681,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navoverlay_navoverlay",
@@ -35403,7 +35713,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navbar_navbar",
@@ -35413,7 +35723,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_layout_navbar_navlinks",
@@ -35424,7 +35734,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_ui_themetoggle",
@@ -35435,7 +35745,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_components_ui_themetoggle_themetoggle",
@@ -35446,7 +35756,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_hooks_use_active_section",
@@ -35457,7 +35767,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_hooks_use_active_section_useactivesection",
@@ -35468,7 +35778,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_lib_sections",
@@ -35479,7 +35789,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_lib_sections_sections",
@@ -35490,7 +35800,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_lib_utils",
@@ -35501,7 +35811,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_layout_navbar",
       "target": "src_lib_utils_cn",
@@ -35513,7 +35823,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/Navbar.tsx",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "src_components_layout_navbar_navbar",
       "target": "src_hooks_use_active_section_useactivesection"
@@ -35826,7 +36136,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/reactbits/GridDistortion.tsx",
-      "source_location": "L346",
+      "source_location": "L384",
       "weight": 1.0,
       "source": "src_components_reactbits_griddistortion_griddistortion",
       "target": "src_lib_utils_cn"
@@ -35888,6 +36198,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/ContactFooterBlock.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_sections_contactfooterblock",
+      "target": "src_components_reactbits_revealheadingline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/sections/ContactFormSection.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -35915,6 +36236,17 @@
       "weight": 1.0,
       "source": "src_components_sections_skillsstacksection",
       "target": "src_components_reactbits_revealheadingline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/ContactFooterBlock.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_sections_contactfooterblock",
+      "target": "src_components_reactbits_revealheadingline_revealheadingline",
       "confidence_score": 1.0
     },
     {
@@ -36091,7 +36423,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/ContactFooterBlock.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0,
       "source": "src_components_sections_contactfooterblock",
       "target": "src_components_sections_contactfooterblock_contactfooterblock",
@@ -36101,7 +36433,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/ContactFooterBlock.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_sections_contactfooterblock",
       "target": "src_components_sections_contactfooterblock_sociallink",
@@ -36111,7 +36443,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/ContactFooterBlock.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "src_components_sections_contactfooterblock",
       "target": "src_components_sections_contactfooterblock_sociallinks",
@@ -36122,7 +36454,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/ContactFooterBlock.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "src_components_sections_contactfooterblock",
       "target": "src_components_ui_gradientbutton",
@@ -36133,7 +36465,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/ContactFooterBlock.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "src_components_sections_contactfooterblock",
       "target": "src_components_ui_gradientbutton_gradientbutton",
@@ -36375,7 +36707,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L85",
+      "source_location": "L86",
       "weight": 1.0,
       "source": "src_components_sections_portfoliogallerysection",
       "target": "src_components_sections_portfoliogallerysection_justify_class",
@@ -36385,7 +36717,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L91",
+      "source_location": "L92",
       "weight": 1.0,
       "source": "src_components_sections_portfoliogallerysection",
       "target": "src_components_sections_portfoliogallerysection_margin_class",
@@ -36395,7 +36727,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L156",
+      "source_location": "L157",
       "weight": 1.0,
       "source": "src_components_sections_portfoliogallerysection",
       "target": "src_components_sections_portfoliogallerysection_portfoliogallerysection",
@@ -36415,7 +36747,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L97",
+      "source_location": "L98",
       "weight": 1.0,
       "source": "src_components_sections_portfoliogallerysection",
       "target": "src_components_sections_portfoliogallerysection_projectcard",
@@ -36547,7 +36879,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L106",
+      "source_location": "L107",
       "weight": 1.0,
       "source": "src_components_sections_portfoliogallerysection_projectcard",
       "target": "src_lib_utils_cn"
@@ -36558,7 +36890,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/sections/PortfolioGallerySection.tsx",
-      "source_location": "L159",
+      "source_location": "L160",
       "weight": 1.0,
       "source": "src_components_sections_portfoliogallerysection_portfoliogallerysection",
       "target": "src_hooks_use_dialog_behavior_usedialogbehavior"
@@ -36607,7 +36939,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "source": "src_components_sections_skillsstacksection",
       "target": "src_components_sections_skillsstacksection_categories",
@@ -36617,7 +36949,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L49",
+      "source_location": "L54",
       "weight": 1.0,
       "source": "src_components_sections_skillsstacksection",
       "target": "src_components_sections_skillsstacksection_categoryblock",
@@ -36637,7 +36969,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L96",
+      "source_location": "L101",
       "weight": 1.0,
       "source": "src_components_sections_skillsstacksection",
       "target": "src_components_sections_skillsstacksection_skillsstacksection",
@@ -36715,7 +37047,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/sections/SkillsStackSection.tsx",
-      "source_location": "L70",
+      "source_location": "L75",
       "weight": 1.0,
       "source": "src_components_sections_skillsstacksection_categoryblock",
       "target": "src_lib_utils_cn"
@@ -48761,6 +49093,116 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning",
+      "target": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_contact_shimmer_zoning_theme_adaptive_text_footer_spacing_implementation_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_contact_shimmer_zoning_theme_adaptive_text_footer_spacing_implementation_plan",
+      "target": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_final_verification_after_both_tasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_contact_shimmer_zoning_theme_adaptive_text_footer_spacing_implementation_plan",
+      "target": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_global_constraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_task_1_restructure_contact_page_tsx_into_two_zones",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_09_contact_page_shimmer_zoning_task_2_swap_contactformsection_tsx_to_theme_adaptive_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_polish_fixes",
+      "target": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_contact_section_polish_fixes_implementation_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L213",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_contact_section_polish_fixes_implementation_plan",
+      "target": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_final_verification_after_all_tasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_contact_section_polish_fixes_implementation_plan",
+      "target": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_global_constraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_task_1_fix_descender_clipping_in_revealheadingline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_task_2_fix_contactfooterblock_text_column_heading_reveal_and_email_me_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_global_constraints",
+      "target": "docs_superpowers_plans_2026_08_09_contact_polish_fixes_task_3_add_red_unavailable_status_dot_to_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/specs/2026-07-29-premium-portfolio-design.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -49857,8 +50299,168 @@
       "source": "docs_superpowers_specs_2026_08_09_contact_page_letstalk_redesign_design_live_dom_measurements_source_of_truth",
       "target": "docs_superpowers_specs_2026_08_09_contact_page_letstalk_redesign_design_home_marquee_button",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_contact_page_shimmer_zoning_theme_adaptive_text_footer_spacing_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_contact_page_shimmer_zoning_theme_adaptive_text_footer_spacing_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_contact_page_shimmer_zoning_theme_adaptive_text_footer_spacing_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_files_touched",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_contact_page_shimmer_zoning_theme_adaptive_text_footer_spacing_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_fix_1_two_zone_restructure_of_contact_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_contact_page_shimmer_zoning_theme_adaptive_text_footer_spacing_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_fix_2_theme_adaptive_text_in_contactformsection_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_contact_page_shimmer_zoning_theme_adaptive_text_footer_spacing_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_fix_3_email_me_footer_spacing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_contact_page_shimmer_zoning_theme_adaptive_text_footer_spacing_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_page_shimmer_zoning_design_verification_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_files_touched",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_1_descender_clipping_on_contact_heading_g_in_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_2_got_a_project_in_mind_text_size_position_animation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_3_email_me_button_size_and_position",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_4_email_me_hover_animation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_fix_5_red_unavailable_indicator_net_new_not_reference_sourced",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_contact_section_polish_fixes_design",
+      "target": "docs_superpowers_specs_2026_08_09_contact_polish_fixes_design_verification_plan",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9fe8ad876934e28f518bb613fed1d7155643d630"
+  "built_at_commit": "e428cb02d101350060349ad758358f861b6a2f87"
 }

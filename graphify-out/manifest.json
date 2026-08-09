@@ -1,7 +1,7 @@
 {
   ".claude/settings.local.json": {
-    "mtime": 1786230526.5643997,
-    "ast_hash": "335a20b44f03093808aee3ab27572b67",
+    "mtime": 1786284710.6768413,
+    "ast_hash": "89afeaf1940e92cfaf4c7be136a1c1e4",
     "semantic_hash": ""
   },
   ".claude/skills/brand/scripts/extract-colors.cjs": {
@@ -185,8 +185,8 @@
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1785662141.6785016,
-    "ast_hash": "1dec5a1fec0582c1482b7302cbcef6aa",
+    "mtime": 1786267469.7509809,
+    "ast_hash": "47edaf25b31ff5c6ccfe76ca2e0cdc42",
     "semantic_hash": ""
   },
   "package.json": {
@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "src/components/sections/PortfolioGallerySection.tsx": {
-    "mtime": 1786221111.2362733,
-    "ast_hash": "bd95e865b02ee0b1f5d57abd20b7c9a3",
+    "mtime": 1786277295.982965,
+    "ast_hash": "a16c6d816e6e8b43d6ca7897a6421ffc",
     "semantic_hash": ""
   },
   "src/hooks/use-in-viewport.ts": {
@@ -570,13 +570,13 @@
     "semantic_hash": ""
   },
   "firebase.json": {
-    "mtime": 1785783486.4617543,
-    "ast_hash": "86cc3074ed891fb229235eefe021978d",
+    "mtime": 1786284565.3778112,
+    "ast_hash": "e735bf4bdb7509579a8c8322248ac8f8",
     "semantic_hash": ""
   },
   "src/app/contact/page.tsx": {
-    "mtime": 1786227330.5580292,
-    "ast_hash": "6b98458c19b824a677c687fdba065daa",
+    "mtime": 1786261297.9897523,
+    "ast_hash": "f769f057f261b9357424bfc2c3221783",
     "semantic_hash": ""
   },
   "src/components/CanvasVisualizer.tsx": {
@@ -585,8 +585,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/Footer.tsx": {
-    "mtime": 1785759499.3090048,
-    "ast_hash": "85f9a989afc3ce2f4aa65dcdfb740609",
+    "mtime": 1786260067.6827688,
+    "ast_hash": "9df4dd4f477da7028c8697a2d648f73b",
     "semantic_hash": ""
   },
   "src/components/layout/NavOverlay.tsx": {
@@ -595,8 +595,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/Navbar.tsx": {
-    "mtime": 1786229299.700791,
-    "ast_hash": "cee6adfa1923ab2ae2ead35d3561e303",
+    "mtime": 1786267686.0571623,
+    "ast_hash": "d233f7a7f2fe526132f67fcae311648d",
     "semantic_hash": ""
   },
   "src/components/layout/Providers.tsx": {
@@ -615,13 +615,13 @@
     "semantic_hash": ""
   },
   "src/components/reactbits/GridDistortion.tsx": {
-    "mtime": 1786205914.511175,
-    "ast_hash": "f2e376df9e0bc1525fb3019efed6e79d",
+    "mtime": 1786269062.836608,
+    "ast_hash": "195b77d562fa3e4f2d23b5789684c76d",
     "semantic_hash": ""
   },
   "src/components/reactbits/RevealHeadingLine.tsx": {
-    "mtime": 1786221100.9600036,
-    "ast_hash": "24582158ec43e67ef0a40519cf886ed8",
+    "mtime": 1786258252.2490013,
+    "ast_hash": "105ba1ebb8df282e53eb7725d3113fe8",
     "semantic_hash": ""
   },
   "src/components/reactbits/SlideRevealText.tsx": {
@@ -635,13 +635,13 @@
     "semantic_hash": ""
   },
   "src/components/sections/ContactFooterBlock.tsx": {
-    "mtime": 1786222198.0133064,
-    "ast_hash": "b895218e1ed65767f182af9dabc1370d",
+    "mtime": 1786259917.003937,
+    "ast_hash": "050e5bedc9c0bbdf6135be09e574f5de",
     "semantic_hash": ""
   },
   "src/components/sections/ContactFormSection.tsx": {
-    "mtime": 1786228739.5434773,
-    "ast_hash": "18af65429a9eb79f1ecae673a9c6bfc1",
+    "mtime": 1786261829.7062669,
+    "ast_hash": "866300a46ef1f9bacf938a42f6774ac4",
     "semantic_hash": ""
   },
   "src/components/sections/ContactSection.tsx": {
@@ -665,8 +665,8 @@
     "semantic_hash": ""
   },
   "src/components/sections/SkillsStackSection.tsx": {
-    "mtime": 1786221117.2866888,
-    "ast_hash": "0793e4b0c2084c706d9e71239f0de6bf",
+    "mtime": 1786284102.6681583,
+    "ast_hash": "c9b13ef0f76b22b8bf0daedd6e04926a",
     "semantic_hash": ""
   },
   "src/components/sections/TaglineSection.tsx": {
@@ -877,6 +877,26 @@
   "public/images/mimikyu.webp": {
     "mtime": 1786213096.910118,
     "ast_hash": "6ad805478c3e47fcf532b1b09044a328",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-09-contact-page-shimmer-zoning.md": {
+    "mtime": 1786261212.134593,
+    "ast_hash": "9065e9d563e5e4c936701b9545cc4966",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-09-contact-polish-fixes.md": {
+    "mtime": 1786258179.48982,
+    "ast_hash": "29d66f8550b63a68d0fb3abd1da9eb66",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-09-contact-page-shimmer-zoning-design.md": {
+    "mtime": 1786261063.7815719,
+    "ast_hash": "615b511b851cebc65dbad31351392400",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-09-contact-polish-fixes-design.md": {
+    "mtime": 1786258060.8329637,
+    "ast_hash": "ec185a59e06a183b020e405fb6103227",
     "semantic_hash": ""
   }
 }

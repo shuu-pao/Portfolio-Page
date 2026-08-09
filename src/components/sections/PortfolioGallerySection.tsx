@@ -35,7 +35,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: "PortfolioMon",
-    year: "2025",
+    year: "2026",
     description:
       "A full turn-based RPG battle system built from scratch — a game-like developer portfolio with boss battles, dialogue, and a chat-driven AI guide.",
     tags: ["React", "Vite", "JavaScript", "CSS"],
@@ -47,7 +47,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Premium Portfolio",
+    title: "My Portfolio",
     year: "2026",
     description:
       "This site — a cinematic, reference-matched personal portfolio built with pixel-precise fidelity to hand-picked design references.",
@@ -55,12 +55,13 @@ const projects: Project[] = [
     position: "start",
     aspectRatio: "16 / 10",
     grid: 7,
+    imageSrc: "/images/Premium%20Portfolio.jpg",
     githubUrl: "https://github.com/shuu-pao/Portfolio-Page",
   },
   {
     id: 3,
     title: "SMARTBIN 3 (Thesis)",
-    year: "2024",
+    year: "2025",
     description:
       "A YOLOv8-powered waste-sorting bin with a motorized platform for auto-segregation. Diagnosed a flawed classification approach that had stalled the team for two months and proposed the object-detection redesign that cleared it — reaching 98.67% accuracy on standard waste.",
     tags: ["YOLOv8", "Computer Vision", "Python", "Deep Learning"],
@@ -71,7 +72,7 @@ const projects: Project[] = [
   {
     id: 4,
     title: "PIC-Based Futsal Scoreboard",
-    year: "2024",
+    year: "2025",
     description:
       "A microcontroller scoreboard written in C (XC8) with real-time match timers and 7-segment display integration — a hands-on embedded-systems lab build.",
     tags: ["C", "XC8", "Embedded", "Microcontrollers"],
