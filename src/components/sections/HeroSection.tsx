@@ -1,8 +1,8 @@
 "use client";
 
 import { Anton } from "next/font/google";
+import Image from "next/image";
 import { Marquee } from "@/components/ui/Marquee";
-import { GridDistortion } from "@/components/reactbits/GridDistortion";
 import { SlideRevealText } from "@/components/reactbits/SlideRevealText";
 import { DrawnText } from "@/components/reactbits/DrawnText";
 import { BUILD_DEBUG_PATH, BUILD_DEBUG_VIEWBOX } from "@/components/reactbits/build-debug-path";
@@ -64,11 +64,13 @@ export default function HeroSection() {
           </div>
 
           <div className="order-1 px-6 lg:order-none lg:col-span-4 lg:col-start-5 lg:row-start-1 lg:px-0">
-            <GridDistortion
-              imageSrc={HERO_IMAGE_SRC}
+            <Image
+              src={HERO_IMAGE_SRC}
               alt="Mimikyu, in the plain-background style of the reference hero photo"
-              aspectRatio="1 / 1"
-              className="w-full rounded-sm"
+              width={800}
+              height={800}
+              className="aspect-square w-full rounded-sm object-cover"
+              priority
             />
           </div>
 

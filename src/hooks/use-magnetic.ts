@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, type MouseEvent } from "react";
-import { useMotionValue, useSpring } from "motion/react";
+import { useMotionValue, useSpring } from "framer-motion";
 import { usePrefersReducedMotion } from "./use-prefers-reduced-motion";
 
 const isFinePointer = () =>

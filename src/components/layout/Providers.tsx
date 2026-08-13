@@ -8,7 +8,7 @@ import { TileShimmerBackground } from "@/components/reactbits/TileShimmerBackgro
 export function Providers({ children }: { children: React.ReactNode }) {
   useLenis();
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <MotionConfig reducedMotion="user">
         <TileShimmerBackground />
         {children}
