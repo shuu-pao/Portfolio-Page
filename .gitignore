@@ -56,3 +56,10 @@ firebase-debug.*.log
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python
+__pycache__/
+*.pyc
+
+# graphify cache/analysis output (regenerate with `graphify update .`)
+/graphify-out/
