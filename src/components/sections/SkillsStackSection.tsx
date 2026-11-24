@@ -27,7 +27,7 @@ const categories: SkillCategory[] = [
   },
   {
     title: "Backend & Automation",
-    tags: ["Node.js", "REST APIs", "Database Design", "Workflow Automation"],
+    tags: ["Node.js", "PostgreSQL", "Supabase", "REST APIs", "Database Design"],
     description:
       "Building server-side logic, RESTful APIs, and automated workflows that connect frontend experiences to reliable data pipelines — the backbone of every polished web application.",
     insetAlt: "Screenshot of a Node.js backend dashboard",
@@ -43,7 +43,7 @@ const categories: SkillCategory[] = [
   },
   {
     title: "Salesforce / CRM Automation",
-    tags: ["Agentforce", "Flow Builder", "Apex Basics", "Lightning"],
+    tags: ["Apex", "Lightning Web Components", "Flow Builder", "Agentforce"],
     description:
       "Configuring Agentforce actions and Flow Builder automations to handle case management and agentic workflows on the Salesforce platform — turning manual processes into guided, self-serve ones.",
     insetAlt: "Screenshot of a Salesforce Flow Builder canvas",

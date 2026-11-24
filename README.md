@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Paolo Enrera: Portfolio
 
-## Getting Started
+My personal portfolio site: an animated, editorial-style single page that presents my work, skills and process, with a working contact form. It's built with Next.js and TypeScript and exported as a static site.
 
-First, run the development server:
+**[🌐 View the live site](https://paolojansenenrera-78fcb.web.app)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Portfolio screenshot](public/images/Premium%20Portfolio.jpg)
+
+---
+
+## Highlights
+
+- **Motion with restraint:** text reveals, a drawn-on headline, a WebGL grid distortion (Three.js), a tile-shimmer background, smooth scrolling (Lenis) and scroll-triggered timelines (GSAP). Animations tone down for visitors who turn on `prefers-reduced-motion`.
+- **Light and dark themes:** design tokens switch with the theme (`next-themes`), and the footer zone stays dark in both.
+- **Contact form without a backend:** messages are sent through EmailJS from the browser, so the site stays fully static.
+- **Fast static hosting:** `next build` exports static files that Firebase Hosting serves, and the images are recompressed for production.
+- **Accessible interactions:** the project modal traps focus and closes on Esc, the navigation tracks the active section, and the menus work from the keyboard.
+
+## Tech stack
+
+| Area | Tools |
+| --- | --- |
+| Framework | Next.js 16 (App Router, static export), React 19, TypeScript |
+| Styling | Tailwind CSS v4, shadcn/ui primitives, class-variance-authority |
+| Motion | Framer Motion, GSAP, Lenis, Three.js |
+| Email | EmailJS |
+| Hosting | Firebase Hosting |
+
+## Project structure
+
+```
+src/
+  app/                  routes: / (home) and /contact
+  components/
+    sections/           Hero, Intro/Bio, Mission, Selected Work, Skills, Process, Contact
+    layout/             Navbar, full-screen nav overlay, footer, theme provider
+    reactbits/          animated text and canvas effects
+    ui/                 buttons, tags, marquee, theme toggle
+  hooks/                reduced motion, in-viewport, active section, Lenis, magnetic hover
+  lib/                  section registry, utilities
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run it locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Requires Node.js 20+.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/shuu-pao/Portfolio-Page.git
+cd Portfolio-Page
+npm install
+cp .env.local.example .env.local   # optional: add EmailJS keys for the contact form
+npm run dev                         # http://localhost:3000
+```
 
-## Learn More
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Static production build |
+| `npm run lint` | Run ESLint |
 
-To learn more about Next.js, take a look at the following resources:
+### Environment variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The contact form needs three EmailJS values in `.env.local`. Everything else works without them.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | EmailJS service |
+| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | Template using `user_name`, `user_email`, `user_message` |
+| `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` | EmailJS public key |
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+firebase deploy
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## About the author
+
+**Paolo Jansen Enrera**, Software Engineering Associate at Accenture and BS Computer Engineering graduate of the University of San Carlos, Cebu. I build web and mobile apps as personal projects.
+
+[LinkedIn](https://www.linkedin.com/in/paolo-jansen-enrera/) · [GitHub](https://github.com/shuu-pao)
