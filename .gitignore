@@ -63,3 +63,8 @@ __pycache__/
 
 # graphify cache/analysis output (regenerate with `graphify update .`)
 /graphify-out/
+
+# AI-tool files and working notes (kept locally, not part of the site)
+/.claude/
+CLAUDE.md
+/docs/superpowers/

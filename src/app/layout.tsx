@@ -41,9 +41,9 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Paolo Jansen Enrera — Computer Engineer",
+  title: "Paolo Jansen Enrera — Software Developer",
   description:
-    "Portfolio of Paolo Jansen Enrera, a Computer Engineering graduate building Salesforce Agentforce agents at Accenture and embedded systems and applied computer vision on the side.",
+    "Portfolio of Paolo Jansen Enrera, a software developer at Accenture building enterprise applications on Salesforce, with full-stack web and mobile projects on the side.",
 };
 
 export default function RootLayout({

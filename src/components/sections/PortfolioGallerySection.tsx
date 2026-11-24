@@ -23,7 +23,7 @@ interface Project {
   aspectRatio: string;
   // Landscape aspect ratios render shorter at this gallery's fixed card width,
   // which shrinks the default grid=15 cell size vertically. Set explicitly to
-  // keep cell size visually consistent with the portrait cards (e.g. Thesis
+  // keep cell size visually consistent with the portrait cards (e.g. Tigom
   // at 3/4, grid=15) instead of reading as a denser/smaller grid.
   grid?: number;
   imageSrc?: string;
@@ -34,52 +34,53 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "Tigom",
+    year: "2026",
+    description:
+      "A mobile-first personal-finance app that records bank and e-wallet transactions automatically by reading payment alerts on Android, with budgets, savings goals, payday forecasts and statistics.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Capacitor"],
+    position: "end",
+    aspectRatio: "3 / 4",
+    imageSrc: "/images/Tigom.jpg",
+  },
+  {
+    id: 2,
+    title: "caracebu POS",
+    year: "2026",
+    description:
+      "An offline-first cashier and inventory app built for a small pop-up retail business: checkout, invoices and receipts, per-event reports, and two-device sync that keeps working with no internet.",
+    tags: ["React Native", "Expo", "TypeScript", "Supabase"],
+    position: "start",
+    aspectRatio: "4 / 3",
+    grid: 8,
+    imageSrc: "/images/caracebu-POS.jpg",
+    githubUrl: "https://github.com/shuu-pao/e-commerce-app",
+  },
+  {
+    id: 3,
     title: "PortfolioMon",
     year: "2026",
     description:
       "A full turn-based RPG battle system built from scratch — a game-like developer portfolio with boss battles, dialogue, and a chat-driven AI guide.",
     tags: ["React", "Vite", "JavaScript", "CSS"],
-    position: "end",
+    position: "center",
     aspectRatio: "16 / 9",
     grid: 6,
     imageSrc: "/images/PortfolioMon.png",
     githubUrl: "https://github.com/shuu-pao/PortfolioMon",
   },
   {
-    id: 2,
+    id: 4,
     title: "My Portfolio",
     year: "2026",
     description:
-      "This site — a cinematic, reference-matched personal portfolio built with pixel-precise fidelity to hand-picked design references.",
+      "This site — a cinematic personal portfolio with scroll-driven animation, light and dark themes, reduced-motion support, and a backend-free contact form, exported as a static site.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    position: "start",
+    position: "end",
     aspectRatio: "16 / 10",
     grid: 7,
     imageSrc: "/images/Premium%20Portfolio.jpg",
     githubUrl: "https://github.com/shuu-pao/Portfolio-Page",
-  },
-  {
-    id: 3,
-    title: "SMARTBIN 3 (Thesis)",
-    year: "2025",
-    description:
-      "A YOLOv8-powered waste-sorting bin with a motorized platform for auto-segregation. Diagnosed a flawed classification approach that had stalled the team for two months and proposed the object-detection redesign that cleared it — reaching 98.67% accuracy on standard waste.",
-    tags: ["YOLOv8", "Computer Vision", "Python", "Deep Learning"],
-    position: "center",
-    aspectRatio: "3 / 4",
-    imageSrc: "/images/Thesis.jpg",
-  },
-  {
-    id: 4,
-    title: "PIC-Based Futsal Scoreboard",
-    year: "2025",
-    description:
-      "A microcontroller scoreboard written in C (XC8) with real-time match timers and 7-segment display integration — a hands-on embedded-systems lab build.",
-    tags: ["C", "XC8", "Embedded", "Microcontrollers"],
-    position: "end",
-    aspectRatio: "4 / 3",
-    grid: 8,
-    imageSrc: "/images/Futsal%20Scoreboard.jpg",
   },
 ];
 
